@@ -9,11 +9,11 @@
 <p align="left">
 <a href="https://linkedin.com/in/afnanhasanrakib" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="afnanhasanrakib" height="30" width="40" /></a>
 <a href="https://fb.com/afnanhrakib" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="afnanhrakib" height="30" width="40" /></a>
-<a href="https://www.youtube.com/c/rakibhasan-sc2dz?si=xy7mcs8tgshly3hp" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="rakibhasan-sc2dz?si=xy7mcs8tgshly3hp" height="30" width="40" /></a>
+<a href="https://www.youtube.com/@rakibhasan-sc2dz?si=xY7mCS8tGShLy3hp" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="rakibhasan-sc2dz?si=xy7mcs8tgshly3hp" height="30" width="40" /></a>
 <a href="https://www.codechef.com/users/rakib476" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/codechef.svg" alt="rakib476" height="30" width="40" /></a>
 <a href="https://codeforces.com/profile/afnanrakib" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codeforces.svg" alt="afnanrakib" height="30" width="40" /></a>
 <a href="https://www.leetcode.com/afnanrakib" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="afnanrakib" height="30" width="40" /></a>
-<a href="https://www.hackerearth.com/afnanhasanrakib476" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerearth.svg" alt="afnanhasanrakib476" height="30" width="40" /></a>
+<a href="https://www.hackerearth.com/@afnanhasanrakib476" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerearth.svg" alt="afnanhasanrakib476" height="30" width="40" /></a>
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
