@@ -22,8 +22,4 @@
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=afnanrakib&show_icons=true&locale=en" alt="afnanrakib" /></p>
 
-<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=afnanrakib&theme=dark" alt="GitHub Streak" /></a>
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=afnanrakib&" alt="afnanrakib" /></p>
-
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=afnanrakib" alt="afnanrakib" /></a> </p>
