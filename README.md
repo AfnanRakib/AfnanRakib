@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Rakib</h1>
-<h3 align="center">A passionate Undergraduate student & Competitive Programmer</h3>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=A+passionate+Undergraduate+student" alt="Typing SVG" /></a>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=afnanrakib&label=Profile%20views&color=0e75b6&style=flat" alt="afnanrakib" /> </p>
 
@@ -22,6 +22,8 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=afnanrakib&show_icons=true&locale=en&layout=compact" alt="afnanrakib" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=afnanrakib&show_icons=true&locale=en" alt="afnanrakib" /></p>
+
+<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=AfnanRakib&theme=dark" alt="GitHub Streak" /></a>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=afnanrakib&" alt="afnanrakib" /></p>
 
