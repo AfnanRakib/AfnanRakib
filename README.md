@@ -1,6 +1,5 @@
 <h1 align="center">Hi 👋, I'm Rakib</h1>
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=A+passionate+Undergraduate+student" alt="Typing SVG" /></a>
-
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F7368C&center=true&vCenter=true&width=435&lines=A+passionate+Undergraduate+student" alt="Typing SVG" /></a>
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=afnanrakib&label=Profile%20views&color=0e75b6&style=flat" alt="afnanrakib" /> </p>
 
 - 📫 How to reach me **rakibhasan4101@gmail.com**
