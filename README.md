@@ -25,4 +25,4 @@
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=afnanrakib" alt="afnanrakib" /></a> </p>
 
 
-![Snake animation](https://github.com/thepiyushmalhotra/thepiyushmalhotra/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://github.com/AfnanRakib/AfnanRakib/blob/output/github-contribution-grid-snake.svg)
