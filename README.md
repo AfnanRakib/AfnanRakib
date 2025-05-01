@@ -1,5 +1,10 @@
 <div align="center">
 
+<div style="width: 100%; height: auto; overflow: hidden;">
+  <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" 
+       style="width: 100%; margin-top: -26%;" />
+</div>
+
 <h1>Hi 👋, I'm Rakib</h1>
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F7368C&center=true&vCenter=true&width=435&lines=A+passionate+Undergraduate+student" alt="Typing SVG" /></a>
 
