@@ -1,8 +1,7 @@
 <div align="center">
 
 <div style="width: 100%; height: auto; overflow: hidden;">
-  <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" 
-       style="width: 100%; margin-top: -26%;" />
+  <img src="resources/banner.gif" style="width: 100%;"/>
 </div>
 
 <h1>Hi 👋, I'm Rakib</h1>
@@ -22,7 +21,7 @@
 
 - 📫 How to reach me **rakibhasan4101@gmail.com**
 
-- 📄 Check out my [CV](resources/Md.%20Rakib%20Hasan.pdf) and [Portfolio](#)
+- 📄 Check out my [CV](resources/Md.%20Rakib%20Hasan.pdf) and [Portfolio](https://afnanrakib.github.io/AfnanRakib/)
 
 - ⚡ Fun fact **I think I am passionate about programming**
 
