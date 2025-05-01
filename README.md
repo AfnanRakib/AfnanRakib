@@ -14,9 +14,9 @@
 <tr border="none">
 <td width="50%" align="left">
   
-- 🔭 I'm currently working on **[My Projects]**
+- 🔭 I'm currently working on **[SOHOJOGI](https://github.com/Learnathon-By-Geeky-Solutions/team-synergy)**
 
-- 🌱 I'm currently learning **Web Development**
+- 🌱 I'm currently learning **App Development**
 
 - 💬 Ask me about **C++, Python, Java**
 
