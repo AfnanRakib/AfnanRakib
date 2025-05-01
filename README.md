@@ -24,4 +24,4 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=afnanrakib" alt="afnanrakib" /></a> </p>
 
-![snake gif](https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/output/github-snake-dark.svg)
+![snake gif](https://github.com/AfnanRakib/AfnanRakib/blob/output/github-snake-dark.svg)
