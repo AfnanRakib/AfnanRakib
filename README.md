@@ -105,6 +105,6 @@
 [![LeetCode](https://img.shields.io/badge/LeetCode-%23FFA116.svg?logo=leetcode&logoColor=white)](https://www.leetcode.com/afnanrakib)
 [![HackerEarth](https://img.shields.io/badge/HackerEarth-%232C3454.svg?logo=hackerearth&logoColor=white)](https://www.hackerearth.com/@afnanhasanrakib476)
 
-![snake gif](https://github.com/AfnanRakib/AfnanRakib/blob/output/github-snake.svg)
+![snake gif](https://github.com/AfnanRakib/AfnanRakib/blob/output/github-snake-dark.svg)
 
 </div>
