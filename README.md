@@ -103,7 +103,7 @@
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?logo=discord&logoColor=white)](https://discord.com/users/afnan_rakib)
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://www.youtube.com/@rakibhasan-sc2dz?si=xY7mCS8tGShLy3hp)
 [![LeetCode](https://img.shields.io/badge/LeetCode-%23FFA116.svg?logo=leetcode&logoColor=white)](https://www.leetcode.com/afnanrakib)
-[![HackerEarth](https://img.shields.io/badge/HackerEarth-%232C3454.svg?logo=hackerearth&logoColor=white)](https://www.hackerearth.com/@afnanhasanrakib476)
+
 
 ![snake gif](https://github.com/AfnanRakib/AfnanRakib/blob/output/github-snake-dark.svg)
 
