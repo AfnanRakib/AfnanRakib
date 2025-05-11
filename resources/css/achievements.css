@@ -6,14 +6,7 @@
 }
 
 .achievements::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: none;
-  pointer-events: none;
+  display: none;
 }
 
 .achievements-tabs {
@@ -27,6 +20,19 @@
   gap: 15px;
   margin-bottom: 50px;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.tab-buttons::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
+  border-radius: 3px;
 }
 
 .tab-btn {
@@ -44,10 +50,22 @@
   gap: 10px;
   position: relative;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
 }
 
 .tab-btn::before {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.tab-btn:hover::before {
+  left: 100%;
 }
 
 .tab-btn i {
@@ -63,9 +81,10 @@
 }
 
 .tab-btn:hover {
-  border-color: var(--accent-pink);
-  background: var(--accent-pink);
+  border-color: var(--accent-blue);
+  background: var(--accent-blue);
   color: #fff;
+  transform: translateY(-2px);
 }
 
 .tab-btn:hover i {
@@ -75,10 +94,12 @@
 .tab-btn.active,
 .tab-btn.active *,
 .tab-btn.active i {
-  background: var(--accent-blue);
+  background: var(--accent-pink);
   color: #fff !important;
-  border-color: var(--accent-blue);
+  border-color: var(--accent-pink);
   text-shadow: none;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(247, 54, 140, 0.3);
 }
 
 .tab-content {
@@ -97,6 +118,33 @@
   display: block;
   opacity: 1;
   transform: translateY(0);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-pane:not(.active) {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 .achievements-container {
@@ -116,7 +164,36 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.achievement-card:nth-child(1) { animation-delay: 0.1s; }
+.achievement-card:nth-child(2) { animation-delay: 0.2s; }
+.achievement-card:nth-child(3) { animation-delay: 0.3s; }
+.achievement-card:nth-child(4) { animation-delay: 0.4s; }
+
+.tab-pane.active .achievement-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.tab-pane:not(.active) .achievement-card {
+  animation: none;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .achievement-card::before {
@@ -124,9 +201,35 @@
 }
 
 .achievement-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   border-color: var(--accent-pink);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(247, 54, 140, 0.1);
+}
+
+.achievement-card:hover .achievement-icon {
+  transform: scale(1.1) rotate(5deg);
+  color: var(--accent-pink);
+}
+
+.achievement-card:hover .achievement-info h3 {
+  color: var(--accent-pink);
+}
+
+.achievement-card:hover .achievement-date {
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+
+.medal.gold:hover .achievement-icon {
+  color: #FFD700;
+}
+
+.medal.silver:hover .achievement-icon {
+  color: #C0C0C0;
+}
+
+.medal.bronze:hover .achievement-icon {
+  color: #CD7F32;
 }
 
 .achievement-header {
@@ -141,10 +244,27 @@
   color: var(--accent-blue);
   transition: all 0.3s ease;
   flex-shrink: 0;
+  position: relative;
 }
 
-.achievement-card:hover .achievement-icon {
-  transform: scale(1.1) rotate(5deg);
+.achievement-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(88, 166, 255, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover .achievement-icon::after {
+  width: 50px;
+  height: 50px;
+  background: rgba(88, 166, 255, 0.2);
 }
 
 .medal.gold .achievement-icon {
@@ -152,14 +272,38 @@
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
+.medal.gold .achievement-icon::after {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.medal.gold:hover .achievement-icon::after {
+  background: rgba(255, 215, 0, 0.2);
+}
+
 .medal.silver .achievement-icon {
   color: #C0C0C0;
   text-shadow: 0 0 15px rgba(192, 192, 192, 0.4);
 }
 
+.medal.silver .achievement-icon::after {
+  background: rgba(192, 192, 192, 0.1);
+}
+
+.medal.silver:hover .achievement-icon::after {
+  background: rgba(192, 192, 192, 0.2);
+}
+
 .medal.bronze .achievement-icon {
   color: #CD7F32;
   text-shadow: 0 0 15px rgba(205, 127, 50, 0.4);
+}
+
+.medal.bronze .achievement-icon::after {
+  background: rgba(205, 127, 50, 0.1);
+}
+
+.medal.bronze:hover .achievement-icon::after {
+  background: rgba(205, 127, 50, 0.2);
 }
 
 .achievement-info {
@@ -168,7 +312,7 @@
 
 .achievement-info h3 {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--text-primary);
   font-weight: 600;
   line-height: 1.4;
@@ -176,20 +320,27 @@
 
 .achievement-info p {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5;
   margin: 8px 0;
 }
 
 .achievement-date {
   display: inline-block;
-  padding: 5px 15px;
-  background: rgba(255, 0, 128, 0.1);
+  padding: 4px 12px;
+  background: transparent;
   border-radius: 20px;
-  color: var(--accent-pink);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   font-weight: 500;
   margin-top: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.achievement-card:hover .achievement-date {
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
 }
 
 .achievement-badge {
@@ -200,9 +351,55 @@
   background: linear-gradient(45deg, var(--accent-pink), var(--accent-blue));
   border-radius: 20px;
   color: white;
-  font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: 0 5px 15px rgba(255, 0, 128, 0.2);
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(247, 54, 140, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  transform-origin: right center;
+  z-index: 2;
+}
+
+.achievement-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.15);
+  z-index: -1;
+}
+
+.achievement-card:hover .achievement-badge {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(247, 54, 140, 0.2);
+}
+
+.medal.gold .achievement-badge {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.medal.silver .achievement-badge {
+  background: linear-gradient(45deg, #C0C0C0, #A9A9A9);
+  box-shadow: 0 5px 15px rgba(192, 192, 192, 0.3);
+}
+
+.medal.bronze .achievement-badge {
+  background: linear-gradient(45deg, #CD7F32, #8B4513);
+  box-shadow: 0 5px 15px rgba(205, 127, 50, 0.3);
+}
+
+.medal.gold:hover .achievement-badge {
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+.medal.silver:hover .achievement-badge {
+  box-shadow: 0 8px 20px rgba(192, 192, 192, 0.4);
+}
+
+.medal.bronze:hover .achievement-badge {
+  box-shadow: 0 8px 20px rgba(205, 127, 50, 0.4);
 }
 
 /* Responsive Design */
@@ -233,4 +430,85 @@
   .achievement-info p {
     font-size: 1rem;
   }
+}
+
+.achievements .section-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.achievements .section-title h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.achievements .section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.achievements .section-title:hover h2::after {
+  transform: scaleX(1);
+}
+
+.achievements .section-title h2 span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.achievements .section-title:hover h2 span {
+  transform: translateY(-2px);
+  color: var(--accent-pink);
+}
+
+/* Add a subtle glow effect to the section title */
+.achievements .section-title h2 {
+  text-shadow: 0 0 10px rgba(247, 54, 140, 0.3);
+}
+
+.achievements .section-title:hover h2 {
+  text-shadow: 0 0 20px rgba(247, 54, 140, 0.5);
+}
+
+/* Add a subtle animation to the section title on page load */
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.achievements .section-title {
+  animation: titleFadeIn 0.8s ease forwards;
+}
+
+/* Add a subtle background pattern to the section title */
+.achievements .section-title::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle at center, rgba(247, 54, 140, 0.1) 0%, transparent 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievements .section-title:hover::before {
+  opacity: 1;
 } 
