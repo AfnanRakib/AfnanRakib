@@ -139,14 +139,20 @@ document.addEventListener('DOMContentLoaded', function() {
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
         const tabId = button.getAttribute('data-tab');
-        
         // Remove active class from all buttons and contents
         tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-        
+        tabContents.forEach(content => {
+          content.classList.remove('active');
+          content.classList.remove('fade-in');
+        });
         // Add active class to clicked button and corresponding content
         button.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
+        const activePane = document.getElementById(tabId);
+        activePane.classList.add('active');
+        // Optionally add fade-in animation
+        setTimeout(() => {
+          activePane.classList.add('fade-in');
+        }, 10);
       });
     });
   

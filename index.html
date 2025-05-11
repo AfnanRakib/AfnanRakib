@@ -64,9 +64,9 @@
         <div class="about-text">
           <h3>Developer • Innovator • Contest Enthusiast</h3>
           <p>As a well-rounded and driven Computer Science undergraduate at Ahsanullah University of Science and Technology (AUST), I bring a strong mix of technical skills, creativity, and leadership. I thrive in dynamic environments and quickly adapt to new tools, technologies, and challenges, whether it's developing scalable applications, leading a team in a programming contest, or managing creative initiatives.</p>
-          <p>Through both academics (CGPA 3.75) and hands-on experience, I’ve built a solid foundation in software development. I’ve led and contributed to projects like AUST CODE REALM, an online judge system, and SOHOJOGI, a service booking app, working with technologies like Flutter, PHP, Java, MySQL, and third-party APIs. I’m comfortable shifting roles between developer, collaborator, and project lead.</p>
-          <p>I’ve also competed in numerous programming contests and tech exhibitions, earning top rankings and gaining valuable experience under pressure. As Head of IT at our university’s programming club, I’ve taken initiative in organizing events and supporting the team with both technical and creative input.</p>
-          <p>I’m always excited about opportunities to learn, grow, and contribute to impactful projects, whether as part of a team or in a leadership role.</p>
+          <p>Through both academics (CGPA 3.75) and hands-on experience, I've built a solid foundation in software development. I've led and contributed to projects like AUST CODE REALM, an online judge system, and SOHOJOGI, a service booking app, working with technologies like Flutter, PHP, Java, MySQL, and third-party APIs. I'm comfortable shifting roles between developer, collaborator, and project lead.</p>
+          <p>I've also competed in numerous programming contests and tech exhibitions, earning top rankings and gaining valuable experience under pressure. As Head of IT at our university's programming club, I've taken initiative in organizing events and supporting the team with both technical and creative input.</p>
+          <p>I'm always excited about opportunities to learn, grow, and contribute to impactful projects, whether as part of a team or in a leadership role.</p>
           <div class="about-info">
             <div class="info-item">
               <i class="fas fa-envelope"></i>
@@ -288,53 +288,81 @@
       
       <div class="achievements-tabs">
         <div class="tab-buttons">
-          <button class="tab-btn active" data-tab="programming">Programming Contests</button>
-          <button class="tab-btn" data-tab="exhibitions">Software Exhibitions</button>
-          <button class="tab-btn" data-tab="refactoring">Code Refactoring</button>
-          <button class="tab-btn" data-tab="academic">Academic Excellence</button>
+          <button class="tab-btn active" data-tab="programming">
+            <i class="fas fa-code"></i>
+            Programming Contests
+          </button>
+          <button class="tab-btn" data-tab="exhibitions">
+            <i class="fas fa-trophy"></i>
+            Software Exhibitions
+          </button>
+          <button class="tab-btn" data-tab="refactoring">
+            <i class="fas fa-code-branch"></i>
+            Code Refactoring
+          </button>
+          <button class="tab-btn" data-tab="academic">
+            <i class="fas fa-graduation-cap"></i>
+            Academic Excellence
+          </button>
         </div>
         
         <div class="tab-content">
           <!-- Programming Contests Tab -->
           <div class="tab-pane active" id="programming">
             <div class="achievements-container">
-              <div class="achievement-card">
-                <div class="achievement-icon">
-                  <i class="fas fa-trophy"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>AUST Inter-University Contest 2025</h3>
-                  <p>97th place (Team: 0xDEADCODER)</p>
-                </div>
-              </div>
-              
               <div class="achievement-card medal gold">
-                <div class="achievement-icon">
-                  <i class="fas fa-medal"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>Intra AUST Contest (CSE Carnival 4.0) 2024</h3>
-                  <p>🥇 Champion</p>
-                </div>
-              </div>
-              
-              <div class="achievement-card medal silver">
-                <div class="achievement-icon">
-                  <i class="fas fa-medal"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>UAP Inter University Contest (Junior) 2024</h3>
-                  <p>🥈 1st Runners-Up</p>
+                <div class="achievement-badge">Champion</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>Intra AUST Contest (CSE Carnival 4.0)</h3>
+                    <p>Led team to victory in the university's premier coding competition</p>
+                    <span class="achievement-date">2024</span>
+                  </div>
                 </div>
               </div>
               
               <div class="achievement-card medal silver">
-                <div class="achievement-icon">
-                  <i class="fas fa-medal"></i>
+                <div class="achievement-badge">1st Runner-Up</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>UAP Inter University Contest (Junior)</h3>
+                    <p>Secured second place in the junior division of the inter-university competition</p>
+                    <span class="achievement-date">2024</span>
+                  </div>
                 </div>
-                <div class="achievement-info">
-                  <h3>Intra AUST Contest (CSE Carnival 3.0) 2024</h3>
-                  <p>🥈 1st Runners-Up</p>
+              </div>
+              
+              <div class="achievement-card medal silver">
+                <div class="achievement-badge">1st Runner-Up</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>Intra AUST Contest (CSE Carnival 3.0)</h3>
+                    <p>Demonstrated exceptional problem-solving skills in the university competition</p>
+                    <span class="achievement-date">2024</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-card">
+                <div class="achievement-badge">Top 100</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>AUST Inter-University Contest</h3>
+                    <p>Ranked 97th among top programmers from universities nationwide</p>
+                    <span class="achievement-date">2025</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -343,33 +371,45 @@
           <!-- Software Exhibitions Tab -->
           <div class="tab-pane" id="exhibitions">
             <div class="achievements-container">
-              <div class="achievement-card medal silver">
-                <div class="achievement-icon">
-                  <i class="fas fa-medal"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>Research Odyssey 2025</h3>
-                  <p>🥈 1st Runners-Up</p>
+              <div class="achievement-card medal gold">
+                <div class="achievement-badge">Champion</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>AUST CSE Carnival 5.0</h3>
+                    <p>Won first place in the software exhibition with innovative project</p>
+                    <span class="achievement-date">2025</span>
+                  </div>
                 </div>
               </div>
               
-              <div class="achievement-card medal gold">
-                <div class="achievement-icon">
-                  <i class="fas fa-medal"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>AUST CSE Carnival 5.0 (2025)</h3>
-                  <p>🥇 Champion</p>
+              <div class="achievement-card medal silver">
+                <div class="achievement-badge">1st Runner-Up</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>Research Odyssey</h3>
+                    <p>Secured second place in the research project exhibition</p>
+                    <span class="achievement-date">2025</span>
+                  </div>
                 </div>
               </div>
               
               <div class="achievement-card medal bronze">
-                <div class="achievement-icon">
-                  <i class="fas fa-medal"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>AUST CSE Carnival 3.0 (2024)</h3>
-                  <p>🥉 2nd Runners-Up</p>
+                <div class="achievement-badge">2nd Runner-Up</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>AUST CSE Carnival 3.0</h3>
+                    <p>Received recognition for innovative software solution</p>
+                    <span class="achievement-date">2024</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -378,23 +418,31 @@
           <!-- Code Refactoring Tab -->
           <div class="tab-pane" id="refactoring">
             <div class="achievements-container">
-              <div class="achievement-card medal bronze">
-                <div class="achievement-icon">
-                  <i class="fas fa-medal"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>AUST CSE Carnival 5.0 (2025)</h3>
-                  <p>🥉 2nd Runners-Up</p>
+              <div class="achievement-card medal gold">
+                <div class="achievement-badge">Champion</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>AUST CSE Carnival 4.0</h3>
+                    <p>Won first place in code refactoring competition</p>
+                    <span class="achievement-date">2024</span>
+                  </div>
                 </div>
               </div>
               
-              <div class="achievement-card medal gold">
-                <div class="achievement-icon">
-                  <i class="fas fa-medal"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>AUST CSE Carnival 4.0 (2024)</h3>
-                  <p>🥇 Champion</p>
+              <div class="achievement-card medal bronze">
+                <div class="achievement-badge">2nd Runner-Up</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>AUST CSE Carnival 5.0</h3>
+                    <p>Demonstrated excellence in code optimization</p>
+                    <span class="achievement-date">2025</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -404,22 +452,30 @@
           <div class="tab-pane" id="academic">
             <div class="achievements-container">
               <div class="achievement-card">
-                <div class="achievement-icon">
-                  <i class="fas fa-award"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>AUST Academic Scholarship (Dec 2023)</h3>
-                  <p>Top 5% performer (Spring 2023)</p>
+                <div class="achievement-badge">Top 5%</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-award"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>AUST Academic Scholarship</h3>
+                    <p>Received scholarship for outstanding academic performance</p>
+                    <span class="achievement-date">December 2023</span>
+                  </div>
                 </div>
               </div>
               
               <div class="achievement-card">
-                <div class="achievement-icon">
-                  <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="achievement-info">
-                  <h3>Consistent Academic Performance</h3>
-                  <p>CGPA: 3.75 (up to 6th semester)</p>
+                <div class="achievement-badge">Excellence</div>
+                <div class="achievement-header">
+                  <div class="achievement-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="achievement-info">
+                    <h3>Consistent Academic Performance</h3>
+                    <p>Maintained excellent CGPA throughout academic journey</p>
+                    <span class="achievement-date">2021 - Present</span>
+                  </div>
                 </div>
               </div>
             </div>
