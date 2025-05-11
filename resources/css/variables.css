@@ -1,0 +1,51 @@
+/* Root Variables */
+:root {
+  --bg-primary: #0a0c10;
+  --bg-secondary: #161b22;
+  --accent-pink: #f7368c;
+  --accent-blue: #58a6ff;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --card-bg: #21262d;
+  --border-color: #30363d;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-pink);
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.content, .hero-content, .section {
+  position: relative;
+  z-index: 1;
+} 

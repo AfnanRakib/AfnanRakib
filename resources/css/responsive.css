@@ -1,0 +1,175 @@
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-content,
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-image {
+    margin-top: 40px;
+    order: 2;
+  }
+  
+  .hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-image {
+    margin-bottom: 30px;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: var(--bg-secondary);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    transition: 0.5s;
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .nav-links li {
+    margin: 15px 0;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  
+  .achievement-card {
+    padding: 15px;
+  }
+  
+  .achievement-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+  }
+  
+  .education-timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 0;
+    text-align: left;
+    left: 0;
+  }
+  
+  .timeline-item:nth-child(odd) {
+    padding-right: 0;
+    text-align: left;
+  }
+  
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+  .timeline-dot {
+    left: 12px !important;
+    right: auto !important;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 120px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .typing {
+    font-size: 1.2rem;
+    height: auto;
+    min-height: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-text .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .btn-outline {
+    margin-left: 0;
+  }
+  
+  .tab-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .about-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-text .btn + .btn {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .typing {
+    font-size: 1rem;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+} 

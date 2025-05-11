@@ -1,0 +1,60 @@
+/* Skills Section */
+.skills {
+  position: relative;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-pink);
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+}
+
+.skill-category h3 i {
+  margin-right: 10px;
+  color: var(--accent-pink);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background-color: rgba(88, 166, 255, 0.1);
+  color: var(--accent-blue);
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(88, 166, 255, 0.3);
+}
+
+.skill-tag:hover {
+  background-color: rgba(247, 54, 140, 0.1);
+  color: var(--accent-pink);
+  border-color: rgba(247, 54, 140, 0.3);
+} 
