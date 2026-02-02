@@ -283,7 +283,6 @@
   border-radius: 10px;
   border: 1px solid var(--border-color);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -358,7 +357,7 @@
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  margin-bottom: 15px;
+  flex-grow: 1;
 }
 
 .achievement-icon {
@@ -430,10 +429,12 @@
 
 .achievement-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .achievement-info h3 {
-  margin: 0;
+  margin: 0 0 0.5rem 0;
   font-size: 1.2rem;
   color: var(--text-primary);
   font-weight: 600;
@@ -444,7 +445,8 @@
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.5;
-  margin: 8px 0;
+  margin: 0 0 1rem 0;
+  flex-grow: 1;
 }
 
 .achievement-date {
@@ -455,14 +457,15 @@
   color: var(--text-secondary);
   font-size: 0.9rem;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: auto;
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+  align-self: flex-start;
 }
 
 .achievement-card:hover .achievement-date {
-  border-color: var(--accent-pink);
-  color: var(--accent-pink);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .achievement-badge {

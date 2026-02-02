@@ -11,6 +11,8 @@
   overflow: hidden;
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -37,6 +39,9 @@
 
 .project-info {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-info h3 {
@@ -69,6 +74,8 @@
 .project-links {
   display: flex;
   gap: 15px;
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .project-links a {

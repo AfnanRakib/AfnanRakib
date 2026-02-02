@@ -2,6 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize motion canvas (dark only)
   loadMotionCanvas();
+  
+  // Calculate experience durations
+  calculateDurations();
     
     // Preloader
     const preloader = document.createElement('div');
@@ -248,6 +251,65 @@ function toggleDetails(button) {
     icon.className = 'fas fa-chevron-down';
     text.textContent = 'Show Details';
   }
+}
+
+// Calculate experience durations automatically
+function calculateDurations() {
+  // Function to calculate duration between two dates
+  function getDuration(startDate, endDate) {
+    const start = new Date(startDate + '-01');
+    const end = endDate === 'present' ? new Date() : new Date(endDate + '-01');
+    
+    let years = end.getFullYear() - start.getFullYear();
+    let months = end.getMonth() - start.getMonth();
+    
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    
+    // Build duration string
+    let duration = '';
+    if (years > 0) {
+      duration += years + ' yr' + (years > 1 ? 's' : '');
+    }
+    if (months > 0) {
+      if (duration) duration += ' ';
+      duration += months + ' mo' + (months > 1 ? 's' : '');
+    }
+    if (!duration) {
+      duration = '1 mo';
+    }
+    
+    return duration;
+  }
+  
+  // Update all role items with duration
+  document.querySelectorAll('.role-item p[data-start]').forEach(element => {
+    const start = element.getAttribute('data-start');
+    const end = element.getAttribute('data-end');
+    const duration = getDuration(start, end);
+    const originalText = element.textContent;
+    // Keep original timeline text and append duration
+    element.textContent = originalText + ' • ' + duration;
+  });
+  
+  // Update total durations for organizations
+  document.querySelectorAll('.total-duration[data-start]').forEach(element => {
+    const start = element.getAttribute('data-start');
+    const end = element.getAttribute('data-end');
+    const duration = getDuration(start, end);
+    element.textContent = duration;
+  });
+  
+  // Update experience cards that have timeline but no total-duration class
+  document.querySelectorAll('.experience-content > p[data-start]:not(.total-duration)').forEach(element => {
+    const start = element.getAttribute('data-start');
+    const end = element.getAttribute('data-end');
+    const duration = getDuration(start, end);
+    const originalText = element.textContent;
+    element.textContent = originalText + ' • ' + duration;
+  });
 }
 
 // Motion Canvas Loader (dark only)
