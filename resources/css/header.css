@@ -18,9 +18,24 @@ nav {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 5px 15px var(--glow-purple));
+}
+
+.logo-image {
+  height: 65px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.logo:hover .logo-image {
+  filter: brightness(1.1);
 }
 
 .nav-links {
