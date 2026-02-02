@@ -15,7 +15,7 @@
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px var(--glow-shadow);
   border-color: var(--accent-pink);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .tech-badge {
-  background-color: rgba(88, 166, 255, 0.1);
+  background-color: var(--badge-blue-bg);
   color: var(--accent-blue);
   padding: 3px 10px;
   border-radius: 5px;

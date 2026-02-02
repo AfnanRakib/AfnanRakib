@@ -1,13 +1,40 @@
-/* Root Variables */
+/* Root Variables - Dark Theme (Default) */
 :root {
   --bg-primary: #0a0c10;
   --bg-secondary: #161b22;
-  --accent-pink: #f7368c;
+  --accent-pink: #8b5cf6;
   --accent-blue: #58a6ff;
+  --primary-color: #8b5cf6;
   --text-primary: #e6edf3;
   --text-secondary: #8b949e;
   --card-bg: #21262d;
   --border-color: #30363d;
+  --header-bg: rgba(10, 12, 16, 0.95);
+  --canvas-opacity: 0.4;
+  
+  /* Glow Effects */
+  --glow-pink: rgba(139, 92, 246, 0.3);
+  --glow-pink-hover: rgba(139, 92, 246, 0.5);
+  --glow-blue: rgba(88, 166, 255, 0.3);
+  --glow-purple: rgba(139, 92, 246, 0.3);
+  --glow-shadow: rgba(0, 0, 0, 0.3);
+  
+  /* Additional Colors */
+  --white: #ffffff;
+  --details-bg: rgba(139, 92, 246, 0.05);
+  --hero-gradient-start: rgba(10, 12, 16, 0.99);
+  --hero-gradient-end: rgba(22, 27, 34, 0.95);
+  --badge-blue-bg: rgba(88, 166, 255, 0.1);
+  --badge-blue-hover: rgba(88, 166, 255, 0.2);
+  --gold: #FFD700;
+  --silver: #C0C0C0;
+  --bronze: #CD7F32;
+  --gold-bg: rgba(255, 215, 0, 0.1);
+  --gold-hover: rgba(255, 215, 0, 0.2);
+  --silver-bg: rgba(192, 192, 192, 0.1);
+  --silver-hover: rgba(192, 192, 192, 0.2);
+  --bronze-bg: rgba(205, 127, 50, 0.1);
+  --bronze-hover: rgba(205, 127, 50, 0.2);
 }
 
 /* Base Styles */
@@ -42,7 +69,7 @@ a:hover {
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.5;
+  opacity: var(--canvas-opacity);
 }
 
 .content, .hero-content, .section {

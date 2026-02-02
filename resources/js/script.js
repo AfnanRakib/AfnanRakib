@@ -1,5 +1,8 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize motion canvas (dark only)
+  loadMotionCanvas();
+    
     // Preloader
     const preloader = document.createElement('div');
     preloader.className = 'preloader';
@@ -48,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
+    
+    // Theme toggle removed
     
     // Typing effect
     const typingElement = document.querySelector('.typing');
@@ -227,3 +232,57 @@ document.addEventListener('DOMContentLoaded', function() {
       yearElement.textContent = new Date().getFullYear();
     }
   });
+
+// Toggle Details Function for Experience Section
+function toggleDetails(button) {
+  const detailsContent = button.nextElementSibling;
+  const icon = button.querySelector('i');
+  const text = button.querySelector('span');
+  
+  detailsContent.classList.toggle('show');
+  
+  if (detailsContent.classList.contains('show')) {
+    icon.className = 'fas fa-chevron-up';
+    text.textContent = 'Hide Details';
+  } else {
+    icon.className = 'fas fa-chevron-down';
+    text.textContent = 'Show Details';
+  }
+}
+
+// Motion Canvas Loader (dark only)
+function loadMotionCanvas() {
+  // Stop existing animation if running
+  if (typeof window.__stopMotionCanvas === 'function') {
+    window.__stopMotionCanvas();
+  }
+  
+  // Replace canvas to fully drop previous shader artifacts
+  const oldCanvas = document.getElementById('canvas');
+  if (oldCanvas) {
+    const newCanvas = document.createElement('canvas');
+    newCanvas.id = 'canvas';
+    oldCanvas.parentNode.insertBefore(newCanvas, oldCanvas);
+    oldCanvas.remove();
+  } else {
+    const newCanvas = document.createElement('canvas');
+    newCanvas.id = 'canvas';
+    document.body.insertBefore(newCanvas, document.body.firstChild);
+  }
+  
+  // Remove existing motion canvas script
+  const existingScript = document.querySelector('script[data-motion-canvas]');
+  if (existingScript) {
+    existingScript.remove();
+  }
+  
+  // Load dark grid script
+  const script = document.createElement('script');
+  script.setAttribute('data-motion-canvas', 'true');
+  script.src = 'resources/js/motionCanvas-grid.js';
+  
+  // Force reload by adding timestamp to prevent caching
+  script.src += '?t=' + Date.now();
+  
+  document.body.appendChild(script);
+}

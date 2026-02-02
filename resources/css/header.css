@@ -4,7 +4,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(10, 12, 16, 0.95);
+  background-color: var(--header-bg);
   backdrop-filter: blur(10px);
   z-index: 100;
   border-bottom: 1px solid var(--border-color);
@@ -26,16 +26,20 @@ nav {
 .nav-links {
   display: flex;
   list-style: none;
+  gap: 2px;
 }
 
 .nav-links li {
-  margin-left: 30px;
+  margin-left: 0;
 }
 
 .nav-links a {
   color: var(--text-primary);
   font-weight: 500;
   position: relative;
+  font-size: 0.9rem;
+  padding: 0 15px;
+  transition: color 0.3s ease;
 }
 
 .nav-links a::after {
@@ -65,4 +69,5 @@ nav {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-} 
+}
+

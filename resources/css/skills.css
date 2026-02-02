@@ -18,7 +18,7 @@
   position: relative;
   border: 1px solid var(--border-color);
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(88, 166, 255, 0.05);
+  box-shadow: 0 4px 24px var(--badge-blue-bg);
   margin-bottom: 10px;
 }
 
@@ -40,7 +40,7 @@
 
 .skill-category:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.1);
+  box-shadow: 0 8px 24px var(--badge-blue-bg);
   border-color: var(--accent-blue);
 }
 
@@ -105,7 +105,7 @@
 .skill-tag:hover {
   border-color: var(--accent-pink);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(247, 54, 140, 0.1);
+  box-shadow: 0 4px 12px var(--glow-pink);
 }
 
 .skill-tag:hover::before {

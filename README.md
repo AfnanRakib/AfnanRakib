@@ -1,7 +1,7 @@
 <div align="center">
 
 <div style="width: 100%; height: auto; overflow: hidden;">
-  <img src="resources/banner.gif" style="width: 100%;"/>
+  <img src="resources/images/banner.gif" style="width: 100%;"/>
 </div>
 
 <h1>Hi 👋, I'm Rakib</h1>

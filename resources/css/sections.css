@@ -5,7 +5,7 @@
   border-radius: 10px;
   padding: 30px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px var(--glow-shadow);
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
@@ -14,7 +14,7 @@
 .about-image img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px var(--glow-shadow);
   border: 2px solid var(--border-color);
 }
 
@@ -45,4 +45,144 @@
   margin-right: 10px;
   color: var(--accent-pink);
   font-size: 1.2rem;
+}
+
+/* Experience Section Collapsible Details */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--glow-shadow);
+}
+
+.experience-logo {
+  flex-shrink: 0;
+}
+
+.experience-logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.experience-content {
+  flex-grow: 1;
+}
+
+.experience-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.experience-content > p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.role-item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.role-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.role-item.active {
+  border-left: 2px solid var(--primary-color);
+}
+
+.role-item:not(.active) {
+  border-left: 2px solid var(--border-color);
+}
+
+.role-item .role-indicator {
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.role-item.active .role-indicator {
+  background: var(--primary-color);
+}
+
+.role-item:not(.active) .role-indicator {
+  background: var(--border-color);
+}
+
+.role-item h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+.role-item p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.details-toggle {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.details-toggle:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--glow-purple);
+}
+
+.details-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.details-content.show {
+  max-height: 1000px !important;
+  transition: max-height 0.5s ease;
+}
+
+.details-inner {
+  padding: 1.5rem;
+  background: var(--details-bg);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.details-inner p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.tech-used {
+  margin-top: 1rem;
+}
+
+.details-toggle i {
+  margin-right: 5px;
+  transition: transform 0.3s;
 } 

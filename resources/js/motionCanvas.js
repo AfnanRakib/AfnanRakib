@@ -1,6 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
   const canvas = document.getElementById('canvas');
+  if (!canvas) return;
+  
   const ctx = canvas.getContext('2d');
+  
+  let animationId = null;
   
   // Set canvas to full window size
   function resizeCanvas() {
@@ -171,10 +175,18 @@ document.addEventListener('DOMContentLoaded', function() {
   function animate() {
     updateParticles();
     drawParticles();
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
   }
+  
+  // Stop animation on cleanup
+  window.__stopMotionCanvas = function() {
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    }
+  };
   
   // Initialize and start animation
   createParticles();
   animate();
-});
+})();
