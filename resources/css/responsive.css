@@ -111,6 +111,37 @@
     flex-direction: column;
     gap: 10px;
   }
+  
+  .experience-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .experience-logo img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .details-inner {
+    padding: 1rem;
+  }
+  
+  .details-inner p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+  }
+  
+  .tech-used {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
 }
 
 @media (max-width: 576px) {

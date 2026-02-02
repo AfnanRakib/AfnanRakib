@@ -232,6 +232,10 @@
   transition: all 0.5s ease;
 }
 
+.tab-pane .category-title {
+  display: none;
+}
+
 .tab-pane.active {
   display: block;
   opacity: 1;
@@ -529,7 +533,7 @@
 
 @media (max-width: 768px) {
   .tab-buttons {
-    gap: 10px;
+    display: none;
   }
   
   .tab-btn {
@@ -555,15 +559,30 @@
   .featured-achievement .achievement-content {
     padding: 2rem 1.5rem;
   }
+  
+  .tab-pane {
+    display: block !important;
+    opacity: 1 !important;
+    margin-bottom: 3rem;
+  }
+  
+  .tab-pane .category-title {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+  }
 }
   
-  .achievement-info h3 {
-    font-size: 1.1rem;
-  }
-  
-  .achievement-info p {
-    font-size: 1rem;
-  }
+.achievement-info h3 {
+  font-size: 1.1rem;
+}
+
+.achievement-info p {
+  font-size: 1rem;
 }
 
 .achievements .section-title {
