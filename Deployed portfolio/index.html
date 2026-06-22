@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md. Rakib Hasan | Portfolio</title>
+  <link rel="icon" type="image/png" href="../resources/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CHROME -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <aside class="section-rail" aria-label="Section navigation">
+    <a href="#home"         data-rail="home"         class="active"><span>Home</span></a>
+    <a href="#console"      data-rail="console">      <span>Console</span></a>
+    <a href="#about"        data-rail="about">        <span>About</span></a>
+    <a href="#projects"     data-rail="projects">     <span>Projects</span></a>
+    <a href="#ranks"        data-rail="ranks">        <span>Ranks</span></a>
+    <a href="#experience"   data-rail="experience">   <span>Experience</span></a>
+    <a href="#achievements" data-rail="achievements"> <span>Achievements</span></a>
+    <a href="#skills"       data-rail="skills">       <span>Skills</span></a>
+    <a href="#education"    data-rail="education">    <span>Education</span></a>
+    <a href="#contact"      data-rail="contact">      <span>Contact</span></a>
+  </aside>
+
+  <div class="focus-chip" id="focus-chip" aria-live="polite">HOME</div>
+  <div class="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <canvas id="matrix-canvas"  class="matrix-canvas"  aria-hidden="true"></canvas>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="wrap nav-wrap">
+      <a href="#top" class="brand">
+        <img src="../resources/images/logo.png" alt="Rakib logo">
+        <span>RAKIB</span>
+      </a>
+
+      <div class="live-clock-wrap" aria-label="Current time in Bangladesh">
+        <span class="live-clock-dot" aria-hidden="true"></span>
+        <span id="live-clock" aria-live="off">00:00:00</span>
+        <span class="live-clock-tz">BD</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#ranks">Ranks</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="mode-toggle" type="button" aria-label="Toggle warm mode">☀ Warm</button>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero" id="home">
+      <div class="hero-bg-letter" aria-hidden="true">R</div>
+
+      <div class="wrap hero-wrap">
+        <div class="hero-left reveal">
+          <div class="avail-badge">
+            <span class="avail-pulse" aria-hidden="true"></span>
+            Open to opportunities
+          </div>
+
+          <h1 class="hero-name">
+            Md. Rakib
+            <span class="hn-accent">Hasan</span>
+          </h1>
+
+          <p class="hero-roles">
+            Software Developer&nbsp;&nbsp;·&nbsp;&nbsp;Competitive Programmer&nbsp;&nbsp;·&nbsp;&nbsp;Technical Leader
+          </p>
+
+          <p class="hero-sub">
+            Final-year CSE undergraduate at AUST. I design and ship software across web, mobile, and AI-assisted systems — from competitive programming to production apps.
+          </p>
+
+          <p class="hero-currently">
+            <span class="cur-label">Currently</span>
+            <span class="typed-text" data-words="building SOHOJOGI,leading AUST Programming Club,solving competitive problems,shipping cross-platform apps">building SOHOJOGI</span>
+          </p>
+
+          <div class="hero-actions">
+            <a href="../resources/Md. Rakib Hasan.pdf" class="btn btn-solid mag-btn" download="Md. Rakib Hasan CV.pdf">Download CV</a>
+            <a href="#projects" class="btn btn-ghost mag-btn">See Work</a>
+          </div>
+        </div>
+
+        <div class="hero-right reveal delay-1">
+          <div class="hero-portrait-frame">
+            <img src="../resources/images/Md. Rakib Hasan.png" alt="Md. Rakib Hasan portrait">
+            <div class="portrait-corner-tag">CSE · AUST</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap hero-stats reveal delay-2">
+        <div class="stat-item">
+          <span class="stat-val">#122</span>
+          <span class="stat-lbl">ICPC Dhaka Regional</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">Champion</span>
+          <span class="stat-lbl">Learnathon 3.0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">3.75</span>
+          <span class="stat-lbl">CGPA</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">VP</span>
+          <span class="stat-lbl">AUST CSE Society</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">President</span>
+          <span class="stat-lbl">Programming Club</span>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>SOHOJOGI</span><span>AUST CODE REALM</span><span>HOMEHUTBD</span>
+          <span>ICPC DHAKA 2025</span><span>LEARNATHON 3.0 CHAMPION</span>
+          <span>AUST CSE SOCIETY VP</span><span>BHROMON</span><span>CODE REALM</span>
+          <span>IRREVOCABLE-ETERNITY</span><span>SOHOJOGI</span>
+          <span>AUST CODE REALM</span><span>HOMEHUTBD</span><span>ICPC DHAKA 2025</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ CONSOLE ══════════ -->
+    <section class="section" id="console">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">00 / ROOT ACCESS</p>
+          <h2 class="glitch-heading" data-glitch="Interactive Command Console">Interactive Command Console</h2>
+        </div>
+
+        <div class="terminal-shell reveal">
+          <div class="terminal-topbar">
+            <span class="dot red"></span>
+            <span class="dot amber"></span>
+            <span class="dot green"></span>
+            <p>guest@rakib:~</p>
+            <span class="drag-note">drag</span>
+          </div>
+          <div class="terminal-body" id="terminal-output" aria-live="polite">
+            <p><span class="prompt">guest@rakib:~$</span> init_profile --mode=cinematic</p>
+            <p class="line-ok">[ok] Portfolio modules loaded.</p>
+            <p class="line-ok">Type <strong>help</strong> to explore.</p>
+          </div>
+          <form class="terminal-input-row" id="terminal-form">
+            <label for="terminal-input" class="sr-only">Terminal command</label>
+            <span class="prompt">guest@rakib:~$</span>
+            <input id="terminal-input" type="text" autocomplete="off" placeholder="try: help">
+            <button type="submit">Run</button>
+          </form>
+          <div class="terminal-actions">
+            <button class="terminal-chip" type="button" data-command="help">help</button>
+            <button class="terminal-chip" type="button" data-command="ls">ls</button>
+            <button class="terminal-chip" type="button" data-command="pwd">pwd</button>
+            <button class="terminal-chip" type="button" data-command="stats">stats</button>
+            <button class="terminal-chip" type="button" data-command="achievements">achievements</button>
+            <button class="terminal-chip" type="button" data-command="contact">contact</button>
+            <button class="terminal-chip" type="button" data-command="clear">clear</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">01 / ABOUT</p>
+          <h2>The Origin Story</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="glass reveal">
+            <p>
+              I am a final-year Computer Science undergraduate at AUST with a CGPA of 3.75.
+              My journey combines algorithmic discipline from competitive programming with practical product development.
+            </p>
+            <p>
+              I have led and contributed to impactful platforms including AUST CODE REALM, SOHOJOGI, and HOMEHUTBD.
+              Currently serving as Vice President of AUST CSE Society and President of AUST Programming and Informatics Club.
+            </p>
+          </article>
+
+          <aside class="quick-facts reveal delay-1">
+            <div><h3>Email</h3><p>rakibhasan4101@gmail.com</p></div>
+            <div><h3>University</h3><p>Ahsanullah University of Science and Technology</p></div>
+            <div><h3>Focus</h3><p>Full-stack software and app development</p></div>
+            <div><h3>Current Build</h3><p>SOHOJOGI service booking platform</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PROJECTS ══════════ -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">02 / PROJECTS</p>
+          <h2 class="glitch-heading" data-glitch="Selected Work">Selected Work</h2>
+        </div>
+
+        <div class="project-controls reveal">
+          <div class="project-filters">
+            <button class="filter-btn active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" type="button" data-filter="web">Web</button>
+            <button class="filter-btn" type="button" data-filter="ai">AI</button>
+            <button class="filter-btn" type="button" data-filter="game">Game</button>
+          </div>
+          <div class="view-toggle" role="group" aria-label="Project view">
+            <button class="view-btn active" type="button" data-view="grid" aria-label="Grid view" title="Grid view">
+              <i class="fas fa-th-large" aria-hidden="true"></i>
+            </button>
+            <button class="view-btn" type="button" data-view="list" aria-label="List view" title="List view">
+              <i class="fas fa-list" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="project-grid" id="project-container">
+
+          <article class="project-card reveal" data-category="mobile" style="--pcol:#818cf8;">
+            <div class="proj-top-bar"></div>
+            <div class="proj-meta">
+              <span class="proj-badge"><span class="live-pulse"></span>DEMO</span>
+              <span class="proj-yr">2025</span>
+            </div>
+            <img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/team-synergy/refs/heads/main/resources/logo.png" alt="SOHOJOGI logo">
+            <h3>SOHOJOGI</h3>
+            <p class="proj-sub">Household Services Platform</p>
+            <p>Location matching, booking flow, and real-time updates for household service workers.</p>
+            <div class="tags"><span>Flutter</span><span>Supabase</span><span>Provider</span><span>MVVM</span></div>
+            <div class="project-links">
+              <a href="https://github.com/Learnathon-By-Geeky-Solutions/team-synergy" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="https://youtu.be/Lwbt7yas1KI" target="_blank" rel="noopener noreferrer">Demo</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-1" data-category="web" style="--pcol:#22d3ee;">
+            <div class="proj-top-bar"></div>
+            <div class="proj-meta">
+              <span class="proj-badge"><span class="live-pulse"></span>LIVE</span>
+              <span class="proj-yr">2024</span>
+            </div>
+            <img src="https://raw.githubusercontent.com/AfnanRakib/AUST-CODE-REALM/main/images/logo%20with%20cover.png" alt="AUST CODE REALM">
+            <h3>AUST CODE REALM</h3>
+            <p class="proj-sub">Online Judge Platform</p>
+            <p>Contests, IDE integration, and ratings for competitive programmers at AUST.</p>
+            <div class="tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Judge0 API</span></div>
+            <div class="project-links">
+              <a href="https://github.com/AfnanRakib/AUST-CODE-REALM" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="http://acr.rf.gd/" target="_blank" rel="noopener noreferrer">Live</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-2" data-category="ai web" style="--pcol:#f59e0b;">
+            <div class="proj-top-bar"></div>
+            <div class="proj-meta"><span class="proj-yr">2024</span></div>
+            <img src="https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg" alt="HOMEHUTBD">
+            <h3>HOMEHUTBD</h3>
+            <p class="proj-sub">Property Listing Platform</p>
+            <p>Property listing and valuation platform with AI-assisted pricing prediction.</p>
+            <div class="tags"><span>ASP.NET MVC</span><span>SQL Server</span><span>Python</span><span>Flask</span></div>
+            <div class="project-links">
+              <a href="https://github.com/AfnanRakib/HomeHutBD" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="ai mobile" style="--pcol:#a78bfa;">
+            <div class="proj-top-bar"></div>
+            <div class="proj-meta"><span class="proj-yr">2024</span></div>
+            <img src="https://raw.githubusercontent.com/AfnanRakib/Bhromon/refs/heads/main/assets/Bhromon.png" alt="BHROMON">
+            <h3>BHROMON</h3>
+            <p class="proj-sub">AI Travel Assistant</p>
+            <p>Travel assistant app with smart recommendations, maps, and chatbot support.</p>
+            <div class="tags"><span>Flutter</span><span>Google Maps API</span><span>TripAdvisor API</span><span>GPT-4</span></div>
+            <div class="project-links">
+              <a href="https://github.com/AfnanRakib/Bhromon" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-1" data-category="web" style="--pcol:#f97316;">
+            <div class="proj-top-bar"></div>
+            <div class="proj-meta"><span class="proj-yr">2023</span></div>
+            <img src="https://raw.githubusercontent.com/AfnanRakib/CodeRealm/main/CodeRealm.png" alt="CODE REALM">
+            <h3>CODE REALM</h3>
+            <p class="proj-sub">Desktop Coding Platform</p>
+            <p>Desktop coding and contest platform with integrated coding environment.</p>
+            <div class="tags"><span>Java</span><span>JavaFX</span><span>Apache Derby</span><span>Jdoodle API</span></div>
+            <div class="project-links">
+              <a href="https://github.com/AfnanRakib/CodeRealm" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-2" data-category="game" style="--pcol:#f43f5e;">
+            <div class="proj-top-bar"></div>
+            <div class="proj-meta"><span class="proj-yr">2023</span></div>
+            <img src="https://raw.githubusercontent.com/AfnanRakib/Irrevocable-Eternity/refs/heads/main/menu.png" alt="IRREVOCABLE-ETERNITY">
+            <h3>IRREVOCABLE-ETERNITY</h3>
+            <p class="proj-sub">2D Dungeon Fighter</p>
+            <p>2D dungeon-fighting game focused on fast mechanics and challenge progression.</p>
+            <div class="tags"><span>C</span><span>C++</span><span>OpenGL</span><span>iGraphics</span></div>
+            <div class="project-links">
+              <a href="https://github.com/AfnanRakib/Irrevocable-Eternity" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ RANKS — Scoreboard ══════════ -->
+    <section class="section" id="ranks">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">03 / RANKS</p>
+          <h2>Contest <span class="accent-text">Log</span></h2>
+        </div>
+
+        <div class="cc-row reveal">
+          <div class="contest-champ">
+            <div class="cc-emoji">🏆</div>
+            <span class="cc-tag">Champion</span>
+            <h3>Learnathon 3.0</h3>
+            <p>Geeky Solutions · Team Synergy</p>
+            <span class="cc-year">2025</span>
+          </div>
+          <div class="contest-champ">
+            <div class="cc-emoji">🏆</div>
+            <span class="cc-tag">Champion</span>
+            <h3>Intra AUST Programming</h3>
+            <p>CSE Carnival 4.0</p>
+            <span class="cc-year">2024</span>
+          </div>
+        </div>
+
+        <div class="rank-cards reveal delay-1">
+          <div class="rank-card">
+            <div class="rc-num">#35</div>
+            <h4>BUBT IUCPC</h4>
+            <p>AUST_DEADCODER · 2025</p>
+          </div>
+          <div class="rank-card">
+            <div class="rc-num">#97</div>
+            <h4>AUST Inter-Uni PC</h4>
+            <p>0xDEADCODER · 2025</p>
+          </div>
+          <div class="rank-card">
+            <div class="rc-num">#122</div>
+            <h4>ICPC Dhaka Regional</h4>
+            <p>AUST_DEADCODER · 2025</p>
+          </div>
+          <div class="rank-card">
+            <div class="rc-num">R.U.</div>
+            <h4>Research Odyssey</h4>
+            <p>Software Segment · 2025</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ EXPERIENCE ══════════ -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">04 / EXPERIENCE</p>
+          <h2>How I <span class="accent-text">Lead</span></h2>
+        </div>
+
+        <div class="exp-timeline">
+
+          <div class="exp-node reveal">
+            <div class="exp-card">
+              <img src="../resources/images/austpic.png" alt="AUST Programming and Informatics Club">
+              <div class="exp-content">
+                <span class="exp-role">President · Joint Secretary · Head of IT</span>
+                <h3>AUST Programming and Informatics Club</h3>
+                <p>Leading programming culture, organizing workshops and contests, and mentoring members across skill levels.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-node reveal delay-1">
+            <div class="exp-card">
+              <img src="../resources/images/aust cse society.jpg" alt="AUST CSE Society">
+              <div class="exp-content">
+                <span class="exp-role">Vice President · General Secretary</span>
+                <h3>AUST CSE Society</h3>
+                <p>Driving major departmental events, sponsorship collaborations, and student-faculty coordination.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-node reveal delay-2">
+            <div class="exp-card">
+              <img src="../resources/images/aust cp community.jpg" alt="AUST Competitive Programming Community">
+              <div class="exp-content">
+                <span class="exp-role">Representative · ACM Coordinator</span>
+                <h3>AUST Competitive Programming Community</h3>
+                <p>Managing ICPC and IUPC preparation, team formation, and contest logistics.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-node reveal">
+            <div class="exp-card">
+              <img src="../resources/images/geeky solutions.png" alt="Geeky Solutions">
+              <div class="exp-content">
+                <span class="exp-role">Champion · Team Leader</span>
+                <h3>Learnathon 3.0 Fresher Training Program</h3>
+                <p>Completed six-month intensive mentorship in cross-platform app development and delivered SOHOJOGI.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ ACHIEVEMENTS — Bento Grid ══════════ -->
+    <section class="section" id="achievements">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">05 / ACHIEVEMENTS</p>
+          <h2 class="glitch-heading" data-glitch="Highlights">Highlights</h2>
+        </div>
+        <p class="achievements-lead reveal">Contests, recognitions, and moments that shaped how I build and compete.</p>
+
+        <div class="bento-grid reveal">
+
+          <div class="bento bento-hero">
+            <div class="bento-num">01</div>
+            <h3>Learnathon 3.0 Champion</h3>
+            <p>Six-month intensive mentorship program run by Geeky Solutions. Delivered SOHOJOGI — a production-ready cross-platform household services platform.</p>
+            <div class="bento-tags">
+              <span>Cross-Platform Dev</span>
+              <span>Team Lead</span>
+              <span>2025</span>
+            </div>
+            <div class="bento-badge">🏆 CHAMPION</div>
+          </div>
+
+          <div class="bento bento-rank">
+            <div class="bento-num">02</div>
+            <h3>ICPC Dhaka Regional</h3>
+            <div class="bento-rank-num">#122</div>
+            <p>Team AUST_DEADCODER at the onsite regional contest.</p>
+            <span class="bento-meta">Onsite · 2025</span>
+          </div>
+
+          <div class="bento bento-sm">
+            <div class="bento-num">03</div>
+            <h3>BUBT IUCPC</h3>
+            <div class="bento-rank-num">#35</div>
+            <span class="bento-meta">National · 2025</span>
+          </div>
+
+          <div class="bento bento-sm">
+            <div class="bento-num">04</div>
+            <h3>AUST IUPC</h3>
+            <div class="bento-rank-num">#97</div>
+            <span class="bento-meta">National · 2025</span>
+          </div>
+
+          <div class="bento bento-wide">
+            <div class="bento-num">05</div>
+            <h3>Research Odyssey — 1st Runner-Up</h3>
+            <p>Recognised for innovation in the software exhibition segment at Research Odyssey.</p>
+            <span class="bento-meta">Software Segment · 2025</span>
+          </div>
+
+          <div class="bento bento-sm">
+            <div class="bento-num">06</div>
+            <h3>Intra AUST Champion</h3>
+            <div class="bento-badge-sm">🏆</div>
+            <span class="bento-meta">CSE Carnival 4.0 · 2024</span>
+          </div>
+
+          <div class="bento bento-sm">
+            <div class="bento-num">07</div>
+            <h3>Academic Scholarship</h3>
+            <p>Top 5% of department.</p>
+            <span class="bento-meta">Merit Award · 2023</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SKILLS ══════════ -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">06 / SKILLS</p>
+          <h2>My <span class="accent-text">Stack</span></h2>
+        </div>
+
+        <div class="skills-wrap" id="skills-wrap">
+
+          <div class="skill-category reveal">
+            <h3 class="skill-cat-title">Languages</h3>
+            <div class="skill-list">
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">C++</span><span class="sp">95%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:95%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">C</span><span class="sp">92%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:92%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Python</span><span class="sp">80%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:80%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Java</span><span class="sp">78%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:78%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Dart</span><span class="sp">80%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:80%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">JavaScript</span><span class="sp">65%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:65%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">C#</span><span class="sp">65%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:65%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category reveal delay-1">
+            <h3 class="skill-cat-title">Web &amp; Mobile</h3>
+            <div class="skill-list">
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Flutter</span><span class="sp">90%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:90%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">HTML / CSS</span><span class="sp">92%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:92%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">ASP.NET Core MVC</span><span class="sp">78%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:78%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Bootstrap</span><span class="sp">82%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:82%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">PHP</span><span class="sp">62%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:62%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category reveal delay-2">
+            <h3 class="skill-cat-title">Database &amp; Tools</h3>
+            <div class="skill-list">
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">MySQL</span><span class="sp">82%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:82%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Supabase</span><span class="sp">80%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:80%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">SQL Server</span><span class="sp">78%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:78%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Firebase</span><span class="sp">62%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:62%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Docker</span><span class="sp">58%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:58%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">GitHub Actions</span><span class="sp">58%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:58%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category reveal">
+            <h3 class="skill-cat-title">Emerging Areas</h3>
+            <div class="skill-list">
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Computer Vision</span><span class="sp">40%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:40%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Machine Learning</span><span class="sp">38%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:38%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">IoT Integration</span><span class="sp">35%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:35%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-head"><span class="sn">Blockchain</span><span class="sp">28%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:28%"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ EDUCATION ══════════ -->
+    <section class="section" id="education">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">07 / EDUCATION</p>
+          <h2>Academic Foundation</h2>
+        </div>
+
+        <div class="edu-grid">
+          <article class="edu-card reveal">
+            <h3>Ahsanullah University of Science and Technology</h3>
+            <p>BSc in Computer Software Engineering</p>
+            <span>2021 – Present · CGPA 3.75</span>
+          </article>
+          <article class="edu-card reveal delay-1">
+            <h3>Bakalia Government College</h3>
+            <p>HSC Science</p>
+            <span>2018 – 2020 · GPA 5.00</span>
+          </article>
+          <article class="edu-card reveal delay-2">
+            <h3>Chandgaon NMC Model High School</h3>
+            <p>SSC Science</p>
+            <span>2013 – 2018 · GPA 5.00</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ CONTACT ══════════ -->
+    <section class="section contact-section" id="contact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">08 / CONTACT</p>
+          <h2>Let's Build <span class="accent-text">Together</span></h2>
+        </div>
+
+        <div class="contact-layout reveal">
+          <div class="contact-info">
+            <p class="contact-desc">
+              Available for full-time roles, freelance projects, and open-source collaborations.
+              Based in Dhaka, Bangladesh.
+            </p>
+
+            <div class="contact-avail-row">
+              <span class="avail-pulse" aria-hidden="true"></span>
+              <span>Available for new opportunities</span>
+            </div>
+
+            <div class="contact-email-row">
+              <a class="email-link mag-btn" href="mailto:rakibhasan4101@gmail.com">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                rakibhasan4101@gmail.com
+              </a>
+              <button class="copy-email-btn" type="button" data-email="rakibhasan4101@gmail.com">
+                <i class="far fa-copy" aria-hidden="true"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="social-panel">
+            <h3 class="social-panel-title">Find Me On</h3>
+            <div class="social-grid">
+              <a href="https://github.com/afnanrakib" target="_blank" rel="noopener noreferrer" class="soc-btn mag-btn">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/afnanhasanrakib/" target="_blank" rel="noopener noreferrer" class="soc-btn mag-btn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://codeforces.com/profile/afnanrakib" target="_blank" rel="noopener noreferrer" class="soc-btn mag-btn">
+                <i class="fas fa-code" aria-hidden="true"></i>
+                <span>Codeforces</span>
+              </a>
+              <a href="https://www.leetcode.com/afnanrakib" target="_blank" rel="noopener noreferrer" class="soc-btn mag-btn">
+                <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                <span>LeetCode</span>
+              </a>
+              <a href="https://atcoder.jp/users/AfnanRakib" target="_blank" rel="noopener noreferrer" class="soc-btn mag-btn">
+                <i class="fas fa-trophy" aria-hidden="true"></i>
+                <span>AtCoder</span>
+              </a>
+              <a href="https://discord.com/users/afnan_rakib" target="_blank" rel="noopener noreferrer" class="soc-btn mag-btn">
+                <i class="fab fa-discord" aria-hidden="true"></i>
+                <span>Discord</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Md. Rakib Hasan — CSE Undergraduate — Dhaka, Bangladesh</p>
+      <p>© <span id="year"></span> Md. Rakib Hasan</p>
+    </div>
+  </footer>
+
+  <button class="back-top" type="button" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <div class="copy-toast" id="copy-toast" role="status" aria-live="polite">Email copied!</div>
+
+  <div class="jump-palette" id="jump-palette" hidden>
+    <div class="jump-shell" role="dialog" aria-modal="true" aria-label="Quick section jump">
+      <p class="jump-title">Quick Jump <kbd class="jump-hint-inline">Ctrl+K</kbd></p>
+      <div class="jump-grid">
+        <button type="button" data-jump="home">Home</button>
+        <button type="button" data-jump="console">Console</button>
+        <button type="button" data-jump="about">About</button>
+        <button type="button" data-jump="projects">Projects</button>
+        <button type="button" data-jump="ranks">Ranks</button>
+        <button type="button" data-jump="experience">Experience</button>
+        <button type="button" data-jump="achievements">Achievements</button>
+        <button type="button" data-jump="skills">Skills</button>
+        <button type="button" data-jump="education">Education</button>
+        <button type="button" data-jump="contact">Contact</button>
+      </div>
+      <p class="jump-hint">Press Esc to close</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

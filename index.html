@@ -1,892 +1,1177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark-default">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Md. Rakib Hasan | Portfolio</title>
-  <link rel="icon" type="image/png" href="resources/images/logo.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23818cf8'/><text x='50%25' y='54%25' font-family='Arial Black,Arial' font-size='13' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='middle'>RH</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="resources/css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="resources/css/style.css">
 </head>
-
 <body>
-  <canvas id="canvas"></canvas>
-  <!-- Header & Navigation -->
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">
-          <img src="resources/images/logo.png" alt="Rakib" class="logo-image">
-        </a>
-        <ul class="nav-links">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#achievements" class="nav-link">Achievements</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#connect" class="nav-link">Connect</a></li>
-        </ul>
-        <div class="mobile-menu">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Hi, I'm <span>Rakib Hasan</span></h1>
-          <div class="typing">Waiting for magic...</div>
-          <p>I'm a Computer Science undergraduate at AUST with a passion for software development, competitive programming, and creative problem-solving.</p>
-          <div class="hero-buttons">
-            <a href="resources/Md. Rakib Hasan.pdf" class="btn" download="Md. Rakib Hasan CV.pdf"><i class="fas fa-download"></i> Download CV</a>
-            <a href="#connect" class="btn btn-outline">Contact Me</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="https://user-images.githubusercontent.com/74038190/219923809-b86dc415-a0c2-4a38-bc88-ad6cf06395a8.gif" alt="Coding Animation">
-        </div>
+<!-- ═══ SPLASH SCREEN ═══ -->
+<div id="splash">
+  <div class="splash-inner">
+    <div class="splash-logo-badge">RH</div>
+    <div class="splash-title">RAKIB-PORTFOLIO</div>
+    <div class="splash-bar-wrap"><div class="splash-bar"><div class="splash-fill"></div></div></div>
+    <div class="splash-status" id="splash-status">Initializing...</div>
+    <div class="splash-credit">VS Code Portfolio · Md. Rakib Hasan</div>
+  </div>
+</div>
+
+<div id="cursor-dot" class="cursor-dot"></div>
+<div id="cursor-ring" class="cursor-ring"></div>
+
+<!-- ═══ WINDOW CLOSED OVERLAY ═══ -->
+<div id="wd-closed" class="desktop-overlay hidden">
+  <img src="resources/images/banner.gif" class="desk-wallpaper" alt="">
+  <div class="desk-icons-area">
+    <div class="desk-icon"><div class="desk-icon-img"><i class="fas fa-desktop"></i></div><span>This PC</span></div>
+    <div class="desk-icon"><div class="desk-icon-img"><i class="fas fa-trash-alt"></i></div><span>Recycle Bin</span></div>
+  </div>
+  <div class="desk-taskbar">
+    <div class="desk-tb-start">
+      <button class="desk-win-btn" title="Start"><i class="fab fa-windows"></i></button>
+      <button class="desk-search-btn"><i class="fas fa-search"></i><span>Search</span></button>
+    </div>
+    <div class="desk-tb-apps">
+      <button class="desk-app-icon" id="wd-reopen" title="Reopen Portfolio">
+        <span class="desk-logo-text">RH</span>
+        <span class="desk-app-label">Rakib Portfolio</span>
+      </button>
+    </div>
+    <div class="desk-tb-tray">
+      <div class="desk-sys-icons"><i class="fas fa-wifi"></i><i class="fas fa-volume-up"></i><i class="fas fa-battery-three-quarters"></i></div>
+      <div class="desk-dt-block" id="desk-dt-closed">
+        <span class="desk-time-val"></span>
+        <span class="desk-date-val"></span>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- About Section -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>About <span>Me</span></h2>
-      </div>
-      <div class="about-content">
-        <div class="about-image">
-          <img src="resources/images/Md. Rakib Hasan.jpg" alt="Rakib Hasan">
-        </div>
-        <div class="about-text">
-          <h3>Developer • Innovator • Contest Enthusiast</h3>
-          <p>Final-year Computer Science undergraduate at AUST specializing in competitive programming, full-stack development, and technical leadership. Won <strong>Champion</strong> in Learnathon 3.0, a 6-month intensive mentorship program by Geeky Solutions. I bring a strong mix of technical skills, creativity, and leadership, thriving in dynamic environments and quickly adapting to new tools, technologies, and challenges.</p>
-          <p>Through both academics (CGPA 3.75) and hands-on experience, I've built a solid foundation in software development. I've led and contributed to projects like AUST CODE REALM, an online judge system, SOHOJOGI, a service booking app, and HOMEHUTBD, an AI-powered property listing platform, working with technologies like Flutter, PHP, ASP.NET, Java, MySQL, and third-party APIs. I'm comfortable shifting roles between developer, collaborator, and project lead.</p>
-          <p>I've also competed in numerous programming contests and tech exhibitions, including ICPC Dhaka Regional 2025, earning top rankings and gaining valuable experience under pressure. Currently serving as Vice President of AUST CSE Society and President of AUST Programming and Informatics Club, leading technical initiatives and organizing major programming events.</p>
-          <p>I'm always excited about opportunities to learn, grow, and contribute to impactful projects, whether as part of a team or in a leadership role.</p>
-          <div class="about-info">
-            <div class="info-item">
-              <i class="fas fa-envelope"></i>
-              <span>rakibhasan4101@gmail.com</span>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-graduation-cap"></i>
-              <span>AUST (CSE Undergraduate)</span>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-code-branch"></i>
-              <span>Working on SOHOJOGI</span>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-brain"></i>
-              <span>Learning App Development</span>
-            </div>
-          </div>
-        </div>
+<!-- ═══ WINDOW MINIMIZED OVERLAY ═══ -->
+<div id="minimized-overlay" class="desktop-overlay hidden">
+  <img src="resources/images/banner.gif" class="desk-wallpaper" alt="">
+  <div class="desk-icons-area">
+    <div class="desk-icon"><div class="desk-icon-img"><i class="fas fa-desktop"></i></div><span>This PC</span></div>
+    <div class="desk-icon"><div class="desk-icon-img"><i class="fas fa-trash-alt"></i></div><span>Recycle Bin</span></div>
+  </div>
+  <div class="desk-taskbar">
+    <div class="desk-tb-start">
+      <button class="desk-win-btn" title="Start"><i class="fab fa-windows"></i></button>
+      <button class="desk-search-btn"><i class="fas fa-search"></i><span>Search</span></button>
+    </div>
+    <div class="desk-tb-apps">
+      <button class="desk-app-icon desk-app-icon--active" id="desk-restore-min" title="Rakib Portfolio - Minimized">
+        <span class="desk-logo-text">RH</span>
+        <span class="desk-app-label">Rakib Portfolio</span>
+        <div class="desk-app-dot"></div>
+      </button>
+    </div>
+    <div class="desk-tb-tray">
+      <div class="desk-sys-icons"><i class="fas fa-wifi"></i><i class="fas fa-volume-up"></i><i class="fas fa-battery-three-quarters"></i></div>
+      <div class="desk-dt-block">
+        <span id="desk-clock" class="desk-time-val"></span>
+        <span id="desk-date" class="desk-date-val"></span>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- Skills Section -->
-  <section class="section skills" id="skills">
-    <div class="container">
-      <div class="section-title">
-        <h2>My <span>Skills</span></h2>
-      </div>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Programming Languages</h3>
-          <div class="skills-list">
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">C#</span>
-            <span class="skill-tag">C</span>
-            <span class="skill-tag">Dart</span>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
-          <div class="skills-list">
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">Bootstrap</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">PHP</span>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-database"></i> Databases</h3>
-          <div class="skills-list">
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">Firebase</span>
-            <span class="skill-tag">Supabase</span>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-tools"></i> Tools</h3>
-          <div class="skills-list">
-            <span class="skill-tag">Sonarcloud</span>
-            <span class="skill-tag">Git/GitHub</span>
-            <span class="skill-tag">GitHub Actions</span>
-            <span class="skill-tag">Docker</span>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-sitemap"></i> Frameworks & Libraries</h3>
-          <div class="skills-list">
-            <span class="skill-tag">ASP.NET Core MVC</span>
-            <span class="skill-tag">Flutter</span>
-            <span class="skill-tag">iGraphics</span>
-            <span class="skill-tag">JavaFX</span>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-brain"></i> Emerging Technologies</h3>
-          <div class="skills-list">
-            <span class="skill-tag">Computer Vision</span>
-            <span class="skill-tag">IoT Integration</span>
-            <span class="skill-tag">Blockchain (Ethereum)</span>
-          </div>
-        </div>
+<div class="vsc-app" id="app">
+
+  <!-- ═══ TITLE BAR ═══ -->
+  <div class="vsc-titlebar">
+    <div class="win-dots">
+      <button class="wd red" id="wd-close" title="Close window"></button>
+      <button class="wd yel" id="wd-min" title="Minimize window"></button>
+      <button class="wd grn" id="wd-max" title="Maximize / Fullscreen"></button>
+    </div>
+    <div class="title-center">
+      <span class="title-logo-text">RH</span>
+      <span>Md. Rakib Hasan - Portfolio (VS Code Edition)</span>
+    </div>
+    <div class="title-right">
+      <button class="titlebar-btn" id="zoom-out-btn" title="Zoom Out (Ctrl+-)"><i class="fas fa-minus"></i></button>
+      <span class="zoom-level" id="zoom-label">100%</span>
+      <button class="titlebar-btn" id="zoom-in-btn" title="Zoom In (Ctrl++)"><i class="fas fa-plus"></i></button>
+      <button class="titlebar-btn" id="fullscreen-btn" title="Toggle Fullscreen (F11)"><i class="fas fa-expand" id="fs-icon"></i></button>
+      <span class="title-clock-dot"></span>
+      BD <span id="live-clock">00:00:00</span>
+    </div>
+  </div>
+
+  <!-- ═══ MENU BAR ═══ -->
+  <div class="vsc-menubar" id="menubar">
+    <div class="mb-menu">
+      <span>File</span>
+      <div class="mb-dd">
+        <button class="mb-dd-item" data-action="close-tab"><i class="fas fa-times"></i>Close Tab<kbd>Ctrl+W</kbd></button>
+        <button class="mb-dd-item" data-action="close-all-tabs"><i class="fas fa-times-circle"></i>Close All Tabs</button>
+        <div class="mb-dd-sep"></div>
+        <a class="mb-dd-item" href="resources/Md. Rakib Hasan.pdf" download><i class="fas fa-download"></i>Download CV</a>
+        <div class="mb-dd-sep"></div>
+        <a class="mb-dd-item" href="Deployed portfolio/index.html"><i class="fas fa-arrow-left"></i>Open Main Portfolio</a>
       </div>
     </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section class="section" id="experience">
-    <div class="container">
-      <div class="section-title">
-        <h2>Professional <span>Experience</span></h2>
-      </div>
-      
-      <!-- LinkedIn-style Experience Cards -->
-      <div class="experience-container">
-        
-        <!-- AUST Programming and Informatics Club -->
-        <div class="experience-card">
-          <div class="experience-logo">
-            <img src="resources/images/austpic.png" alt="AUST Programming Club">
-          </div>
-          <div class="experience-content">
-            <h3>AUST Programming and Informatics Club</h3>
-            <p class="total-duration" data-start="2024-05" data-end="present">Calculating...</p>
-            
-            <!-- Multiple Roles -->
-            <div class="role-item active">
-              <div class="role-indicator"></div>
-              <h4>President</h4>
-              <p data-start="2025-12" data-end="present">Dec 2025 - Present</p>
-            </div>
-            
-            <div class="role-item">
-              <div class="role-indicator"></div>
-              <h4>Joint Secretary</h4>
-              <p data-start="2025-06" data-end="2025-12">Jun 2025 - Dec 2025</p>
-            </div>
-            
-            <div class="role-item">
-              <div class="role-indicator"></div>
-              <h4>Head of Information Technology</h4>
-              <p data-start="2024-05" data-end="2025-06">May 2024 - Jun 2025</p>
-            </div>
-            
-            <!-- Collapsible Details -->
-            <button class="details-toggle" onclick="toggleDetails(this)">
-              <i class="fas fa-chevron-down"></i>
-              <span>Show Details</span>
-            </button>
-            <div class="details-content">
-              <div class="details-inner">
-                <p>Throughout my journey at AUST Programming and Informatics Club, I've played a pivotal role in shaping the competitive programming culture. I oversee AUST's primary programming community by leading workshops, training programs, and inter-university activities. My responsibilities include mentoring members in competitive programming and software development, managing executive teams, and providing technical support for club activities. I've been instrumental in organizing training sessions, coordinating contests, and building a strong community of programmers at AUST.</p>
-              </div>
-              <div class="tech-used">
-                <span class="tech-badge">Leadership</span>
-                <span class="tech-badge">Mentorship</span>
-                <span class="tech-badge">Workshop Organization</span>
-                <span class="tech-badge">Competitive Programming</span>
-                <span class="tech-badge">Community Building</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- AUST CSE Society -->
-        <div class="experience-card">
-          <div class="experience-logo">
-            <img src="resources/images/aust cse society.jpg" alt="AUST CSE Society">
-          </div>
-          <div class="experience-content">
-            <h3>AUST CSE Society</h3>
-            <p class="total-duration" data-start="2025-06" data-end="present">Calculating...</p>
-            
-            <!-- Multiple Roles -->
-            <div class="role-item active">
-              <div class="role-indicator"></div>
-              <h4>Vice President</h4>
-              <p data-start="2025-12" data-end="present">Dec 2025 - Present</p>
-            </div>
-            
-            <div class="role-item">
-              <div class="role-indicator"></div>
-              <h4>General Secretary</h4>
-              <p data-start="2025-06" data-end="2025-12">Jun 2025 - Dec 2025</p>
-            </div>
-            
-            <!-- Collapsible Details -->
-            <button class="details-toggle" onclick="toggleDetails(this)">
-              <i class="fas fa-chevron-down"></i>
-              <span>Show Details</span>
-            </button>
-            <div class="details-content">
-              <div class="details-inner">
-                <p>As a key leader in AUST CSE Society, I lead departmental initiatives alongside faculty and serve as a core organizer of major events including CSE Carnival, Sports Tournament, and Cultural Fest. I manage sponsorship partnerships with industry collaborators and held a pivotal leadership position as the primary representative for the entire CSE student community. My responsibilities include actively participating in high-level decision making alongside authorities and coordinating between students and faculty.</p>
-              </div>
-              <div class="tech-used">
-                <span class="tech-badge">Event Management</span>
-                <span class="tech-badge">Leadership</span>
-                <span class="tech-badge">Sponsorship</span>
-                <span class="tech-badge">Team Coordination</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- AUST CP Community -->
-        <div class="experience-card">
-          <div class="experience-logo">
-            <img src="resources/images/aust cp community.jpg" alt="AUST CP Community">
-          </div>
-          <div class="experience-content">
-            <h3>AUST Competitive Programming Community</h3>
-            <p class="total-duration" data-start="2025-12" data-end="present">Calculating...</p>
-            
-            <div class="role-item">
-              <h4>Representative and ACM Coordinator</h4>
-              <p data-start="2025-12" data-end="present">Dec 2025 - Present</p>
-            </div>
-            
-            <!-- Collapsible Details -->
-            <button class="details-toggle" onclick="toggleDetails(this)">
-              <i class="fas fa-chevron-down"></i>
-              <span>Show Details</span>
-            </button>
-            <div class="details-content">
-              <div class="details-inner">
-                <p>As the Representative and ACM Coordinator, I strategically manage AUST's involvement in major national and international competitive programming contests, including ICPC and IUPC. My duties include developing the talent pool by organizing training sessions, supporting team formation, coordinating contest registrations, and ensuring our teams are well-prepared for competitions. I work closely with faculty and students to build a strong competitive programming culture at AUST.</p>
-              </div>
-              <div class="tech-used">
-                <span class="tech-badge">ICPC</span>
-                <span class="tech-badge">Contest Coordination</span>
-                <span class="tech-badge">Team Building</span>
-                <span class="tech-badge">Training Programs</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Learnathon 3.0 -->
-        <div class="experience-card">
-          <div class="experience-logo">
-            <img src="resources/images/geeky solutions.png" alt="Learnathon 3.0 Champion">
-          </div>
-          <div class="experience-content">
-            <h3>Learnathon 3.0: Fresher Training Program</h3>
-            <p>Geeky Solutions • Internship • Remote</p>
-            <p class="total-duration" data-start="2024-12" data-end="2025-05">Calculating...</p>
-            
-            <div class="role-item">
-              <h4>Champion - Team Leader</h4>
-              <p data-start="2024-12" data-end="2025-05">Dec 2024 - May 2025</p>
-            </div>
-            
-            <!-- Collapsible Details -->
-            <button class="details-toggle" onclick="toggleDetails(this)">
-              <i class="fas fa-chevron-down"></i>
-              <span>Show Details</span>
-            </button>
-            <div class="details-content">
-              <div class="details-inner">
-                <p>Participated in a 6-month comprehensive training program focused on cross-platform mobile development. Collaborated in team-based project development, culminating in winning the <strong style="color: var(--primary-color);">Champion</strong> title in the Cross-Platform Stack. Gained hands-on experience with Flutter, Supabase, and modern mobile app architecture patterns including MVVM, state management, and code quality tools like Sonarcloud. Worked on real-world project SOHOJOGI, a household services platform with advanced features.</p>
-              </div>
-              <div class="tech-used">
-                <span class="tech-badge">Flutter</span>
-                <span class="tech-badge">Supabase</span>
-                <span class="tech-badge">MVVM Architecture</span>
-                <span class="tech-badge">Mobile Development</span>
-                <span class="tech-badge">Sonarcloud</span>
-                <span class="tech-badge">State Management</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
+    <div class="mb-menu">
+      <span>Edit</span>
+      <div class="mb-dd">
+        <button class="mb-dd-item" data-action="copy-email"><i class="far fa-copy"></i>Copy Email</button>
+        <button class="mb-dd-item" data-action="copilot"><i class="fas fa-robot"></i>Ask AI Copilot</button>
       </div>
     </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section-title">
-        <h2>My <span>Projects</span></h2>
-      </div>
-      <div class="projects-container">
-        <!-- SOHOJOGI Project -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/team-synergy/refs/heads/main/resources/logo.png" alt="SOHOJOGI Project">
-          </div>
-          <div class="project-info">
-            <h3>SOHOJOGI</h3>
-            <p>One-stop platform for household services like plumbing and electrical help with location-based matching, booking system, and real-time updates.</p>
-            <div class="tech-used">
-              <span class="tech-badge">Flutter</span>
-              <span class="tech-badge">Supabase</span>
-              <span class="tech-badge">Provider</span>
-              <span class="tech-badge">MVVM</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Learnathon-By-Geeky-Solutions/team-synergy"><i class="fab fa-github"></i> View Code</a>
-              <a href="https://youtu.be/Lwbt7yas1KI"><i class="fas fa-play-circle"></i> Demo Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- AUST CODE REALM Project -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="https://raw.githubusercontent.com/AfnanRakib/AUST-CODE-REALM/main/images/logo%20with%20cover.png" alt="AUST CODE REALM">
-          </div>
-          <div class="project-info">
-            <h3>AUST CODE REALM</h3>
-            <p>Online Judge platform with problem sets, contests, IDE, and rating system for competitive programmers.</p>
-            <div class="tech-used">
-              <span class="tech-badge">PHP</span>
-              <span class="tech-badge">HTML</span>
-              <span class="tech-badge">CSS</span>
-              <span class="tech-badge">JavaScript</span>
-              <span class="tech-badge">MySQL</span>
-              <span class="tech-badge">Judge0 API</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/AUST-CODE-REALM"><i class="fab fa-github"></i> View Code</a>
-              <a href="http://acr.rf.gd/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- HOMEHUTBD Project -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg" alt="HOMEHUTBD Project">
-          </div>
-          <div class="project-info">
-            <h3>HOMEHUTBD</h3>
-            <p>Intelligent property listing and pricing platform with AI-based price prediction for real-time property valuations.</p>
-            <div class="tech-used">
-              <span class="tech-badge">ASP.NET MVC</span>
-              <span class="tech-badge">SQL Server</span>
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">Flask</span>
-              <span class="tech-badge">scikit-learn</span>
-              <span class="tech-badge">Machine Learning</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/HomeHutBD"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BHROMON Project -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="https://raw.githubusercontent.com/AfnanRakib/Bhromon/refs/heads/main/assets/Bhromon.png" alt="BHROMON Project">
-          </div>
-          <div class="project-info">
-            <h3>BHROMON</h3>
-            <p>Travel assistant app with tourist spot suggestions, maps, and ChatBot for a seamless travel experience.</p>
-            <div class="tech-used">
-              <span class="tech-badge">Flutter</span>
-              <span class="tech-badge">Dart</span>
-              <span class="tech-badge">Google Maps API</span>
-              <span class="tech-badge">TripAdvisor API</span>
-              <span class="tech-badge">OpenAI GPT-4</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/Bhromon"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CODE REALM Project -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="https://raw.githubusercontent.com/AfnanRakib/CodeRealm/main/CodeRealm.png" alt="CODE REALM Project">
-          </div>
-          <div class="project-info">
-            <h3>CODE REALM</h3>
-            <p>Desktop app for learning to code and participating in contests with a comprehensive IDE.</p>
-            <div class="tech-used">
-              <span class="tech-badge">Java</span>
-              <span class="tech-badge">JavaFX</span>
-              <span class="tech-badge">Apache Derby</span>
-              <span class="tech-badge">Jdoodle API</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/CodeRealm"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- IRREVOCABLE-ETERNITY Project -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="https://raw.githubusercontent.com/AfnanRakib/Irrevocable-Eternity/refs/heads/main/menu.png" alt="IRREVOCABLE-ETERNITY Project">
-          </div>
-          <div class="project-info">
-            <h3>IRREVOCABLE-ETERNITY</h3>
-            <p>2D dungeon-fighting game with multiple levels and challenging gameplay mechanics.</p>
-            <div class="tech-used">
-              <span class="tech-badge">C/C++</span>
-              <span class="tech-badge">OpenGL</span>
-              <span class="tech-badge">iGraphics</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/Irrevocable-Eternity"><i class="fab fa-github"></i> View Code</a>
-            </div>
-          </div>
-        </div>
+    <div class="mb-menu">
+      <span>Selection</span>
+      <div class="mb-dd">
+        <button class="mb-dd-item" data-file="home"><i class="fas fa-home"></i>Go to Home</button>
+        <button class="mb-dd-item" data-file="projects"><i class="fas fa-code"></i>Go to Projects</button>
+        <button class="mb-dd-item" data-file="skills"><i class="fas fa-layer-group"></i>Go to Skills</button>
+        <button class="mb-dd-item" data-file="contact"><i class="fas fa-envelope"></i>Go to Contact</button>
       </div>
     </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section class="section achievements" id="achievements">
-    <div class="container">
-      <div class="section-title">
-        <h2>My <span>Achievements</span></h2>
-      </div>
-      
-      <!-- Featured Achievement -->
-      <div class="featured-achievement">
-        <div class="achievement-card medal gold">
-          <!-- Left Side Content -->
-          <div class="achievement-content">
-            <div class="achievement-header">
-              <div class="achievement-icon">
-                <i class="fas fa-trophy"></i>
-              </div>
-              <div class="achievement-text">
-                <h3>Learnathon 3.0<br>Champion</h3>
-                <p>Won <strong>Champion</strong> title in a 6-month intensive mentorship program by Geeky Solutions. Competed in comprehensive training focused on cross-platform mobile development, culminating in building SOHOJOGI.</p>
-              </div>
-            </div>
-            <div class="achievement-meta">
-              <span class="achievement-date">May 2025</span>
-              <span class="achievement-divider"></span>
-              <span class="achievement-stack">Cross-Platform Stack</span>
-            </div>
-          </div>
-          <!-- Right Side Image -->
-          <div class="achievement-image">
-            <img src="resources/images/learnathon 3 champion.jpg" alt="Learnathon 3.0 Champion">
-          </div>
-        </div>
-      </div>
-      
-      <div class="achievements-tabs">
-        <div class="tab-buttons">
-          <button class="tab-btn active" data-tab="programming">
-            <i class="fas fa-code"></i>
-            Programming Contests
-          </button>
-          <button class="tab-btn" data-tab="exhibitions">
-            <i class="fas fa-trophy"></i>
-            Software Exhibitions
-          </button>
-          <button class="tab-btn" data-tab="refactoring">
-            <i class="fas fa-code-branch"></i>
-            Code Refactoring
-          </button>
-          <button class="tab-btn" data-tab="academic">
-            <i class="fas fa-graduation-cap"></i>
-            Academic Excellence
-          </button>
-        </div>
-        
-        <div class="tab-content">
-          <!-- Programming Contests Tab -->
-          <div class="tab-pane active" id="programming">
-            <h3 class="category-title"><i class="fas fa-code"></i> Programming Contests</h3>
-            <div class="achievements-container">
-              <div class="achievement-card">
-                <div class="achievement-badge">122nd</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-trophy"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>ICPC Dhaka Regional Site 2025</h3>
-                    <p>Competed in the prestigious ICPC regional contest with team "AUST_DEADCODER"</p>
-                    <span class="achievement-date">December 2025</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="achievement-card">
-                <div class="achievement-badge">35th</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>BUBT Inter University Collaborative Programming Contest 2025</h3>
-                    <p>Ranked 35th with team "AUST_DEADCODER" in inter-university competition</p>
-                    <span class="achievement-date">November 2025</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="achievement-card">
-                <div class="achievement-badge">Top 100</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-trophy"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>AUST Inter-University Programming Contest</h3>
-                    <p>Ranked 97th with team "0xDEADCODER" among top programmers from universities nationwide</p>
-                    <span class="achievement-date">February 2025</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="achievement-card medal gold">
-                <div class="achievement-badge">Champion</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>Intra AUST Programming Contest (CSE Carnival 4.0)</h3>
-                    <p>Achieved Champion position in the university's premier coding competition</p>
-                    <span class="achievement-date">July 2024</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="achievement-card medal silver">
-                <div class="achievement-badge">1st Runner-Up</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>UAP Inter University Programming Contest 1.0 (Junior)</h3>
-                    <p>Secured second place in the junior division of the inter-university competition</p>
-                    <span class="achievement-date">January 2024</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="achievement-card medal silver">
-                <div class="achievement-badge">1st Runner-Up</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>Intra AUST Programming Contest (CSE Carnival 3.0)</h3>
-                    <p>Achieved 1st Runners-Up position in the university competition</p>
-                    <span class="achievement-date">January 2024</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Software Exhibitions Tab -->
-          <div class="tab-pane" id="exhibitions">
-            <h3 class="category-title"><i class="fas fa-trophy"></i> Software Exhibitions</h3>
-            <div class="achievements-container">
-              <div class="achievement-card medal silver">
-                <div class="achievement-badge">1st Runner-Up</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>Research Odyssey: Inter-University Research Exhibitions</h3>
-                    <p>Achieved 1st Runners-Up position in Software Exhibition segment</p>
-                    <span class="achievement-date">March 2025</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="achievement-card medal gold">
-                <div class="achievement-badge">Champion</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>Software Exhibition (AUST CSE Carnival 5.0)</h3>
-                    <p>Achieved Champion position in the software exhibition</p>
-                    <span class="achievement-date">February 2025</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="achievement-card medal bronze">
-                <div class="achievement-badge">2nd Runner-Up</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>Software Exhibition (AUST CSE Carnival 3.0)</h3>
-                    <p>Achieved 2nd Runners-Up position in the software exhibition</p>
-                    <span class="achievement-date">January 2024</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Code Refactoring Tab -->
-          <div class="tab-pane" id="refactoring">
-            <h3 class="category-title"><i class="fas fa-code-branch"></i> Code Refactoring</h3>
-            <div class="achievements-container">
-              <div class="achievement-card medal bronze">
-                <div class="achievement-badge">2nd Runner-Up</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>Code Refactoring (AUST CSE Carnival 5.0)</h3>
-                    <p>Achieved 2nd Runners-Up position in code refactoring competition</p>
-                    <span class="achievement-date">February 2025</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="achievement-card medal gold">
-                <div class="achievement-badge">Champion</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>Code Refactoring (AUST CSE Carnival 4.0)</h3>
-                    <p>Achieved Champion position in code refactoring competition</p>
-                    <span class="achievement-date">July 2024</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Academic Excellence Tab -->
-          <div class="tab-pane" id="academic">
-            <h3 class="category-title"><i class="fas fa-graduation-cap"></i> Academic Excellence</h3>
-            <div class="achievements-container">
-              <div class="achievement-card">
-                <div class="achievement-badge">Top 5%</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-award"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>AUST Academic Scholarship</h3>
-                    <p>Awarded for being among the top 5% students based on academic performance of Spring 2023</p>
-                    <span class="achievement-date">December 2023</span>
-                  </div>
-                </div>
-              </div>
-              <div class="achievement-card">
-                <div class="achievement-badge">CGPA</div>
-                <div class="achievement-header">
-                  <div class="achievement-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                  </div>
-                  <div class="achievement-info">
-                    <h3>Consistent Academic Performance</h3>
-                    <p>Maintained excellent CGPA throughout academic journey</p>
-                    <span class="achievement-date">CGPA: 3.75 (up to 7th semester)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="mb-menu">
+      <span>View</span>
+      <div class="mb-dd">
+        <button class="mb-dd-item" data-action="palette"><i class="fas fa-search"></i>Command Palette<kbd>Ctrl+Shift+P</kbd></button>
+        <button class="mb-dd-item" data-action="sidebar"><i class="fas fa-columns"></i>Toggle Sidebar<kbd>Ctrl+B</kbd></button>
+        <button class="mb-dd-item" data-action="terminal"><i class="fas fa-terminal"></i>Toggle Terminal<kbd>Ctrl+`</kbd></button>
+        <button class="mb-dd-item" data-action="copilot"><i class="fas fa-robot"></i>Toggle AI Copilot<kbd>Ctrl+Shift+C</kbd></button>
+        <div class="mb-dd-sep"></div>
+        <button class="mb-dd-item" data-action="fullscreen"><i class="fas fa-expand"></i>Enter Full Screen<kbd>F11</kbd></button>
+        <button class="mb-dd-item" data-action="zoom-in"><i class="fas fa-search-plus"></i>Zoom In<kbd>Ctrl++</kbd></button>
+        <button class="mb-dd-item" data-action="zoom-out"><i class="fas fa-search-minus"></i>Zoom Out<kbd>Ctrl+-</kbd></button>
+        <button class="mb-dd-item" data-action="zoom-reset"><i class="fas fa-undo"></i>Reset Zoom<kbd>Ctrl+0</kbd></button>
       </div>
     </div>
-  </section>
+    <div class="mb-menu">
+      <span>Go</span>
+      <div class="mb-dd">
+        <button class="mb-dd-item" data-file="home"><kbd>Ctrl+1</kbd>home.html</button>
+        <button class="mb-dd-item" data-file="about"><kbd>Ctrl+2</kbd>about.md</button>
+        <button class="mb-dd-item" data-file="projects"><kbd>Ctrl+3</kbd>projects.js</button>
+        <button class="mb-dd-item" data-file="experience"><kbd>Ctrl+4</kbd>experience.html</button>
+        <button class="mb-dd-item" data-file="achievements"><kbd>Ctrl+5</kbd>achievements.md</button>
+        <button class="mb-dd-item" data-file="skills"><kbd>Ctrl+6</kbd>skills.css</button>
+        <button class="mb-dd-item" data-file="contact"><kbd>Ctrl+7</kbd>contact.html</button>
+      </div>
+    </div>
+    <span class="mb-active" id="mb-terminal-toggle">Terminal</span>
+    <div class="mb-menu">
+      <span>Help</span>
+      <div class="mb-dd">
+        <button class="mb-dd-item" data-action="shortcuts"><i class="fas fa-keyboard"></i>Keyboard Shortcuts</button>
+        <button class="mb-dd-item" data-action="settings"><i class="fas fa-cog"></i>Open Settings</button>
+      </div>
+    </div>
+    <button class="mb-cmd" id="mb-cmd-btn" title="Ctrl+Shift+P">⌘ Command Palette</button>
+    <a href="Deployed portfolio/index.html" class="run-portfolio-btn" title="Launch Main Portfolio"><i class="fas fa-play"></i> Run Portfolio</a>
+  </div>
 
-  <!-- Education Section -->
-  <section class="section education" id="education">
-    <div class="container">
-      <div class="section-title">
-        <h2>My <span>Education</span></h2>
-      </div>
-      <div class="education-timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">Jan 2021 - Present</div>
-            <h3>Ahsanullah University of Science and Technology (AUST)</h3>
-            <p>Bachelor of Science in Computer Software Engineering</p>
-            <p>CGPA: 3.75 (up to 7th semester)</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2018 - 2020</div>
-            <h3>Bakalia Government College</h3>
-            <p>HSC - Science</p>
-            <p>GPA: 5.0/5.0</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2013 - 2018</div>
-            <h3>Chandgaon NMC Modal High School</h3>
-            <p>SSC - Science</p>
-            <p>GPA: 5.0/5.0</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ═══ BODY ═══ -->
+  <div class="vsc-body">
 
-  <!-- Stats Section -->
-  <!-- <section class="section stats">
-    <div class="container">
-      <div class="section-title">
-        <h2>My <span>Stats</span></h2>
-      </div>
-      <div class="stats-container">
-        <div class="stats-card">
-          <i class="fas fa-code"></i>
-          <h3>5+</h3>
-          <p>Projects Completed</p>
-        </div>
-        
-        <div class="stats-card">
-          <i class="fas fa-trophy"></i>
-          <h3>8+</h3>
-          <p>Awards Won</p>
-        </div>
-        
-        <div class="stats-card">
-          <i class="fas fa-laptop-code"></i>
-          <h3>500+</h3>
-          <p>Coding Problems Solved</p>
-        </div>
-        
-        <div class="stats-card">
-          <i class="fas fa-user-friends"></i>
-          <h3>10+</h3>
-          <p>Team Projects</p>
-        </div>
-      </div>
+    <!-- ─ ACTIVITY BAR ─ -->
+    <div class="vsc-actbar">
+      <button class="ab active" data-panel="explorer" title="Explorer (Ctrl+Shift+E)">
+        <i class="fas fa-copy"></i>
+      </button>
+      <button class="ab" data-panel="search" title="Search (Ctrl+Shift+F)">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="ab" data-panel="extensions" title="Extensions">
+        <i class="fas fa-puzzle-piece"></i>
+      </button>
+      <button class="ab" data-panel="themes" title="Color Theme">
+        <i class="fas fa-palette"></i>
+      </button>
+      <button class="ab" data-panel="profile" title="Profile">
+        <i class="fas fa-user"></i>
+      </button>
+      <div class="ab-spacer"></div>
+      <button class="ab" id="ab-copilot" title="AI Copilot (Ctrl+Shift+C)">
+        <i class="fas fa-robot"></i>
+      </button>
+      <button class="ab" data-panel="gear" title="Settings &amp; Shortcuts">
+        <i class="fas fa-cog"></i>
+      </button>
+      <button class="ab" id="ab-terminal" title="Toggle Terminal (Ctrl+`)">
+        <i class="fas fa-terminal"></i>
+      </button>
     </div>
-  </section> -->
 
-  <!-- Connect Section -->
-  <section class="section" id="connect">
-    <div class="container">
-      <div class="section-title">
-        <h2>Get In <span>Touch</span></h2>
+    <!-- ─ SIDEBAR ─ -->
+    <div class="vsc-sidebar" id="sidebar">
+      <div id="sidebar-resize" class="sidebar-resize-handle"></div>
+
+      <!-- Explorer Panel -->
+      <div class="panel active" id="panel-explorer">
+        <div class="panel-hd">EXPLORER</div>
+        <div class="panel-body">
+          <div class="tree-section">
+            <div class="tf-label open" data-folder="root">
+              <i class="fas fa-chevron-down chev"></i>
+              <i class="fas fa-folder-open fi-folder"></i>
+              <span>RAKIB-PORTFOLIO</span>
+            </div>
+            <div class="tf-children" id="root-folder">
+              <div class="tree-file active" data-file="home">
+                <i class="devicon-html5-plain colored fi-type-icon"></i>home.html
+              </div>
+              <div class="tree-file" data-file="about">
+                <i class="fab fa-markdown fi-type-icon fi-md"></i>about.md
+              </div>
+              <div class="tree-file" data-file="projects">
+                <i class="devicon-javascript-plain colored fi-type-icon"></i>projects.js
+              </div>
+              <div class="tree-file" data-file="experience">
+                <i class="devicon-html5-plain colored fi-type-icon"></i>experience.html
+              </div>
+              <div class="tree-file" data-file="achievements">
+                <i class="fab fa-markdown fi-type-icon fi-md"></i>achievements.md
+              </div>
+              <div class="tree-file" data-file="skills">
+                <i class="devicon-css3-plain colored fi-type-icon"></i>skills.css
+              </div>
+              <div class="tree-file" data-file="contact">
+                <i class="devicon-html5-plain colored fi-type-icon"></i>contact.html
+              </div>
+            </div>
+          </div>
+          <div class="tree-section">
+            <div class="tf-label" data-folder="resources">
+              <i class="fas fa-chevron-right chev"></i>
+              <i class="fas fa-folder fi-folder dim"></i>
+              <span class="dim">resources/</span>
+            </div>
+            <div class="tf-children tf-hidden" id="resources-folder">
+              <a class="tree-file tree-file-dl" href="resources/images/Md. Rakib Hasan.png" download title="Download Photo">
+                <i class="fas fa-image fi-type-icon fi-png"></i>Md. Rakib Hasan.png
+                <i class="fas fa-download tree-dl-icon"></i>
+              </a>
+              <a class="tree-file tree-file-dl" href="resources/Md. Rakib Hasan.pdf" download title="Download CV">
+                <i class="fas fa-file-pdf fi-type-icon fi-pdf"></i>Md. Rakib Hasan.pdf
+                <i class="fas fa-download tree-dl-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="connect-container">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Connect With Me</h2>
-        <div class="social-links">
-          <a href="https://github.com/afnanrakib" class="social-link" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/afnanhasanrakib/" class="social-link" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://fb.com/afnanhrakib" class="social-link" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rakibhasan4101@gmail.com" class="social-link" target="_blank" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="https://discord.com/users/afnan_rakib" class="social-link" target="_blank" aria-label="Discord">
-            <i class="fab fa-discord"></i>
-          </a>
-        </div>
-        
-        <h2>Coding Profiles</h2>
-        <div class="coding-profiles">
-          <div class="profile-card">
-            <img src="https://img.atcoder.jp/assets/top/img/logo_bk.svg" alt="AtCoder" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-            <h3>AtCoder</h3>
-            <a href="https://atcoder.jp/users/AfnanRakib" target="_blank">View Profile</a>
+
+      <!-- Search Panel -->
+      <div class="panel" id="panel-search">
+        <div class="panel-hd">SEARCH</div>
+        <div class="panel-body">
+          <div class="search-wrap">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="search-input" placeholder="Search portfolio…" autocomplete="off">
+            </div>
           </div>
-          
-          <div class="profile-card">
-            <img src="https://art.npanuhin.me/SVG/Codeforces/Codeforces.colored.svg" alt="CodeForces" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-            <h3>CodeForces</h3>
-            <a href="https://codeforces.com/profile/afnanrakib" target="_blank">View Profile</a>
-          </div>
-          
-          <div class="profile-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px; filter: invert(1);">
-            <h3>LeetCode</h3>
-            <a href="https://www.leetcode.com/afnanrakib" target="_blank">View Profile</a>
-          </div>
-          
-          <div class="profile-card">
-            <img src="https://cdn.codechef.com/images/cc-logo.svg" alt="CodeChef" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-            <h3>CodeChef</h3>
-            <a href="https://www.codechef.com/users/rakib476" target="_blank">View Profile</a>
+          <div id="search-results" class="search-results">
+            <p class="search-hint">Search across all sections.</p>
           </div>
         </div>
+      </div>
+
+      <!-- Extensions Panel -->
+      <div class="panel" id="panel-extensions">
+        <div class="panel-hd">EXTENSIONS - SKILLS</div>
+        <div class="panel-body">
+          <div class="ext-search"><i class="fas fa-search"></i><input type="text" placeholder="Search skills…" readonly></div>
+          <div class="ext-group-label">LANGUAGES (7)</div>
+          <div class="ext-item"><i class="devicon-cplusplus-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">C++</div><div class="ext-meta">Expert · Competitive Programming</div></div></div>
+          <div class="ext-item"><i class="devicon-c-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">C</div><div class="ext-meta">Expert · Systems &amp; Graphics</div></div></div>
+          <div class="ext-item"><i class="devicon-python-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Python</div><div class="ext-meta">Advanced · ML &amp; Scripting</div></div></div>
+          <div class="ext-item"><i class="devicon-java-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Java</div><div class="ext-meta">Advanced · OOP &amp; Desktop Apps</div></div></div>
+          <div class="ext-item"><i class="devicon-dart-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Dart</div><div class="ext-meta">Advanced · Flutter Development</div></div></div>
+          <div class="ext-item"><i class="devicon-javascript-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">JavaScript</div><div class="ext-meta">Intermediate · Web &amp; Node.js</div></div></div>
+          <div class="ext-item"><i class="devicon-csharp-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">C#</div><div class="ext-meta">Advanced · ASP.NET MVC</div></div></div>
+          <div class="ext-group-label">WEB &amp; MOBILE (5)</div>
+          <div class="ext-item"><i class="devicon-flutter-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Flutter</div><div class="ext-meta">Expert · Cross-Platform Apps</div></div></div>
+          <div class="ext-item"><i class="devicon-html5-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">HTML5 / CSS3</div><div class="ext-meta">Expert · Web Development</div></div></div>
+          <div class="ext-item"><i class="devicon-dotnetcore-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">ASP.NET Core MVC</div><div class="ext-meta">Advanced · Web Backend</div></div></div>
+          <div class="ext-item"><i class="devicon-bootstrap-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Bootstrap</div><div class="ext-meta">Advanced · UI Framework</div></div></div>
+          <div class="ext-item"><i class="devicon-php-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">PHP</div><div class="ext-meta">Intermediate · Server-Side</div></div></div>
+          <div class="ext-group-label">DATABASES (4)</div>
+          <div class="ext-item"><i class="devicon-mysql-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">MySQL</div><div class="ext-meta">Advanced · Relational DBs</div></div></div>
+          <div class="ext-item"><i class="devicon-postgresql-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Supabase / PostgreSQL</div><div class="ext-meta">Advanced · BaaS &amp; Realtime</div></div></div>
+          <div class="ext-item"><i class="devicon-firebase-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Firebase</div><div class="ext-meta">Intermediate · NoSQL &amp; Auth</div></div></div>
+          <div class="ext-item"><i class="devicon-microsoftsqlserver-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">SQL Server</div><div class="ext-meta">Advanced · Enterprise DB</div></div></div>
+          <div class="ext-group-label">TOOLS &amp; DEVOPS (5)</div>
+          <div class="ext-item"><i class="devicon-git-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Git</div><div class="ext-meta">Expert · Version Control</div></div></div>
+          <div class="ext-item"><i class="devicon-github-original ext-dv-icon" style="color:var(--tx)"></i><div class="ext-info"><div class="ext-name">GitHub Actions</div><div class="ext-meta">Intermediate · CI/CD</div></div></div>
+          <div class="ext-item"><i class="devicon-docker-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Docker</div><div class="ext-meta">Intermediate · Containers</div></div></div>
+          <div class="ext-item"><i class="devicon-linux-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Linux</div><div class="ext-meta">Intermediate · CLI &amp; Admin</div></div></div>
+          <div class="ext-item"><i class="devicon-opencv-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">OpenCV</div><div class="ext-meta">Beginner · Computer Vision</div></div></div>
+        </div>
+      </div>
+
+      <!-- Themes Panel -->
+      <div class="panel" id="panel-themes">
+        <div class="panel-hd">COLOR THEME</div>
+        <div class="panel-body">
+          <p class="theme-hint">Select a theme. Press <kbd>Ctrl+Shift+P</kbd> for commands.</p>
+          <div class="theme-list" id="theme-list">
+            <div class="theme-item active" data-theme="dark-default">
+              <span class="theme-swatch" style="--tc:#818cf8"></span>
+              <div class="theme-info"><span class="theme-name">Dark Default (Indigo)</span><span class="theme-meta">Rakib's signature theme</span></div>
+              <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-item" data-theme="tokyo-night">
+              <span class="theme-swatch" style="--tc:#7aa2f7"></span>
+              <div class="theme-info"><span class="theme-name">Tokyo Night</span><span class="theme-meta">Deep blue city vibes</span></div>
+              <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-item" data-theme="catppuccin">
+              <span class="theme-swatch" style="--tc:#cba6f7"></span>
+              <div class="theme-info"><span class="theme-name">Catppuccin Mocha</span><span class="theme-meta">Soft mauve palette</span></div>
+              <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-item" data-theme="nord">
+              <span class="theme-swatch" style="--tc:#88c0d0"></span>
+              <div class="theme-info"><span class="theme-name">Nord</span><span class="theme-meta">Arctic, icy blues</span></div>
+              <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-item" data-theme="vscode-light">
+              <span class="theme-swatch" style="--tc:#0078d4"></span>
+              <div class="theme-info"><span class="theme-name">VS Code Light</span><span class="theme-meta">Clean white classic</span></div>
+              <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-item" data-theme="dracula">
+              <span class="theme-swatch" style="--tc:#bd93f9"></span>
+              <div class="theme-info"><span class="theme-name">Dracula</span><span class="theme-meta">Vampire purple &amp; dark</span></div>
+              <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-item" data-theme="solarized-light">
+              <span class="theme-swatch" style="--tc:#0969da"></span>
+              <div class="theme-info"><span class="theme-name">Solarized Light</span><span class="theme-meta">Warm cream, orange accent</span></div>
+              <i class="fas fa-check theme-check"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Panel -->
+      <div class="panel" id="panel-profile">
+        <div class="panel-hd">PROFILE</div>
+        <div class="panel-body profile-panel">
+          <div class="pp-photo">
+            <img src="resources/images/Md. Rakib Hasan.png" alt="Md. Rakib Hasan">
+            <div class="pp-glow"></div>
+          </div>
+          <div class="pp-name">Md. Rakib Hasan</div>
+          <div class="pp-roles">
+            <span>Software Developer</span>
+            <span>Competitive Programmer</span>
+            <span>Technical Leader</span>
+          </div>
+          <div class="pp-divider"></div>
+          <div class="pp-stat"><span>CGPA</span><strong>3.75</strong></div>
+          <div class="pp-stat"><span>ICPC Rank</span><strong>#122</strong></div>
+          <div class="pp-stat"><span>Learnathon</span><strong>Champion</strong></div>
+          <div class="pp-stat"><span>Status</span><strong class="pp-open">● Open to Work</strong></div>
+          <div class="pp-divider"></div>
+          <a href="mailto:rakibhasan4101@gmail.com" class="pp-link"><i class="fas fa-envelope"></i>rakibhasan4101@gmail.com</a>
+          <a href="https://github.com/afnanrakib" target="_blank" rel="noopener" class="pp-link"><i class="fab fa-github"></i>github.com/afnanrakib</a>
+          <a href="resources/Md. Rakib Hasan.pdf" class="pp-link" download><i class="fas fa-download"></i>Download CV</a>
+        </div>
+      </div>
+
+      <!-- Settings/Gear Panel -->
+      <div class="panel" id="panel-gear">
+        <div class="panel-hd">SETTINGS</div>
+        <div class="panel-body">
+          <div class="gear-section-hd"><i class="fas fa-palette"></i> COLOR THEME</div>
+          <div class="gear-theme-list">
+            <div class="gear-theme active" data-theme="dark-default"><span class="theme-swatch" style="--tc:#818cf8"></span>Dark Default</div>
+            <div class="gear-theme" data-theme="tokyo-night"><span class="theme-swatch" style="--tc:#7aa2f7"></span>Tokyo Night</div>
+            <div class="gear-theme" data-theme="catppuccin"><span class="theme-swatch" style="--tc:#cba6f7"></span>Catppuccin Mocha</div>
+            <div class="gear-theme" data-theme="nord"><span class="theme-swatch" style="--tc:#88c0d0"></span>Nord</div>
+            <div class="gear-theme" data-theme="vscode-light"><span class="theme-swatch" style="--tc:#0078d4"></span>VS Code Light</div>
+            <div class="gear-theme" data-theme="dracula"><span class="theme-swatch" style="--tc:#bd93f9"></span>Dracula</div>
+            <div class="gear-theme" data-theme="solarized-light"><span class="theme-swatch" style="--tc:#cb4b16"></span>Solarized Light</div>
+          </div>
+
+          <div class="gear-section-hd"><i class="fas fa-bolt"></i> QUICK ACTIONS</div>
+          <button class="gear-action" data-action="palette"><i class="fas fa-search"></i><span>Command Palette</span><kbd>Ctrl+Shift+P</kbd></button>
+          <button class="gear-action" data-action="terminal"><i class="fas fa-terminal"></i><span>Toggle Terminal</span><kbd>Ctrl+`</kbd></button>
+          <button class="gear-action" data-action="copilot"><i class="fas fa-robot"></i><span>Toggle AI Copilot</span><kbd>Ctrl+Shift+C</kbd></button>
+          <button class="gear-action" data-action="fullscreen"><i class="fas fa-expand"></i><span>Toggle Fullscreen</span><kbd>F11</kbd></button>
+          <button class="gear-action" data-action="zoom-in"><i class="fas fa-search-plus"></i><span>Zoom In</span><kbd>Ctrl++</kbd></button>
+          <button class="gear-action" data-action="zoom-out"><i class="fas fa-search-minus"></i><span>Zoom Out</span><kbd>Ctrl+-</kbd></button>
+          <a class="gear-action" href="resources/Md. Rakib Hasan.pdf" download><i class="fas fa-download"></i><span>Download CV</span></a>
+
+          <div class="gear-section-hd"><i class="fas fa-keyboard"></i> KEYBOARD SHORTCUTS</div>
+          <div class="gear-shortcuts">
+            <div class="gs-row"><kbd>Ctrl+Shift+P</kbd><span>Command Palette</span></div>
+            <div class="gs-row"><kbd>Ctrl+B</kbd><span>Toggle Sidebar</span></div>
+            <div class="gs-row"><kbd>Ctrl+`</kbd><span>Toggle Terminal</span></div>
+            <div class="gs-row"><kbd>Ctrl+Shift+C</kbd><span>AI Copilot</span></div>
+            <div class="gs-row"><kbd>F11</kbd><span>Fullscreen</span></div>
+            <div class="gs-row"><kbd>Ctrl++</kbd><span>Zoom In</span></div>
+            <div class="gs-row"><kbd>Ctrl+-</kbd><span>Zoom Out</span></div>
+            <div class="gs-row"><kbd>Ctrl+0</kbd><span>Reset Zoom</span></div>
+            <div class="gs-row"><kbd>Ctrl+1–8</kbd><span>Switch File</span></div>
+            <div class="gs-row"><kbd>Esc</kbd><span>Close Overlay</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+    <!-- ─ EDITOR WRAP ─ -->
+    <div class="vsc-editor-wrap" id="editor-wrap">
+
+      <!-- Tabs -->
+      <div class="vsc-tabs" id="tabs"></div>
+
+      <!-- Breadcrumb -->
+      <div class="vsc-breadcrumb">
+        <span class="bc-root"><i class="fas fa-folder-open"></i> RAKIB-PORTFOLIO</span>
+        <i class="fas fa-chevron-right bc-sep"></i>
+        <span id="bc-file">home.html</span>
+      </div>
+
+      <!-- Find widget (Ctrl+F) -->
+      <div id="find-widget" class="find-widget hidden" role="search">
+        <input id="find-input" class="find-input" type="text" placeholder="Find" spellcheck="false" autocomplete="off">
+        <span id="find-counter" class="find-counter">No results</span>
+        <div class="find-btns">
+          <button id="find-prev" class="find-btn" title="Previous Match (Shift+Enter)"><i class="fas fa-chevron-up"></i></button>
+          <button id="find-next" class="find-btn" title="Next Match (Enter)"><i class="fas fa-chevron-down"></i></button>
+          <button id="find-case" class="find-btn find-btn--toggle" title="Match Case (Alt+C)" id="find-case">Aa</button>
+          <button id="find-close" class="find-btn find-btn--close" title="Close (Escape)"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+
+      <!-- Content area -->
+      <div class="vsc-content" id="content">
+
+        <!-- ══ HOME.HTML ══ -->
+        <div class="pane active" id="pane-home">
+          <div class="code-view">
+            <div class="cl"><span class="ln">1</span><span class="cmt">&lt;!-- home.html: Portfolio Entry Point --&gt;</span></div>
+            <div class="cl"><span class="ln">2</span><span class="tag">&lt;!DOCTYPE html&gt;</span></div>
+            <div class="cl"><span class="ln">3</span><span class="tag">&lt;html</span> <span class="attr">lang</span><span class="op">=</span><span class="str">"en"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">4</span>  <span class="tag">&lt;meta</span> <span class="attr">name</span><span class="op">=</span><span class="str">"author"</span> <span class="attr">content</span><span class="op">=</span><span class="str">"Md. Rakib Hasan"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">5</span>  <span class="tag">&lt;meta</span> <span class="attr">name</span><span class="op">=</span><span class="str">"description"</span> <span class="attr">content</span><span class="op">=</span><span class="str">"Software Developer · AUST · Dhaka"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">6</span>  <span class="tag">&lt;title&gt;</span><span class="tx">Md. Rakib Hasan | Portfolio</span><span class="tag">&lt;/title&gt;</span></div>
+            <div class="cl"><span class="ln">7</span><span class="tag">&lt;body</span> <span class="attr">class</span><span class="op">=</span><span class="str">"vscode-theme"</span><span class="tag">&gt;</span></div>
+            <div class="cl cl-sep"><span class="ln">8</span><span class="cmt">&lt;!-- ────────────────── rendered ────────────────── --&gt;</span></div>
+          </div>
+          <div class="pane-body">
+            <div class="hero-split">
+              <div class="hero-left">
+                <div class="avail-badge"><span class="avail-dot"></span>Open to opportunities</div>
+                <h1 class="hero-name">Md. Rakib<br><span class="hn-accent">Hasan</span></h1>
+                <p class="hero-role"><span class="typed-text" data-words="Software Developer,Competitive Programmer,Technical Leader">Software Developer</span><span class="cursor-blink">|</span></p>
+                <p class="hero-bio">Final-year CSE undergraduate at AUST. I design and ship software across web, mobile, and AI-assisted systems, from competitive programming to production apps.</p>
+                <p class="hero-currently"><span class="cur-label">Currently</span> building <strong>SOHOJOGI</strong> · Leading AUST Programming Club</p>
+                <div class="hero-actions">
+                  <a href="resources/Md. Rakib Hasan.pdf" class="vsc-btn solid" download>
+                    <i class="fas fa-download"></i> Download CV
+                  </a>
+                  <button class="vsc-btn ghost" onclick="openFile('projects')">
+                    <i class="fas fa-code"></i> See Work
+                  </button>
+                </div>
+              </div>
+              <div class="hero-right">
+                <div class="portrait-frame">
+                  <img src="resources/images/Md. Rakib Hasan.png" alt="Md. Rakib Hasan">
+                  <div class="portrait-glow"></div>
+                  <div class="portrait-tag">CSE · AUST</div>
+                </div>
+              </div>
+            </div>
+            <div class="stat-strip">
+              <div class="ss-item"><span class="ss-val">#122</span><span class="ss-lbl">ICPC Dhaka Regional</span></div>
+              <div class="ss-item"><span class="ss-val">Champion</span><span class="ss-lbl">Learnathon 3.0</span></div>
+              <div class="ss-item"><span class="ss-val">3.75</span><span class="ss-lbl">CGPA</span></div>
+              <div class="ss-item"><span class="ss-val">President</span><span class="ss-lbl">Programming Club</span></div>
+              <div class="ss-item"><span class="ss-val">VP</span><span class="ss-lbl">CSE Society</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ABOUT.MD ══ -->
+        <div class="pane" id="pane-about">
+          <div class="md-preview">
+            <h1>Md. Rakib Hasan</h1>
+            <blockquote>Final-year CSE undergraduate at AUST · CGPA 3.75 · Dhaka, Bangladesh 🇧🇩</blockquote>
+            <h2>Background</h2>
+            <p>I am a final-year Computer Science undergraduate at Ahsanullah University of Science and Technology with a CGPA of 3.75. My journey combines algorithmic discipline from competitive programming with practical product development.</p>
+            <p>I have led and contributed to impactful platforms including <strong>AUST CODE REALM</strong>, <strong>SOHOJOGI</strong>, and <strong>HOMEHUTBD</strong>. I currently serve as President of the AUST Programming and Informatics Club and Vice President of the AUST CSE Society.</p>
+            <h2>Currently Building</h2>
+            <p><strong>SOHOJOGI</strong>, a cross-platform household services platform developed with Flutter and Supabase, featuring location-based matching and real-time updates.</p>
+            <h2>Quick Facts</h2>
+            <table class="md-table">
+              <tr><td>University</td><td>Ahsanullah University of Science and Technology</td></tr>
+              <tr><td>Degree</td><td>BSc in Computer Software Engineering</td></tr>
+              <tr><td>CGPA</td><td>3.75 / 4.00</td></tr>
+              <tr><td>Email</td><td><a href="mailto:rakibhasan4101@gmail.com">rakibhasan4101@gmail.com</a></td></tr>
+              <tr><td>Location</td><td>Dhaka, Bangladesh</td></tr>
+              <tr><td>Focus</td><td>Full-stack · Mobile · Competitive Programming</td></tr>
+              <tr><td>Status</td><td><span style="color:var(--green)">● Open to new opportunities</span></td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- ══ PROJECTS.JS ══ -->
+        <div class="pane" id="pane-projects">
+          <div class="code-view">
+            <div class="cl"><span class="ln">1</span><span class="cmt">// projects.js: Selected Work</span></div>
+            <div class="cl"><span class="ln">2</span><span class="kw">const</span> <span class="var">projects</span> <span class="op">=</span> [</div>
+            <div class="cl"><span class="ln">3</span>  { <span class="attr">name</span>: <span class="str">'SOHOJOGI'</span>, <span class="attr">stack</span>: [<span class="str">'Flutter'</span>, <span class="str">'Supabase'</span>], <span class="attr">type</span>: <span class="str">'mobile'</span>, <span class="attr">year</span>: <span class="num">2025</span> },</div>
+            <div class="cl"><span class="ln">4</span>  { <span class="attr">name</span>: <span class="str">'AUST CODE REALM'</span>, <span class="attr">stack</span>: [<span class="str">'PHP'</span>, <span class="str">'MySQL'</span>], <span class="attr">type</span>: <span class="str">'web'</span>, <span class="attr">year</span>: <span class="num">2024</span> },</div>
+            <div class="cl"><span class="ln">5</span>  <span class="cmt">// … more projects</span></div>
+            <div class="cl"><span class="ln">6</span>]</div>
+            <div class="cl cl-sep"><span class="ln">7</span><span class="cmt">/* ─────────────────────────── rendered ─────────────────────────── */</span></div>
+          </div>
+          <div class="pane-body">
+            <div class="proj-filters">
+              <button class="pf-btn active" data-cat="all">All</button>
+              <button class="pf-btn" data-cat="mobile">Mobile</button>
+              <button class="pf-btn" data-cat="web">Web</button>
+              <button class="pf-btn" data-cat="ai">AI</button>
+              <button class="pf-btn" data-cat="game">Game</button>
+            </div>
+            <div class="proj-grid" id="proj-grid">
+              <article class="proj-card" data-cat="mobile" style="--pcol:#818cf8">
+                <div class="pc-topbar"></div>
+                <div class="pc-meta"><span class="pc-badge">● DEMO</span><span class="pc-yr">2025</span></div>
+                <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/team-synergy/refs/heads/main/resources/logo.png" alt="SOHOJOGI" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
+                <h3>SOHOJOGI</h3>
+                <p class="pc-sub">Household Services Platform</p>
+                <p>Location matching, booking flow, and real-time updates for household service workers.</p>
+                <div class="pc-tags"><span>Flutter</span><span>Supabase</span><span>Provider</span><span>MVVM</span></div>
+                <div class="pc-links">
+                  <a href="https://github.com/Learnathon-By-Geeky-Solutions/team-synergy" target="_blank" rel="noopener">Code</a>
+                  <a href="https://youtu.be/Lwbt7yas1KI" target="_blank" rel="noopener">Demo</a>
+                </div>
+              </article>
+              <article class="proj-card" data-cat="web" style="--pcol:#22d3ee">
+                <div class="pc-topbar"></div>
+                <div class="pc-meta"><span class="pc-badge">● LIVE</span><span class="pc-yr">2024</span></div>
+                <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/AUST-CODE-REALM/main/images/logo%20with%20cover.png" alt="AUST CODE REALM" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
+                <h3>AUST CODE REALM</h3>
+                <p class="pc-sub">Online Judge Platform</p>
+                <p>Contests, IDE integration, and ratings for competitive programmers at AUST.</p>
+                <div class="pc-tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Judge0</span></div>
+                <div class="pc-links">
+                  <a href="https://github.com/AfnanRakib/AUST-CODE-REALM" target="_blank" rel="noopener">Code</a>
+                  <a href="http://acr.rf.gd/" target="_blank" rel="noopener">Live</a>
+                </div>
+              </article>
+              <article class="proj-card" data-cat="ai web" style="--pcol:#f59e0b">
+                <div class="pc-topbar"></div>
+                <div class="pc-meta"><span class="pc-yr">2024</span></div>
+                <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg" alt="HOMEHUTBD" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
+                <h3>HOMEHUTBD</h3>
+                <p class="pc-sub">Property Listing Platform</p>
+                <p>Property listing and AI-assisted pricing prediction.</p>
+                <div class="pc-tags"><span>ASP.NET MVC</span><span>SQL Server</span><span>Python</span><span>Flask</span></div>
+                <div class="pc-links">
+                  <a href="https://github.com/AfnanRakib/HomeHutBD" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+              <article class="proj-card" data-cat="ai mobile" style="--pcol:#a78bfa">
+                <div class="pc-topbar"></div>
+                <div class="pc-meta"><span class="pc-yr">2024</span></div>
+                <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/Bhromon/refs/heads/main/assets/Bhromon.png" alt="BHROMON" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
+                <h3>BHROMON</h3>
+                <p class="pc-sub">AI Travel Assistant</p>
+                <p>Smart recommendations, maps, and GPT-4 chatbot support.</p>
+                <div class="pc-tags"><span>Flutter</span><span>Google Maps</span><span>GPT-4</span></div>
+                <div class="pc-links">
+                  <a href="https://github.com/AfnanRakib/Bhromon" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+              <article class="proj-card" data-cat="web" style="--pcol:#f97316">
+                <div class="pc-topbar"></div>
+                <div class="pc-meta"><span class="pc-yr">2023</span></div>
+                <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/CodeRealm/main/CodeRealm.png" alt="CODE REALM" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
+                <h3>CODE REALM</h3>
+                <p class="pc-sub">Desktop Coding Platform</p>
+                <p>Desktop coding and contest platform with integrated coding environment.</p>
+                <div class="pc-tags"><span>Java</span><span>JavaFX</span><span>Apache Derby</span></div>
+                <div class="pc-links">
+                  <a href="https://github.com/AfnanRakib/CodeRealm" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+              <article class="proj-card" data-cat="game" style="--pcol:#f43f5e">
+                <div class="pc-topbar"></div>
+                <div class="pc-meta"><span class="pc-yr">2023</span></div>
+                <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/Irrevocable-Eternity/refs/heads/main/menu.png" alt="IRREVOCABLE-ETERNITY" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
+                <h3>IRREVOCABLE-ETERNITY</h3>
+                <p class="pc-sub">2D Dungeon Fighter</p>
+                <p>2D dungeon-fighting game with fast mechanics and challenge progression.</p>
+                <div class="pc-tags"><span>C</span><span>C++</span><span>OpenGL</span><span>iGraphics</span></div>
+                <div class="pc-links">
+                  <a href="https://github.com/AfnanRakib/Irrevocable-Eternity" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ EXPERIENCE.HTML ══ -->
+        <div class="pane" id="pane-experience">
+          <div class="code-view">
+            <div class="cl"><span class="ln">1</span><span class="cmt">&lt;!-- experience.html: Leadership Track --&gt;</span></div>
+            <div class="cl"><span class="ln">2</span><span class="tag">&lt;section</span> <span class="attr">id</span><span class="op">=</span><span class="str">"experience"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">3</span>  <span class="tag">&lt;article</span> <span class="attr">role</span><span class="op">=</span><span class="str">"President"</span> <span class="attr">org</span><span class="op">=</span><span class="str">"AUST Programming Club"</span> <span class="attr">since</span><span class="op">=</span><span class="str">"2024"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">4</span>  <span class="tag">&lt;article</span> <span class="attr">role</span><span class="op">=</span><span class="str">"Vice President"</span> <span class="attr">org</span><span class="op">=</span><span class="str">"AUST CSE Society"</span> <span class="attr">since</span><span class="op">=</span><span class="str">"2023"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">5</span>  <span class="tag">&lt;article</span> <span class="attr">role</span><span class="op">=</span><span class="str">"Champion · Team Leader"</span> <span class="attr">org</span><span class="op">=</span><span class="str">"Learnathon 3.0"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">6</span><span class="tag">&lt;/section&gt;</span></div>
+            <div class="cl cl-sep"><span class="ln">7</span><span class="cmt">&lt;!-- ────────────────── rendered ────────────────── --&gt;</span></div>
+          </div>
+          <div class="pane-body">
+            <div class="exp-orgs" id="exp-orgs">
+
+              <!-- Org 0 -->
+              <div class="eorg" id="eorg-0">
+                <div class="eorg-header" onclick="toggleExpOrg(0)">
+                  <img src="resources/images/austpic.png" alt="AUST PIC" class="eorg-logo" onerror="this.style.display='none'">
+                  <div class="eorg-info">
+                    <h3>AUST Programming and Informatics Club</h3>
+                    <div class="eorg-meta">
+                      <span class="eorg-period">Jan 2022 – Present</span>
+                      <span class="eorg-role-count">3 roles</span>
+                    </div>
+                  </div>
+                  <i class="fas fa-chevron-down eorg-chev"></i>
+                </div>
+                <div class="eorg-roles">
+                  <div class="eorg-role-item">
+                    <div class="eorg-role-title">President</div>
+                    <div class="eorg-role-period">Jan 2024 – Present · 1+ yr</div>
+                    <p class="eorg-role-desc">Leading programming culture, organizing national-level workshops and contests, mentoring 200+ members across all skill levels.</p>
+                  </div>
+                  <div class="eorg-role-item">
+                    <div class="eorg-role-title">Joint Secretary</div>
+                    <div class="eorg-role-period">Jan 2023 – Dec 2023 · 1 yr</div>
+                    <p class="eorg-role-desc">Coordinated inter-organization events, managed club logistics and member onboarding processes.</p>
+                  </div>
+                  <div class="eorg-role-item">
+                    <div class="eorg-role-title">Head of IT</div>
+                    <div class="eorg-role-period">Jan 2022 – Dec 2022 · 1 yr</div>
+                    <p class="eorg-role-desc">Maintained the club's digital infrastructure including the website and online judge integration.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Org 1 -->
+              <div class="eorg" id="eorg-1">
+                <div class="eorg-header" onclick="toggleExpOrg(1)">
+                  <img src="resources/images/aust cse society.jpg" alt="AUST CSE Society" class="eorg-logo" onerror="this.style.display='none'">
+                  <div class="eorg-info">
+                    <h3>AUST CSE Society</h3>
+                    <div class="eorg-meta">
+                      <span class="eorg-period">Jan 2023 – Present</span>
+                      <span class="eorg-role-count">2 roles</span>
+                    </div>
+                  </div>
+                  <i class="fas fa-chevron-down eorg-chev"></i>
+                </div>
+                <div class="eorg-roles">
+                  <div class="eorg-role-item">
+                    <div class="eorg-role-title">Vice President</div>
+                    <div class="eorg-role-period">Jan 2024 – Present · 1+ yr</div>
+                    <p class="eorg-role-desc">Driving major departmental events, sponsorship collaborations, and student-faculty coordination across the department.</p>
+                  </div>
+                  <div class="eorg-role-item">
+                    <div class="eorg-role-title">General Secretary</div>
+                    <div class="eorg-role-period">Jan 2023 – Dec 2023 · 1 yr</div>
+                    <p class="eorg-role-desc">Managed official correspondence, meeting minutes, and event scheduling for the CSE Society.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Org 2 -->
+              <div class="eorg" id="eorg-2">
+                <div class="eorg-header" onclick="toggleExpOrg(2)">
+                  <img src="resources/images/aust cp community.jpg" alt="AUST CP Community" class="eorg-logo" onerror="this.style.display='none'">
+                  <div class="eorg-info">
+                    <h3>AUST Competitive Programming Community</h3>
+                    <div class="eorg-meta">
+                      <span class="eorg-period">Jan 2023 – Present</span>
+                      <span class="eorg-role-count">2 roles</span>
+                    </div>
+                  </div>
+                  <i class="fas fa-chevron-down eorg-chev"></i>
+                </div>
+                <div class="eorg-roles">
+                  <div class="eorg-role-item">
+                    <div class="eorg-role-title">ACM ICPC Coordinator</div>
+                    <div class="eorg-role-period">Jan 2024 – Present · 1+ yr</div>
+                    <p class="eorg-role-desc">Managing ICPC and IUPC preparation, team formation and contest logistics for regional and national competitions.</p>
+                  </div>
+                  <div class="eorg-role-item">
+                    <div class="eorg-role-title">Representative</div>
+                    <div class="eorg-role-period">Jan 2023 – Dec 2023 · 1 yr</div>
+                    <p class="eorg-role-desc">Represented AUST at competitive programming events and coordinated training sessions.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Org 3 -->
+              <div class="eorg" id="eorg-3">
+                <div class="eorg-header" onclick="toggleExpOrg(3)">
+                  <img src="resources/images/geeky solutions.png" alt="Geeky Solutions" class="eorg-logo" onerror="this.style.display='none'">
+                  <div class="eorg-info">
+                    <h3>Geeky Solutions - Learnathon 3.0</h3>
+                    <div class="eorg-meta">
+                      <span class="eorg-period">Sep 2024 – Mar 2025 · 6 mos</span>
+                      <span class="eorg-role-count">1 role</span>
+                    </div>
+                  </div>
+                  <i class="fas fa-chevron-down eorg-chev"></i>
+                </div>
+                <div class="eorg-roles">
+                  <div class="eorg-role-item">
+                    <div class="eorg-role-title">Team Leader &amp; Champion</div>
+                    <div class="eorg-role-period">Sep 2024 – Mar 2025 · 6 mos</div>
+                    <p class="eorg-role-desc">Led Team Synergy through six-month intensive mentorship in cross-platform development. Delivered SOHOJOGI, a production-ready household services platform. Won champion title at the final showcase.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ACHIEVEMENTS.MD ══ -->
+        <div class="pane" id="pane-achievements">
+          <div class="code-view">
+            <div class="cl"><span class="ln">1</span><span class="cmt"># achievements.md: Contest Records &amp; Recognitions</span></div>
+            <div class="cl"><span class="ln">2</span><span class="kw">## </span><span class="str">Programming Contests</span> <span class="op">|</span> <span class="str">Software Exhibition</span> <span class="op">|</span> <span class="str">Scholarships</span></div>
+            <div class="cl cl-sep"><span class="ln">3</span><span class="cmt">&lt;!-- ─────────────────────────── rendered ─────────────────────────── --&gt;</span></div>
+          </div>
+          <div class="pane-body">
+
+            <!-- Notable Achievement -->
+            <div class="ach-segment">
+              <div class="ach-seg-title"><i class="fas fa-star"></i> Notable Achievement</div>
+              <div class="ach-seg-items">
+                <div class="ach-item ach-featured">
+                  <div class="ach-org-badge ach-badge-gold"><i class="fas fa-trophy"></i></div>
+                  <div class="ach-body">
+                    <h3>Learnathon 3.0 Hackathon <span class="ach-result ach-champ">Champion</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">Geeky Solutions</span><span class="ach-dot">·</span><span class="ach-yr-inline">Dec 2024 – May 2025</span></div>
+                    <p>Six-month intensive hackathon. Led <em>Team Synergy</em> to build <strong>SOHOJOGI</strong>, a production-ready cross-platform household services platform.</p>
+                    <div class="ach-tags"><span>Team Lead</span><span>Flutter</span><span>Full-Stack</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Programming Contests -->
+            <div class="ach-segment">
+              <div class="ach-seg-title"><i class="fas fa-code"></i> Programming Contests</div>
+              <div class="ach-seg-items">
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-rank">7%</div>
+                  <div class="ach-body">
+                    <h3>ICPC Dhaka Regional Site 2025 <span class="ach-result ach-rank">Top 7%</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">AUST_DEADCODER</span><span class="ach-dot">·</span><span class="ach-yr-inline">December 2025</span></div>
+                    <p>Onsite ICPC Asia Dhaka Regional, <strong>Top 7% out of 1,717 teams</strong>.</p>
+                    <div class="ach-tags"><span>ICPC</span><span>Onsite</span><span>International</span></div>
+                  </div>
+                </div>
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-rank">#35</div>
+                  <div class="ach-body">
+                    <h3>BUBT IUCPC National Programming Contest <span class="ach-result ach-rank">Rank #35</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">AUST_DEADCODER</span><span class="ach-dot">·</span><span class="ach-yr-inline">2025</span></div>
+                    <p>National inter-university contest at Bangladesh University of Business &amp; Technology.</p>
+                    <div class="ach-tags"><span>National</span><span>Team</span></div>
+                  </div>
+                </div>
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-rank">#97</div>
+                  <div class="ach-body">
+                    <h3>AUST Inter-University Programming Contest <span class="ach-result ach-rank">Rank #97</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">0xDEADCODER</span><span class="ach-dot">·</span><span class="ach-yr-inline">2025</span></div>
+                    <p>Competed among top university teams across Bangladesh.</p>
+                    <div class="ach-tags"><span>Inter-University</span><span>Team</span></div>
+                  </div>
+                </div>
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-gold"><i class="fas fa-trophy"></i></div>
+                  <div class="ach-body">
+                    <h3>Intra AUST Programming Contest <span class="ach-result ach-champ">Champion</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">CSE Carnival 4.0 · Solo</span><span class="ach-dot">·</span><span class="ach-yr-inline">July 2024</span></div>
+                    <p>Outperformed all participants in solo algorithmic problem-solving under timed constraints.</p>
+                    <div class="ach-tags"><span>Solo</span><span>Algorithms</span></div>
+                  </div>
+                </div>
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-silver"><i class="fas fa-medal"></i></div>
+                  <div class="ach-body">
+                    <h3>UAP Inter University Collaborative PC 1.0 (Junior) <span class="ach-result ach-runner">1st Runners-Up</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">University of Asia Pacific</span><span class="ach-dot">·</span><span class="ach-yr-inline">January 2024</span></div>
+                    <p>Junior category inter-university collaborative programming contest.</p>
+                    <div class="ach-tags"><span>Junior</span><span>Team</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Software Exhibition & Code Refactoring -->
+            <div class="ach-segment">
+              <div class="ach-seg-title"><i class="fas fa-laptop-code"></i> Software Exhibition &amp; Code Refactoring</div>
+              <div class="ach-seg-items">
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-silver"><i class="fas fa-medal"></i></div>
+                  <div class="ach-body">
+                    <h3>Research Odyssey: Inter-University Research Exhibitions <span class="ach-result ach-runner">1st Runners-Up</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">Software Segment</span><span class="ach-dot">·</span><span class="ach-yr-inline">March 2025</span></div>
+                    <p>Recognised for innovation in the software exhibition segment at the national research showcase.</p>
+                    <div class="ach-tags"><span>Research</span><span>Software</span></div>
+                  </div>
+                </div>
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-gold"><i class="fas fa-trophy"></i></div>
+                  <div class="ach-body">
+                    <h3>Software Exhibition (AUST CSE Carnival 5.0) <span class="ach-result ach-champ">Champion</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">AUST</span><span class="ach-dot">·</span><span class="ach-yr-inline">February 2025</span></div>
+                    <p>Won the software exhibition segment at AUST's annual CSE Carnival event.</p>
+                    <div class="ach-tags"><span>Software</span><span>Exhibition</span></div>
+                  </div>
+                </div>
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-gold"><i class="fas fa-trophy"></i></div>
+                  <div class="ach-body">
+                    <h3>Code Refactoring (AUST CSE Carnival 4.0) <span class="ach-result ach-champ">Champion</span></h3>
+                    <div class="ach-meta"><span class="ach-org-name">AUST</span><span class="ach-dot">·</span><span class="ach-yr-inline">July 2024</span></div>
+                    <p>Topped the code refactoring challenge, demonstrating exceptional code quality and clean architecture.</p>
+                    <div class="ach-tags"><span>Code Quality</span><span>Architecture</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scholarships -->
+            <div class="ach-segment">
+              <div class="ach-seg-title"><i class="fas fa-graduation-cap"></i> Scholarships &amp; Recognitions</div>
+              <div class="ach-seg-items">
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-green"><i class="fas fa-star"></i></div>
+                  <div class="ach-body">
+                    <h3>Khondaker Ahmed Muktadir &amp; Mosammat Khodeza Begum Scholarship</h3>
+                    <div class="ach-meta"><span class="ach-org-name">AUST</span><span class="ach-dot">·</span><span class="ach-yr-inline">April 2026</span></div>
+                    <p>Merit-based scholarship awarded in recognition of exceptional academic and extracurricular achievement.</p>
+                    <div class="ach-tags"><span>Merit</span><span>Scholarship</span></div>
+                  </div>
+                </div>
+                <div class="ach-item">
+                  <div class="ach-org-badge ach-badge-green"><i class="fas fa-graduation-cap"></i></div>
+                  <div class="ach-body">
+                    <h3>AUST Academic Merit Scholarship</h3>
+                    <div class="ach-meta"><span class="ach-org-name">AUST, Top 5% of department</span><span class="ach-dot">·</span><span class="ach-yr-inline">December 2023</span></div>
+                    <p>Awarded for ranking among the top 5% of CSE students. CGPA: <strong>3.75 / 4.00</strong>.</p>
+                    <div class="ach-tags"><span>Merit Award</span><span>Top 5%</span><span>CGPA 3.75</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="ach-footer-note">Additionally competed in multiple IUPCs, earning awards and recognitions across diverse competitive events.</p>
+
+          </div>
+        </div>
+
+        <!-- ══ SKILLS.CSS ══ -->
+        <div class="pane" id="pane-skills">
+          <div class="code-view">
+            <div class="cl"><span class="ln">1</span><span class="cmt">/* skills.css: Tech Stack */</span></div>
+            <div class="cl"><span class="ln">2</span><span class="attr">:root</span> {</div>
+            <div class="cl"><span class="ln">3</span>  <span class="kw">--cpp</span>:     <span class="num">95%</span>;  <span class="kw">--python</span>:  <span class="num">80%</span>;  <span class="kw">--dart</span>: <span class="num">80%</span>;</div>
+            <div class="cl"><span class="ln">4</span>  <span class="kw">--flutter</span>: <span class="num">90%</span>;  <span class="kw">--html-css</span>: <span class="num">92%</span>; <span class="kw">--mysql</span>: <span class="num">82%</span>;</div>
+            <div class="cl"><span class="ln">5</span>  <span class="kw">--cv</span>:      <span class="num">40%</span>;  <span class="kw">--ml</span>:      <span class="num">38%</span>;</div>
+            <div class="cl"><span class="ln">6</span>}</div>
+            <div class="cl cl-sep"><span class="ln">7</span><span class="cmt">/* ─────────────────────────── rendered ─────────────────────────── */</span></div>
+          </div>
+          <div class="pane-body">
+            <div class="skills-logo-wrap">
+              <div class="skill-section">
+                <div class="skill-section-title"><i class="fas fa-code"></i> Languages</div>
+                <div class="skill-logos-grid">
+                  <div class="skill-logo-item" title="C++"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+                  <div class="skill-logo-item" title="C"><i class="devicon-c-plain colored"></i><span>C</span></div>
+                  <div class="skill-logo-item" title="Python"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                  <div class="skill-logo-item" title="Java"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+                  <div class="skill-logo-item" title="Dart"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+                  <div class="skill-logo-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                  <div class="skill-logo-item" title="C#"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+                </div>
+              </div>
+              <div class="skill-section">
+                <div class="skill-section-title"><i class="fas fa-globe"></i> Web &amp; Mobile</div>
+                <div class="skill-logos-grid">
+                  <div class="skill-logo-item" title="Flutter"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
+                  <div class="skill-logo-item" title="HTML5"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+                  <div class="skill-logo-item" title="CSS3"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+                  <div class="skill-logo-item" title="ASP.NET"><i class="devicon-dotnetcore-plain colored"></i><span>ASP.NET</span></div>
+                  <div class="skill-logo-item" title="Bootstrap"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+                  <div class="skill-logo-item" title="PHP"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+                </div>
+              </div>
+              <div class="skill-section">
+                <div class="skill-section-title"><i class="fas fa-database"></i> Databases</div>
+                <div class="skill-logos-grid">
+                  <div class="skill-logo-item" title="MySQL"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                  <div class="skill-logo-item" title="Supabase / PostgreSQL"><i class="devicon-postgresql-plain colored"></i><span>Supabase</span></div>
+                  <div class="skill-logo-item" title="SQL Server"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
+                  <div class="skill-logo-item" title="Firebase"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
+                </div>
+              </div>
+              <div class="skill-section">
+                <div class="skill-section-title"><i class="fas fa-tools"></i> Tools &amp; DevOps</div>
+                <div class="skill-logos-grid">
+                  <div class="skill-logo-item" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                  <div class="skill-logo-item" title="GitHub"><i class="devicon-github-original" style="color:var(--tx)"></i><span>GitHub</span></div>
+                  <div class="skill-logo-item" title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                  <div class="skill-logo-item" title="Linux"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
+                  <div class="skill-logo-item" title="VS Code"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+                  <div class="skill-logo-item" title="OpenCV"><i class="devicon-opencv-plain colored"></i><span>OpenCV</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ CONTACT.HTML ══ -->
+        <div class="pane" id="pane-contact">
+          <div class="code-view">
+            <div class="cl"><span class="ln">1</span><span class="cmt">&lt;!-- contact.html --&gt;</span></div>
+            <div class="cl"><span class="ln">2</span><span class="tag">&lt;section</span> <span class="attr">id</span><span class="op">=</span><span class="str">"contact"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">3</span>  <span class="tag">&lt;a</span> <span class="attr">href</span><span class="op">=</span><span class="str">"mailto:rakibhasan4101@gmail.com"</span><span class="tag">&gt;</span>Email<span class="tag">&lt;/a&gt;</span></div>
+            <div class="cl"><span class="ln">4</span>  <span class="tag">&lt;a</span> <span class="attr">href</span><span class="op">=</span><span class="str">"https://github.com/afnanrakib"</span><span class="tag">&gt;</span>GitHub<span class="tag">&lt;/a&gt;</span></div>
+            <div class="cl"><span class="ln">5</span>  <span class="tag">&lt;meta</span> <span class="attr">name</span><span class="op">=</span><span class="str">"status"</span> <span class="attr">content</span><span class="op">=</span><span class="str">"open-to-work"</span><span class="tag">&gt;</span></div>
+            <div class="cl"><span class="ln">6</span><span class="tag">&lt;/section&gt;</span></div>
+            <div class="cl cl-sep"><span class="ln">7</span><span class="cmt">&lt;!-- ────────────────── rendered ────────────────── --&gt;</span></div>
+          </div>
+          <div class="pane-body">
+            <div class="contact-hero">
+              <h1 class="contact-headline">Let's build something <span class="hn-accent">together</span></h1>
+              <p class="contact-sub">Open to full-time roles, freelance projects, and open-source collaborations. Based in Dhaka, Bangladesh.</p>
+              <div class="contact-avail"><span class="avail-dot"></span>Currently available · Actively looking for opportunities</div>
+            </div>
+            <div class="contact-main-grid">
+              <div class="contact-left">
+                <div class="contact-email-card">
+                  <div class="contact-email-header">
+                    <div class="contact-email-icon"><i class="fas fa-at"></i></div>
+                    <div>
+                      <div class="contact-email-label">Primary Email</div>
+                      <a class="contact-email-addr" href="mailto:rakibhasan4101@gmail.com">rakibhasan4101@gmail.com</a>
+                    </div>
+                  </div>
+                  <div class="contact-email-btns">
+                    <a class="vsc-btn solid" href="mailto:rakibhasan4101@gmail.com"><i class="fas fa-paper-plane"></i> Send Email</a>
+                    <button class="vsc-btn ghost" id="copy-email-btn" data-email="rakibhasan4101@gmail.com"><i class="far fa-copy"></i> Copy</button>
+                  </div>
+                </div>
+                <div class="contact-social-section">
+                  <div class="social-title">Connect Online</div>
+                  <a class="soc-card github" href="https://github.com/afnanrakib" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i><div><strong>GitHub</strong><span>afnanrakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
+                  </a>
+                  <a class="soc-card linkedin" href="https://www.linkedin.com/in/afnanhasanrakib/" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i><div><strong>LinkedIn</strong><span>afnanhasanrakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
+                  </a>
+                  <a class="soc-card cf" href="https://codeforces.com/profile/afnanrakib" target="_blank" rel="noopener">
+                    <i class="fas fa-code"></i><div><strong>Codeforces</strong><span>afnanrakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
+                  </a>
+                  <a class="soc-card lc" href="https://www.leetcode.com/afnanrakib" target="_blank" rel="noopener">
+                    <i class="fas fa-laptop-code"></i><div><strong>LeetCode</strong><span>afnanrakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
+                  </a>
+                  <a class="soc-card atc" href="https://atcoder.jp/users/AfnanRakib" target="_blank" rel="noopener">
+                    <i class="fas fa-trophy"></i><div><strong>AtCoder</strong><span>AfnanRakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
+                  </a>
+                  <a class="soc-card dc" href="https://discord.com/users/afnan_rakib" target="_blank" rel="noopener">
+                    <i class="fab fa-discord"></i><div><strong>Discord</strong><span>afnan_rakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="contact-right">
+                <div class="contact-term-block">
+                  <div class="contact-term-header">
+                    <div class="contact-term-dots">
+                      <span class="ct-dot red"></span>
+                      <span class="ct-dot yel"></span>
+                      <span class="ct-dot grn"></span>
+                    </div>
+                    <span class="contact-term-title">contact_info.json</span>
+                  </div>
+                  <div class="contact-term-body">
+                    <pre class="contact-json"><span class="op">{</span>
+  <span class="attr">"name"</span><span class="op">:</span>         <span class="str">"Md. Rakib Hasan"</span><span class="op">,</span>
+  <span class="attr">"role"</span><span class="op">:</span>         <span class="str">"Software Developer"</span><span class="op">,</span>
+  <span class="attr">"university"</span><span class="op">:</span>   <span class="str">"AUST · CSE"</span><span class="op">,</span>
+  <span class="attr">"location"</span><span class="op">:</span>     <span class="str">"Dhaka, Bangladesh"</span><span class="op">,</span>
+  <span class="attr">"email"</span><span class="op">:</span>        <span class="str">"rakibhasan4101@gmail.com"</span><span class="op">,</span>
+  <span class="attr">"github"</span><span class="op">:</span>       <span class="str">"github.com/afnanrakib"</span><span class="op">,</span>
+  <span class="attr">"linkedin"</span><span class="op">:</span>     <span class="str">"in/afnanhasanrakib"</span><span class="op">,</span>
+  <span class="attr">"openToWork"</span><span class="op">:</span>   <span class="kw">true</span><span class="op">,</span>
+  <span class="attr">"responseTime"</span><span class="op">:</span> <span class="str">"within 24 hours"</span>
+<span class="op">}</span></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ .VSCODE/SETTINGS.JSON ══ -->
+        <div class="pane" id="pane-settings">
+          <div class="code-view json-view">
+            <div class="cl"><span class="ln">1</span><span class="cmt">// .vscode/settings.json: Editor Preferences</span></div>
+            <div class="cl"><span class="ln">2</span><span class="op">{</span></div>
+            <div class="cl"><span class="ln">3</span>  <span class="attr">"editor.fontFamily"</span><span class="op">:</span> <span class="str">"JetBrains Mono, Cascadia Code"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">4</span>  <span class="attr">"editor.fontSize"</span><span class="op">:</span> <span class="num">14</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">5</span>  <span class="attr">"editor.tabSize"</span><span class="op">:</span> <span class="num">2</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">6</span>  <span class="attr">"editor.formatOnSave"</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">7</span>  <span class="attr">"editor.minimap.enabled"</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">8</span>  <span class="attr">"editor.wordWrap"</span><span class="op">:</span> <span class="str">"off"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">9</span>  <span class="attr">"editor.cursorStyle"</span><span class="op">:</span> <span class="str">"line"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">10</span>  <span class="attr">"editor.cursorBlinking"</span><span class="op">:</span> <span class="str">"smooth"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">11</span>  <span class="attr">"workbench.colorTheme"</span><span class="op">:</span> <span class="str" id="settings-theme-val">"Dark Default (Indigo)"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">12</span>  <span class="attr">"terminal.integrated.fontFamily"</span><span class="op">:</span> <span class="str">"JetBrains Mono"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">13</span>  <span class="attr">"files.autoSave"</span><span class="op">:</span> <span class="str">"afterDelay"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">14</span>  <span class="attr">"leetcode.userid"</span><span class="op">:</span> <span class="str">"afnanrakib"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">15</span>  <span class="attr">"codeforces.handle"</span><span class="op">:</span> <span class="str">"afnanrakib"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">16</span>  <span class="attr">"portfolio.owner"</span><span class="op">:</span> <span class="str">"Md. Rakib Hasan"</span><span class="op">,</span></div>
+            <div class="cl"><span class="ln">17</span>  <span class="attr">"portfolio.openToWork"</span><span class="op">:</span> <span class="kw">true</span></div>
+            <div class="cl"><span class="ln">18</span><span class="op">}</span></div>
+          </div>
+          <div class="pane-body">
+            <div class="settings-info">
+              <h2 class="set-title"><i class="fas fa-cog"></i> Editor Settings</h2>
+              <p class="set-sub">These settings configure the portfolio editor experience. Switch themes using the <strong>Color Theme</strong> panel or <strong>Ctrl+Shift+P</strong>.</p>
+              <div class="set-grid">
+                <div class="set-item"><span class="set-key">Font</span><span class="set-val">JetBrains Mono</span></div>
+                <div class="set-item"><span class="set-key">Tab Size</span><span class="set-val">2 spaces</span></div>
+                <div class="set-item"><span class="set-key">Format on Save</span><span class="set-val set-on">✓ Enabled</span></div>
+                <div class="set-item"><span class="set-key">Minimap</span><span class="set-val set-on">✓ Enabled</span></div>
+                <div class="set-item"><span class="set-key">Auto Save</span><span class="set-val set-on">✓ After Delay</span></div>
+                <div class="set-item"><span class="set-key">Open to Work</span><span class="set-val set-on">✓ True</span></div>
+                <div class="set-item"><span class="set-key">Current Theme</span><span class="set-val" id="settings-theme-display">Dark Default</span></div>
+                <div class="set-item"><span class="set-key">Codeforces</span><span class="set-val">afnanrakib</span></div>
+              </div>
+              <div class="set-themes-quick">
+                <p class="set-key">Quick Switch Theme:</p>
+                <div class="set-theme-btns" id="set-theme-btns"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /vsc-content -->
+
+      <!-- Minimap -->
+      <div class="minimap" id="minimap" title="Minimap"></div>
+
+      <!-- Terminal -->
+      <div class="vsc-terminal" id="terminal-panel">
+        <div class="term-tabs">
+          <button class="tt active">TERMINAL</button>
+          <button class="tt">PROBLEMS</button>
+          <button class="tt">OUTPUT</button>
+          <button class="tt-close" id="term-close" title="Close terminal">✕</button>
+        </div>
+        <div class="term-output" id="term-output">
+          <p><span class="tp">guest@rakib:~$</span> init --mode=vscode</p>
+          <p class="t-ok">[ok] Portfolio loaded. Type <strong>help</strong> to explore or <strong>Ctrl+Shift+P</strong> for commands.</p>
+        </div>
+        <form class="term-form" id="term-form">
+          <span class="tp">guest@rakib:~$</span>
+          <input id="term-input" type="text" autocomplete="off" placeholder="type a command…">
+        </form>
+      </div>
+
+    </div><!-- /editor-wrap -->
+
+    <!-- ─ AI COPILOT PANEL ─ -->
+    <div class="vsc-copilot" id="copilot-panel">
+      <div class="cop-resize" id="cop-resize"></div>
+      <div class="cop-header">
+        <div class="cop-title"><i class="fas fa-robot"></i> Rakib's AI Copilot</div>
+        <button class="cop-close" id="cop-close" title="Close">✕</button>
+      </div>
+      <div class="cop-messages" id="cop-messages">
+        <div class="cop-msg cop-msg-ai">
+          <div class="cop-avatar"><i class="fas fa-robot"></i></div>
+          <div class="cop-bubble">Hi! I'm Rakib's AI Copilot. Ask me anything about his projects, skills, experience, or how to hire him. 👋</div>
+        </div>
+      </div>
+      <div class="cop-chips" id="cop-chips">
+        <button class="cop-chip" data-q="Tell me about Rakib">About Rakib</button>
+        <button class="cop-chip" data-q="What projects has he built?">Projects</button>
+        <button class="cop-chip" data-q="What's his tech stack?">Tech Stack</button>
+        <button class="cop-chip" data-q="How can I hire Rakib?">Hire</button>
+        <button class="cop-chip" data-q="What are his achievements?">Achievements</button>
+        <button class="cop-chip" data-q="How to contact him?">Contact</button>
+      </div>
+      <form class="cop-form" id="cop-form">
+        <input type="text" id="cop-input" placeholder="Ask about Rakib…" autocomplete="off">
+        <button type="submit" class="cop-send"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+
+  </div><!-- /vsc-body -->
+
+  <!-- ═══ STATUS BAR ═══ -->
+  <div class="vsc-statusbar">
+    <div class="sb-left">
+      <span class="sbi sb-branch"><i class="fas fa-code-branch"></i> main</span>
+      <span class="sbi sb-errs"><i class="fas fa-times-circle"></i> 0 &nbsp;<i class="fas fa-exclamation-triangle"></i> 0</span>
+      <span class="sbi sb-theme-name" id="sb-theme-name">Dark Default</span>
+    </div>
+    <div class="sb-right">
+      <span class="sbi" id="sb-zoom" title="Zoom (Ctrl++ / Ctrl+-)">100%</span>
+      <span class="sbi" id="sb-filetype">HTML</span>
+      <span class="sbi">UTF-8</span>
+      <span class="sbi">CSE · AUST</span>
+      <span class="sbi sb-avail"><span class="sb-dot"></span>Open to Work</span>
+      <span class="sbi">BD · <span id="sb-time">00:00</span></span>
+    </div>
+  </div>
+
+  <!-- ═══ COMMAND PALETTE ═══ -->
+  <div class="cmd-overlay" id="cmd-overlay">
+    <div class="cmd-palette">
+      <div class="cmd-input-wrap">
+        <i class="fas fa-chevron-right cmd-prefix"></i>
+        <input type="text" id="cmd-input" placeholder="Type a command, file name, or theme…" autocomplete="off">
+        <span class="cmd-esc">Esc</span>
+      </div>
+      <div class="cmd-results" id="cmd-results"></div>
+      <div class="cmd-footer">
+        <span><kbd>↑↓</kbd> navigate</span>
+        <span><kbd>Enter</kbd> select</span>
+        <span><kbd>Esc</kbd> close</span>
       </div>
     </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <h3>Md. Rakib Hasan</h3>
-          <p>Computer Science Undergraduate</p>
-          <p>Badda, Dhaka, 1212, Bangladesh</p>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; <span class="copyright-year">2026</span> Md. Rakib Hasan. All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  
-  <!-- JavaScript -->
-  <script src="resources/js/script.js"></script>
-  <!-- Motion Canvas will be loaded dynamically based on theme -->
-  <!-- Scroll to Top Button will be added by JavaScript -->
+  </div>
+
+  <!-- ═══ NOTIFICATIONS ═══ -->
+  <div class="notif-stack" id="notif-stack"></div>
+
+  <!-- ═══ COPY TOAST ═══ -->
+  <div class="copy-toast" id="copy-toast">Email copied!</div>
+
+</div><!-- /vsc-app -->
+<script src="resources/js/main.js"></script>
 </body>
 </html>
