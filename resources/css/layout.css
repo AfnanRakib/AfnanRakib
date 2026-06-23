@@ -666,15 +666,19 @@
     flex-direction: column;
     position: absolute !important;
     top: 0; left: 0; right: 0; bottom: 0;
-    width: auto !important;
-    height: auto !important;
+    width: 100% !important;
+    height: 100% !important;
     z-index: 1000;
+    overflow: hidden !important;
     transform: translateX(110%);
     transition: transform 0.3s cubic-bezier(0.2,0.8,0.2,1);
     box-shadow: none;
     border-left: none;
   }
   .vsc-body.copilot-open .vsc-copilot { transform: translateX(0) !important; }
+  .vsc-copilot .cop-resize { display: none !important; }
+  .vsc-copilot .cop-messages { flex: 1 !important; min-height: 0 !important; overflow-y: auto !important; }
+  .vsc-copilot .cop-header { flex-shrink: 0 !important; }
 
   /* Content layout */
   .hero-split { grid-template-columns: 1fr; }

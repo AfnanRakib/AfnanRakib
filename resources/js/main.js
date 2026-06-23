@@ -430,7 +430,7 @@ function setZoom(pct) {
   app.style.transformOrigin = 'top left';
   app.style.transform = `scale(${scale})`;
   app.style.width  = `${(1 / scale) * 100}vw`;
-  app.style.height = `${(1 / scale) * 100}vh`;
+  app.style.height = `${(1 / scale) * 100}dvh`;
   const lbl = document.getElementById('zoom-label');
   const sb  = document.getElementById('sb-zoom');
   if (lbl) lbl.textContent = zoomLevel + '%';

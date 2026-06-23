@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "bubt-iucpc.txt": { type: "file", content: "BUBT IUCPC 2025 — Rank #35, Team AUST_DEADCODER." },
           },
         },
-        "about.txt":   { type: "file", content: "Final-year CSE undergraduate at AUST, CGPA 3.75. VP AUST CSE Society, President AUST Programming Club." },
+        "about.txt":   { type: "file", content: "Final-year CSE undergraduate at AUST, CGPA 3.75. President AUST Programming Club, VP AUST CSE Society, ACM ICPC Coordinator." },
         "contact.txt": { type: "file", content: "Email: rakibhasan4101@gmail.com | LinkedIn: linkedin.com/in/afnanhasanrakib | GitHub: github.com/afnanrakib" },
       },
     },
@@ -448,7 +448,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       stats: [
         "CGPA: 3.75 | University: AUST",
-        "Leadership: VP at AUST CSE Society, President at AUST Programming Club.",
+        "Leadership: President AUST Programming Club, VP AUST CSE Society, ACM ICPC Coordinator.",
         "Competitive: ICPC Dhaka 2025 #122, Learnathon 3.0 Champion.",
       ],
       achievements: [
