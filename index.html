@@ -7,10 +7,11 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23818cf8'/><text x='50%25' y='54%25' font-family='Arial Black,Arial' font-size='13' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='middle'>RH</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link rel="stylesheet" href="resources/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
 
@@ -207,9 +208,13 @@
       </button>
     </div>
 
+    <!-- Mobile sidebar backdrop -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
     <!-- ─ SIDEBAR ─ -->
     <div class="vsc-sidebar" id="sidebar">
       <div id="sidebar-resize" class="sidebar-resize-handle"></div>
+      <button class="sidebar-mobile-close" id="sidebar-mobile-close" title="Close"><i class="fas fa-times"></i></button>
 
       <!-- Explorer Panel -->
       <div class="panel active" id="panel-explorer">
@@ -252,14 +257,12 @@
               <span class="dim">resources/</span>
             </div>
             <div class="tf-children tf-hidden" id="resources-folder">
-              <a class="tree-file tree-file-dl" href="resources/images/Md. Rakib Hasan.png" download title="Download Photo">
+              <div class="tree-file" data-file="photo" title="View Photo">
                 <i class="fas fa-image fi-type-icon fi-png"></i>Md. Rakib Hasan.png
-                <i class="fas fa-download tree-dl-icon"></i>
-              </a>
-              <a class="tree-file tree-file-dl" href="resources/Md. Rakib Hasan.pdf" download title="Download CV">
+              </div>
+              <div class="tree-file" data-file="cv" title="View CV / Resume">
                 <i class="fas fa-file-pdf fi-type-icon fi-pdf"></i>Md. Rakib Hasan.pdf
-                <i class="fas fa-download tree-dl-icon"></i>
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -300,17 +303,17 @@
           <div class="ext-item"><i class="devicon-dotnetcore-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">ASP.NET Core MVC</div><div class="ext-meta">Advanced · Web Backend</div></div></div>
           <div class="ext-item"><i class="devicon-bootstrap-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Bootstrap</div><div class="ext-meta">Advanced · UI Framework</div></div></div>
           <div class="ext-item"><i class="devicon-php-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">PHP</div><div class="ext-meta">Intermediate · Server-Side</div></div></div>
-          <div class="ext-group-label">DATABASES (4)</div>
+          <div class="ext-group-label">DATABASES (3)</div>
           <div class="ext-item"><i class="devicon-mysql-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">MySQL</div><div class="ext-meta">Advanced · Relational DBs</div></div></div>
-          <div class="ext-item"><i class="devicon-postgresql-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Supabase / PostgreSQL</div><div class="ext-meta">Advanced · BaaS &amp; Realtime</div></div></div>
+          <div class="ext-item"><i class="fas fa-database ext-dv-icon" style="color:#3ecf8e"></i><div class="ext-info"><div class="ext-name">Supabase</div><div class="ext-meta">Advanced · BaaS &amp; Realtime</div></div></div>
           <div class="ext-item"><i class="devicon-firebase-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Firebase</div><div class="ext-meta">Intermediate · NoSQL &amp; Auth</div></div></div>
           <div class="ext-item"><i class="devicon-microsoftsqlserver-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">SQL Server</div><div class="ext-meta">Advanced · Enterprise DB</div></div></div>
-          <div class="ext-group-label">TOOLS &amp; DEVOPS (5)</div>
+          <div class="ext-group-label">TOOLS &amp; DEVOPS (6)</div>
           <div class="ext-item"><i class="devicon-git-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Git</div><div class="ext-meta">Expert · Version Control</div></div></div>
-          <div class="ext-item"><i class="devicon-github-original ext-dv-icon" style="color:var(--tx)"></i><div class="ext-info"><div class="ext-name">GitHub Actions</div><div class="ext-meta">Intermediate · CI/CD</div></div></div>
+          <div class="ext-item"><i class="fas fa-cogs ext-dv-icon" style="color:#2088ff"></i><div class="ext-info"><div class="ext-name">GitHub Actions</div><div class="ext-meta">Intermediate · CI/CD</div></div></div>
+          <div class="ext-item"><i class="fas fa-shield-alt ext-dv-icon" style="color:#f3702a"></i><div class="ext-info"><div class="ext-name">SonarCloud</div><div class="ext-meta">Intermediate · Code Quality</div></div></div>
           <div class="ext-item"><i class="devicon-docker-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Docker</div><div class="ext-meta">Intermediate · Containers</div></div></div>
           <div class="ext-item"><i class="devicon-linux-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">Linux</div><div class="ext-meta">Intermediate · CLI &amp; Admin</div></div></div>
-          <div class="ext-item"><i class="devicon-opencv-plain colored ext-dv-icon"></i><div class="ext-info"><div class="ext-name">OpenCV</div><div class="ext-meta">Beginner · Computer Vision</div></div></div>
         </div>
       </div>
 
@@ -512,13 +515,16 @@
             <p>I have led and contributed to impactful platforms including <strong>AUST CODE REALM</strong>, <strong>SOHOJOGI</strong>, and <strong>HOMEHUTBD</strong>. I currently serve as President of the AUST Programming and Informatics Club and Vice President of the AUST CSE Society.</p>
             <h2>Currently Building</h2>
             <p><strong>SOHOJOGI</strong>, a cross-platform household services platform developed with Flutter and Supabase, featuring location-based matching and real-time updates.</p>
+            <h2>Education</h2>
+            <table class="md-table">
+              <tr><td><strong>BSc in Computer Software Engineering</strong></td><td>Ahsanullah University of Science and Technology</td><td>Jan 2021 – Present</td><td>CGPA 3.75+ / 4.00</td></tr>
+              <tr><td><strong>HSC – Science</strong></td><td>Bakalia Government College, Chittagong</td><td>2018 – 2020</td><td>GPA 5.0 / 5.0</td></tr>
+              <tr><td><strong>SSC – Science</strong></td><td>Chandgaon NMC Modal High School, Chittagong</td><td>2013 – 2018</td><td>GPA 5.0 / 5.0</td></tr>
+            </table>
             <h2>Quick Facts</h2>
             <table class="md-table">
-              <tr><td>University</td><td>Ahsanullah University of Science and Technology</td></tr>
-              <tr><td>Degree</td><td>BSc in Computer Software Engineering</td></tr>
-              <tr><td>CGPA</td><td>3.75 / 4.00</td></tr>
               <tr><td>Email</td><td><a href="mailto:rakibhasan4101@gmail.com">rakibhasan4101@gmail.com</a></td></tr>
-              <tr><td>Location</td><td>Dhaka, Bangladesh</td></tr>
+              <tr><td>Location</td><td>Moghbazar, Dhaka, Bangladesh</td></tr>
               <tr><td>Focus</td><td>Full-stack · Mobile · Competitive Programming</td></tr>
               <tr><td>Status</td><td><span style="color:var(--green)">● Open to new opportunities</span></td></tr>
             </table>
@@ -644,26 +650,27 @@
                   <div class="eorg-info">
                     <h3>AUST Programming and Informatics Club</h3>
                     <div class="eorg-meta">
-                      <span class="eorg-period">Jan 2022 – Present</span>
+                      <span class="eorg-period">May 2024 – Present</span>
                       <span class="eorg-role-count">3 roles</span>
                     </div>
                   </div>
                   <i class="fas fa-chevron-down eorg-chev"></i>
                 </div>
+                <button class="exp-toggle-btn" onclick="toggleExpOrg(0)"><i class="fas fa-chevron-down"></i><span>Show Details</span></button>
                 <div class="eorg-roles">
                   <div class="eorg-role-item">
                     <div class="eorg-role-title">President</div>
-                    <div class="eorg-role-period">Jan 2024 – Present · 1+ yr</div>
-                    <p class="eorg-role-desc">Leading programming culture, organizing national-level workshops and contests, mentoring 200+ members across all skill levels.</p>
+                    <div class="eorg-role-period">Dec 2025 – Jun 2026</div>
+                    <p class="eorg-role-desc">So the final chapter begins with new responsibility. Though time isn't really on our side this semester. But even if the clock is ticking, the goal stays the same. Serving as President for the Spring 2025 Executive Panel is a huge honor, and I'm ready to give it everything I've got.</p>
                   </div>
                   <div class="eorg-role-item">
                     <div class="eorg-role-title">Joint Secretary</div>
-                    <div class="eorg-role-period">Jan 2023 – Dec 2023 · 1 yr</div>
+                    <div class="eorg-role-period">Jun 2025 – Dec 2025</div>
                     <p class="eorg-role-desc">Coordinated inter-organization events, managed club logistics and member onboarding processes.</p>
                   </div>
                   <div class="eorg-role-item">
                     <div class="eorg-role-title">Head of IT</div>
-                    <div class="eorg-role-period">Jan 2022 – Dec 2022 · 1 yr</div>
+                    <div class="eorg-role-period">May 2024 – Jun 2025</div>
                     <p class="eorg-role-desc">Maintained the club's digital infrastructure including the website and online judge integration.</p>
                   </div>
                 </div>
@@ -676,21 +683,22 @@
                   <div class="eorg-info">
                     <h3>AUST CSE Society</h3>
                     <div class="eorg-meta">
-                      <span class="eorg-period">Jan 2023 – Present</span>
+                      <span class="eorg-period">Jun 2025 – Jun 2026</span>
                       <span class="eorg-role-count">2 roles</span>
                     </div>
                   </div>
                   <i class="fas fa-chevron-down eorg-chev"></i>
                 </div>
+                <button class="exp-toggle-btn" onclick="toggleExpOrg(1)"><i class="fas fa-chevron-down"></i><span>Show Details</span></button>
                 <div class="eorg-roles">
                   <div class="eorg-role-item">
                     <div class="eorg-role-title">Vice President</div>
-                    <div class="eorg-role-period">Jan 2024 – Present · 1+ yr</div>
-                    <p class="eorg-role-desc">Driving major departmental events, sponsorship collaborations, and student-faculty coordination across the department.</p>
+                    <div class="eorg-role-period">Dec 2025 – Jun 2026</div>
+                    <p class="eorg-role-desc">My journey with the AUST CSE Society officially comes to an end today. This place has pretty much been my whole life for the last few semesters. Every single thing I did, every decision I made, was just to protect, build and leave our department a little better than I found it. I honestly put my entire heart into this responsibility and I just hope the impact and the changes we brought together stay around for a long time. None of this would've been possible without the amazing support from my team, my batchmates and everyone who stood by me. It has been the greatest honor of my varsity life. Thank you for everything.</p>
                   </div>
                   <div class="eorg-role-item">
                     <div class="eorg-role-title">General Secretary</div>
-                    <div class="eorg-role-period">Jan 2023 – Dec 2023 · 1 yr</div>
+                    <div class="eorg-role-period">Jun 2025 – Dec 2025</div>
                     <p class="eorg-role-desc">Managed official correspondence, meeting minutes, and event scheduling for the CSE Society.</p>
                   </div>
                 </div>
@@ -709,6 +717,7 @@
                   </div>
                   <i class="fas fa-chevron-down eorg-chev"></i>
                 </div>
+                <button class="exp-toggle-btn" onclick="toggleExpOrg(2)"><i class="fas fa-chevron-down"></i><span>Show Details</span></button>
                 <div class="eorg-roles">
                   <div class="eorg-role-item">
                     <div class="eorg-role-title">ACM ICPC Coordinator</div>
@@ -736,6 +745,7 @@
                   </div>
                   <i class="fas fa-chevron-down eorg-chev"></i>
                 </div>
+                <button class="exp-toggle-btn" onclick="toggleExpOrg(3)"><i class="fas fa-chevron-down"></i><span>Show Details</span></button>
                 <div class="eorg-roles">
                   <div class="eorg-role-item">
                     <div class="eorg-role-title">Team Leader &amp; Champion</div>
@@ -756,136 +766,160 @@
             <div class="cl"><span class="ln">2</span><span class="kw">## </span><span class="str">Programming Contests</span> <span class="op">|</span> <span class="str">Software Exhibition</span> <span class="op">|</span> <span class="str">Scholarships</span></div>
             <div class="cl cl-sep"><span class="ln">3</span><span class="cmt">&lt;!-- ─────────────────────────── rendered ─────────────────────────── --&gt;</span></div>
           </div>
-          <div class="pane-body">
+          <div class="pane-body ach-pane-body">
 
-            <!-- Notable Achievement -->
-            <div class="ach-segment">
-              <div class="ach-seg-title"><i class="fas fa-star"></i> Notable Achievement</div>
-              <div class="ach-seg-items">
-                <div class="ach-item ach-featured">
-                  <div class="ach-org-badge ach-badge-gold"><i class="fas fa-trophy"></i></div>
-                  <div class="ach-body">
-                    <h3>Learnathon 3.0 Hackathon <span class="ach-result ach-champ">Champion</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">Geeky Solutions</span><span class="ach-dot">·</span><span class="ach-yr-inline">Dec 2024 – May 2025</span></div>
-                    <p>Six-month intensive hackathon. Led <em>Team Synergy</em> to build <strong>SOHOJOGI</strong>, a production-ready cross-platform household services platform.</p>
-                    <div class="ach-tags"><span>Team Lead</span><span>Flutter</span><span>Full-Stack</span></div>
-                  </div>
+            <!-- ── FEATURED: LEARNATHON ── -->
+            <div class="ach-featured-card">
+              <div class="ach-feat-left">
+                <div class="ach-feat-badge"><i class="fas fa-trophy"></i></div>
+                <div>
+                  <div class="ach-feat-org">Geeky Solutions · Dec 2024 – May 2025</div>
+                  <h2 class="ach-feat-title">Learnathon 3.0 <span class="ach-champ">Champion</span></h2>
+                  <p class="ach-feat-desc">Won Champion title in a 6-month intensive mentorship program by Geeky Solutions. Competed in comprehensive training focused on cross-platform mobile development, culminating in building <strong>SOHOJOGI</strong>.</p>
+                  <div class="ach-feat-meta"><span class="ach-feat-date">May 2025</span><span class="ach-feat-dot">/</span><span>Cross-Platform Stack</span></div>
+                  <div class="ach-tags"><span>Team Lead</span><span>Flutter</span><span>Full-Stack</span><span>6 Months</span></div>
                 </div>
+              </div>
+              <div class="ach-feat-right">
+                <img src="resources/images/learnathon 3 champion.jpg" alt="Learnathon 3.0 Champion" class="ach-feat-img">
               </div>
             </div>
 
-            <!-- Programming Contests -->
-            <div class="ach-segment">
-              <div class="ach-seg-title"><i class="fas fa-code"></i> Programming Contests</div>
-              <div class="ach-seg-items">
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-rank">7%</div>
-                  <div class="ach-body">
-                    <h3>ICPC Dhaka Regional Site 2025 <span class="ach-result ach-rank">Top 7%</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">AUST_DEADCODER</span><span class="ach-dot">·</span><span class="ach-yr-inline">December 2025</span></div>
-                    <p>Onsite ICPC Asia Dhaka Regional, <strong>Top 7% out of 1,717 teams</strong>.</p>
-                    <div class="ach-tags"><span>ICPC</span><span>Onsite</span><span>International</span></div>
-                  </div>
+            <!-- ── PROGRAMMING CONTESTS ── -->
+            <div class="ach-section">
+              <div class="ach-section-hd"><i class="fas fa-code"></i> Programming Contests</div>
+              <div class="ach-card-grid">
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-rank">TOP 7%</span>
+                  <div class="ach-card-icon ach-icon-blue"><i class="fas fa-trophy"></i></div>
+                  <h4 class="ach-card-title">ICPC Dhaka Regional Site 2025</h4>
+                  <p class="ach-card-desc">Competed with team "AUST_DEADCODER" — ranked in the top 7% out of 1,717 teams</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> December 2025</div>
                 </div>
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-rank">#35</div>
-                  <div class="ach-body">
-                    <h3>BUBT IUCPC National Programming Contest <span class="ach-result ach-rank">Rank #35</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">AUST_DEADCODER</span><span class="ach-dot">·</span><span class="ach-yr-inline">2025</span></div>
-                    <p>National inter-university contest at Bangladesh University of Business &amp; Technology.</p>
-                    <div class="ach-tags"><span>National</span><span>Team</span></div>
-                  </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-rank">#35</span>
+                  <div class="ach-card-icon ach-icon-blue"><i class="fas fa-code"></i></div>
+                  <h4 class="ach-card-title">BUBT Inter University Collaborative PC 2025</h4>
+                  <p class="ach-card-desc">Ranked 35th with team "AUST_DEADCODER" in inter-university competition</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> November 2025</div>
                 </div>
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-rank">#97</div>
-                  <div class="ach-body">
-                    <h3>AUST Inter-University Programming Contest <span class="ach-result ach-rank">Rank #97</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">0xDEADCODER</span><span class="ach-dot">·</span><span class="ach-yr-inline">2025</span></div>
-                    <p>Competed among top university teams across Bangladesh.</p>
-                    <div class="ach-tags"><span>Inter-University</span><span>Team</span></div>
-                  </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-rank">#97</span>
+                  <div class="ach-card-icon ach-icon-blue"><i class="fas fa-trophy"></i></div>
+                  <h4 class="ach-card-title">AUST Inter-University Programming Contest</h4>
+                  <p class="ach-card-desc">Ranked 97th with team "0xDEADCODER" among top programmers from universities nationwide</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> February 2025</div>
                 </div>
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-gold"><i class="fas fa-trophy"></i></div>
-                  <div class="ach-body">
-                    <h3>Intra AUST Programming Contest <span class="ach-result ach-champ">Champion</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">CSE Carnival 4.0 · Solo</span><span class="ach-dot">·</span><span class="ach-yr-inline">July 2024</span></div>
-                    <p>Outperformed all participants in solo algorithmic problem-solving under timed constraints.</p>
-                    <div class="ach-tags"><span>Solo</span><span>Algorithms</span></div>
-                  </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-champ">CHAMPION</span>
+                  <div class="ach-card-icon ach-icon-gold"><i class="fas fa-medal"></i></div>
+                  <h4 class="ach-card-title">Intra AUST Programming Contest (CSE Carnival 4.0)</h4>
+                  <p class="ach-card-desc">Achieved Champion position in the university's premier coding competition</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> July 2024</div>
                 </div>
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-silver"><i class="fas fa-medal"></i></div>
-                  <div class="ach-body">
-                    <h3>UAP Inter University Collaborative PC 1.0 (Junior) <span class="ach-result ach-runner">1st Runners-Up</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">University of Asia Pacific</span><span class="ach-dot">·</span><span class="ach-yr-inline">January 2024</span></div>
-                    <p>Junior category inter-university collaborative programming contest.</p>
-                    <div class="ach-tags"><span>Junior</span><span>Team</span></div>
-                  </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-runner">1ST RUNNER-UP</span>
+                  <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+                  <h4 class="ach-card-title">UAP Inter University Programming Contest 1.0 (Junior)</h4>
+                  <p class="ach-card-desc">Secured second place in the junior division of the inter-university competition</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> January 2024</div>
                 </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-runner">1ST RUNNER-UP</span>
+                  <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+                  <h4 class="ach-card-title">Intra AUST Programming Contest (CSE Carnival 3.0)</h4>
+                  <p class="ach-card-desc">Achieved 1st Runners-Up position in the university competition</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> January 2024</div>
+                </div>
+
               </div>
             </div>
 
-            <!-- Software Exhibition & Code Refactoring -->
-            <div class="ach-segment">
-              <div class="ach-seg-title"><i class="fas fa-laptop-code"></i> Software Exhibition &amp; Code Refactoring</div>
-              <div class="ach-seg-items">
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-silver"><i class="fas fa-medal"></i></div>
-                  <div class="ach-body">
-                    <h3>Research Odyssey: Inter-University Research Exhibitions <span class="ach-result ach-runner">1st Runners-Up</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">Software Segment</span><span class="ach-dot">·</span><span class="ach-yr-inline">March 2025</span></div>
-                    <p>Recognised for innovation in the software exhibition segment at the national research showcase.</p>
-                    <div class="ach-tags"><span>Research</span><span>Software</span></div>
-                  </div>
+            <!-- ── SOFTWARE EXHIBITIONS ── -->
+            <div class="ach-section">
+              <div class="ach-section-hd"><i class="fas fa-laptop-code"></i> Software Exhibitions</div>
+              <div class="ach-card-grid">
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-champ">CHAMPION</span>
+                  <div class="ach-card-icon ach-icon-gold"><i class="fas fa-trophy"></i></div>
+                  <h4 class="ach-card-title">Software Exhibition (AUST CSE Carnival 5.0)</h4>
+                  <p class="ach-card-desc">Won the software exhibition segment at AUST's annual CSE Carnival event</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> February 2025</div>
                 </div>
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-gold"><i class="fas fa-trophy"></i></div>
-                  <div class="ach-body">
-                    <h3>Software Exhibition (AUST CSE Carnival 5.0) <span class="ach-result ach-champ">Champion</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">AUST</span><span class="ach-dot">·</span><span class="ach-yr-inline">February 2025</span></div>
-                    <p>Won the software exhibition segment at AUST's annual CSE Carnival event.</p>
-                    <div class="ach-tags"><span>Software</span><span>Exhibition</span></div>
-                  </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-runner">1ST RUNNER-UP</span>
+                  <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+                  <h4 class="ach-card-title">Research Odyssey: Inter-University Research Exhibition</h4>
+                  <p class="ach-card-desc">Recognised for innovation in the software exhibition segment at the national research showcase</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> March 2025</div>
                 </div>
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-gold"><i class="fas fa-trophy"></i></div>
-                  <div class="ach-body">
-                    <h3>Code Refactoring (AUST CSE Carnival 4.0) <span class="ach-result ach-champ">Champion</span></h3>
-                    <div class="ach-meta"><span class="ach-org-name">AUST</span><span class="ach-dot">·</span><span class="ach-yr-inline">July 2024</span></div>
-                    <p>Topped the code refactoring challenge, demonstrating exceptional code quality and clean architecture.</p>
-                    <div class="ach-tags"><span>Code Quality</span><span>Architecture</span></div>
-                  </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-runner">2ND RUNNER-UP</span>
+                  <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+                  <h4 class="ach-card-title">Software Exhibition (AUST CSE Carnival 3.0)</h4>
+                  <p class="ach-card-desc">Achieved 2nd Runners-Up position in the software exhibition segment</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> January 2024</div>
                 </div>
+
               </div>
             </div>
 
-            <!-- Scholarships -->
-            <div class="ach-segment">
-              <div class="ach-seg-title"><i class="fas fa-graduation-cap"></i> Scholarships &amp; Recognitions</div>
-              <div class="ach-seg-items">
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-green"><i class="fas fa-star"></i></div>
-                  <div class="ach-body">
-                    <h3>Khondaker Ahmed Muktadir &amp; Mosammat Khodeza Begum Scholarship</h3>
-                    <div class="ach-meta"><span class="ach-org-name">AUST</span><span class="ach-dot">·</span><span class="ach-yr-inline">April 2026</span></div>
-                    <p>Merit-based scholarship awarded in recognition of exceptional academic and extracurricular achievement.</p>
-                    <div class="ach-tags"><span>Merit</span><span>Scholarship</span></div>
-                  </div>
+            <!-- ── CODE REFACTORING ── -->
+            <div class="ach-section">
+              <div class="ach-section-hd"><i class="fas fa-file-code"></i> Code Refactoring</div>
+              <div class="ach-card-grid">
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-runner">2ND RUNNER-UP</span>
+                  <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+                  <h4 class="ach-card-title">Code Refactoring (AUST CSE Carnival 5.0)</h4>
+                  <p class="ach-card-desc">Achieved 2nd Runners-Up in the code refactoring segment</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> February 2025</div>
                 </div>
-                <div class="ach-item">
-                  <div class="ach-org-badge ach-badge-green"><i class="fas fa-graduation-cap"></i></div>
-                  <div class="ach-body">
-                    <h3>AUST Academic Merit Scholarship</h3>
-                    <div class="ach-meta"><span class="ach-org-name">AUST, Top 5% of department</span><span class="ach-dot">·</span><span class="ach-yr-inline">December 2023</span></div>
-                    <p>Awarded for ranking among the top 5% of CSE students. CGPA: <strong>3.75 / 4.00</strong>.</p>
-                    <div class="ach-tags"><span>Merit Award</span><span>Top 5%</span><span>CGPA 3.75</span></div>
-                  </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-champ">CHAMPION</span>
+                  <div class="ach-card-icon ach-icon-gold"><i class="fas fa-trophy"></i></div>
+                  <h4 class="ach-card-title">Code Refactoring (AUST CSE Carnival 4.0)</h4>
+                  <p class="ach-card-desc">Topped the code refactoring challenge, demonstrating exceptional code quality and clean architecture</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> July 2024</div>
                 </div>
+
               </div>
             </div>
 
-            <p class="ach-footer-note">Additionally competed in multiple IUPCs, earning awards and recognitions across diverse competitive events.</p>
+            <!-- ── ACADEMIC EXCELLENCE ── -->
+            <div class="ach-section">
+              <div class="ach-section-hd"><i class="fas fa-graduation-cap"></i> Academic Excellence</div>
+              <div class="ach-card-grid">
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-green-pill">SCHOLARSHIP</span>
+                  <div class="ach-card-icon ach-icon-green"><i class="fas fa-star"></i></div>
+                  <h4 class="ach-card-title">Khondaker Ahmed Muktadir Scholarship</h4>
+                  <p class="ach-card-desc">Merit-based scholarship awarded for exceptional academic and extracurricular achievement</p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> April 2026</div>
+                </div>
+
+                <div class="ach-card">
+                  <span class="ach-card-badge ach-badge-green-pill">TOP 5%</span>
+                  <div class="ach-card-icon ach-icon-green"><i class="fas fa-graduation-cap"></i></div>
+                  <h4 class="ach-card-title">AUST Academic Merit Scholarship</h4>
+                  <p class="ach-card-desc">Ranked among the top 5% of CSE students. CGPA: <strong>3.75 / 4.00</strong></p>
+                  <div class="ach-card-date"><i class="far fa-calendar-alt"></i> December 2023</div>
+                </div>
+
+              </div>
+            </div>
 
           </div>
         </div>
@@ -895,10 +929,11 @@
           <div class="code-view">
             <div class="cl"><span class="ln">1</span><span class="cmt">/* skills.css: Tech Stack */</span></div>
             <div class="cl"><span class="ln">2</span><span class="attr">:root</span> {</div>
-            <div class="cl"><span class="ln">3</span>  <span class="kw">--cpp</span>:     <span class="num">95%</span>;  <span class="kw">--python</span>:  <span class="num">80%</span>;  <span class="kw">--dart</span>: <span class="num">80%</span>;</div>
-            <div class="cl"><span class="ln">4</span>  <span class="kw">--flutter</span>: <span class="num">90%</span>;  <span class="kw">--html-css</span>: <span class="num">92%</span>; <span class="kw">--mysql</span>: <span class="num">82%</span>;</div>
-            <div class="cl"><span class="ln">5</span>  <span class="kw">--cv</span>:      <span class="num">40%</span>;  <span class="kw">--ml</span>:      <span class="num">38%</span>;</div>
-            <div class="cl"><span class="ln">6</span>}</div>
+            <div class="cl"><span class="ln">3</span>  <span class="kw">--cpp</span>:            <span class="num">95%</span>;  <span class="kw">--python</span>:  <span class="num">80%</span>;  <span class="kw">--dart</span>: <span class="num">80%</span>;</div>
+            <div class="cl"><span class="ln">4</span>  <span class="kw">--flutter</span>:         <span class="num">90%</span>;  <span class="kw">--html-css</span>: <span class="num">92%</span>; <span class="kw">--mysql</span>: <span class="num">82%</span>;</div>
+            <div class="cl"><span class="ln">5</span>  <span class="kw">--github-actions</span>:  <span class="num">75%</span>;  <span class="kw">--sonarcloud</span>: <span class="num">70%</span>; <span class="kw">--latex</span>: <span class="num">72%</span>;</div>
+            <div class="cl"><span class="ln">6</span>  <span class="kw">--cv</span>:              <span class="num">40%</span>;  <span class="kw">--ml</span>:      <span class="num">38%</span>;</div>
+            <div class="cl"><span class="ln">7</span>}</div>
             <div class="cl cl-sep"><span class="ln">7</span><span class="cmt">/* ─────────────────────────── rendered ─────────────────────────── */</span></div>
           </div>
           <div class="pane-body">
@@ -930,7 +965,7 @@
                 <div class="skill-section-title"><i class="fas fa-database"></i> Databases</div>
                 <div class="skill-logos-grid">
                   <div class="skill-logo-item" title="MySQL"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-                  <div class="skill-logo-item" title="Supabase / PostgreSQL"><i class="devicon-postgresql-plain colored"></i><span>Supabase</span></div>
+                  <div class="skill-logo-item" title="Supabase"><i class="fas fa-database" style="color:#3ecf8e"></i><span>Supabase</span></div>
                   <div class="skill-logo-item" title="SQL Server"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
                   <div class="skill-logo-item" title="Firebase"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
                 </div>
@@ -940,10 +975,10 @@
                 <div class="skill-logos-grid">
                   <div class="skill-logo-item" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></div>
                   <div class="skill-logo-item" title="GitHub"><i class="devicon-github-original" style="color:var(--tx)"></i><span>GitHub</span></div>
+                  <div class="skill-logo-item" title="GitHub Actions"><i class="fas fa-cogs" style="color:#2088ff"></i><span>GH Actions</span></div>
+                  <div class="skill-logo-item" title="SonarCloud"><i class="fas fa-cloud" style="color:#f3702a"></i><span>SonarCloud</span></div>
                   <div class="skill-logo-item" title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
                   <div class="skill-logo-item" title="Linux"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
-                  <div class="skill-logo-item" title="VS Code"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
-                  <div class="skill-logo-item" title="OpenCV"><i class="devicon-opencv-plain colored"></i><span>OpenCV</span></div>
                 </div>
               </div>
             </div>
@@ -991,7 +1026,10 @@
                     <i class="fab fa-linkedin-in"></i><div><strong>LinkedIn</strong><span>afnanhasanrakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
                   </a>
                   <a class="soc-card cf" href="https://codeforces.com/profile/afnanrakib" target="_blank" rel="noopener">
-                    <i class="fas fa-code"></i><div><strong>Codeforces</strong><span>afnanrakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
+                    <i class="fas fa-code"></i><div><strong>Codeforces</strong><span>afnanrakib · 1200+</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
+                  </a>
+                  <a class="soc-card cc" href="https://www.codechef.com/users/rakib476" target="_blank" rel="noopener">
+                    <i class="fas fa-utensils"></i><div><strong>CodeChef</strong><span>rakib476 · 1600+</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
                   </a>
                   <a class="soc-card lc" href="https://www.leetcode.com/afnanrakib" target="_blank" rel="noopener">
                     <i class="fas fa-laptop-code"></i><div><strong>LeetCode</strong><span>afnanrakib</span></div><i class="fas fa-arrow-right soc-card-arrow"></i>
@@ -1073,6 +1111,60 @@
                 <p class="set-key">Quick Switch Theme:</p>
                 <div class="set-theme-btns" id="set-theme-btns"></div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ PHOTO VIEWER ══ -->
+        <div class="pane" id="pane-photo">
+          <div class="res-viewer">
+            <div class="res-viewer-header">
+              <div class="res-viewer-meta">
+                <i class="fas fa-image" style="color:var(--accent)"></i>
+                <span class="res-viewer-name">Md. Rakib Hasan.png</span>
+                <span class="res-viewer-type">PNG Image · 1920×1080</span>
+              </div>
+              <a href="resources/images/Md. Rakib Hasan.png" download="Md. Rakib Hasan.png" class="res-dl-btn">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+            <div class="res-img-wrap">
+              <img src="resources/images/Md. Rakib Hasan.png" alt="Md. Rakib Hasan" class="res-img-preview">
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ CV / PDF VIEWER ══ -->
+        <div class="pane" id="pane-cv">
+          <div class="res-viewer">
+            <div class="res-viewer-header">
+              <div class="res-viewer-meta">
+                <i class="fas fa-file-pdf" style="color:#f87171"></i>
+                <span class="res-viewer-name">Md. Rakib Hasan.pdf</span>
+                <span class="res-viewer-type">PDF Document · Resume / CV</span>
+              </div>
+              <div class="res-header-actions">
+                <button class="pdf-nav-btn" id="pdf-prev" title="Previous page" disabled><i class="fas fa-chevron-up"></i></button>
+                <span class="pdf-page-info" id="pdf-page-info">— / —</span>
+                <button class="pdf-nav-btn" id="pdf-next" title="Next page" disabled><i class="fas fa-chevron-down"></i></button>
+                <select class="pdf-zoom-sel" id="pdf-zoom-sel">
+                  <option value="0.75">75%</option>
+                  <option value="1.0">100%</option>
+                  <option value="1.25" selected>125%</option>
+                  <option value="1.5">150%</option>
+                  <option value="fit">Fit Width</option>
+                </select>
+                <button id="pdf-open-btn" class="res-dl-btn res-dl-btn--ghost" title="Open in new tab">
+                  <i class="fas fa-external-link-alt"></i> Open
+                </button>
+                <a href="resources/Md. Rakib Hasan.pdf" download="Md. Rakib Hasan CV.pdf" class="res-dl-btn">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+            <div class="pdf-canvas-wrap" id="pdf-canvas-wrap">
+              <div class="pdf-loading" id="pdf-loading"><i class="fas fa-spinner fa-spin"></i><span>Loading PDF...</span></div>
+              <canvas id="pdf-canvas" class="pdf-canvas"></canvas>
             </div>
           </div>
         </div>

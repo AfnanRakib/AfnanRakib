@@ -10,6 +10,8 @@ const FILES = [
   { id: 'skills',       label: 'skills.css',             dot: 'css',  ft: 'CSS'             },
   { id: 'contact',      label: 'contact.html',           dot: 'html', ft: 'HTML'            },
   { id: 'settings',     label: '.vscode/settings.json',  dot: 'json', ft: 'JSON'            },
+  { id: 'photo',        label: 'Md. Rakib Hasan.png',    dot: 'png',  ft: 'PNG Image'       },
+  { id: 'cv',           label: 'Md. Rakib Hasan.pdf',    dot: 'pdf',  ft: 'PDF'             },
 ];
 
 /* ─── Themes ─── */
@@ -33,6 +35,8 @@ const SEARCH_DATA = [
   { file: 'skills',       text: 'C++ C Python Java Dart JavaScript C# Flutter HTML CSS ASP.NET MySQL Supabase Docker Firebase GitHub Actions computer vision machine learning' },
   { file: 'contact',      text: 'email github linkedin codeforces leetcode atcoder discord contact rakibhasan4101@gmail.com' },
   { file: 'settings',     text: 'settings theme editor font JetBrains Mono configuration vscode' },
+  { file: 'photo',        text: 'photo portrait image png Md. Rakib Hasan' },
+  { file: 'cv',           text: 'CV resume PDF download Md. Rakib Hasan curriculum vitae' },
 ];
 
 /* ─── State ─── */
@@ -141,6 +145,7 @@ function openFile(id) {
   content.scrollTo({ top: 0, behavior: 'smooth' });
   triggerSkillBars(id);
   generateMinimap();
+  if (id === 'cv' && typeof window.pdfViewerLoad === 'function') window.pdfViewerLoad();
 }
 
 function closeTab(id) {
@@ -330,6 +335,14 @@ function notify(msg, type = 'info', icon = 'fas fa-info-circle') {
 /* ════════════════════════════════
    ACTIVITY BAR
 ════════════════════════════════ */
+function closeMobileSidebar() {
+  document.querySelector('.vsc-body')?.classList.add('sidebar-hidden');
+  document.getElementById('sidebar-backdrop')?.classList.remove('open');
+}
+
+document.getElementById('sidebar-backdrop')?.addEventListener('click', closeMobileSidebar);
+document.getElementById('sidebar-mobile-close')?.addEventListener('click', closeMobileSidebar);
+
 document.querySelectorAll('.ab[data-panel]').forEach(btn => {
   btn.addEventListener('click', () => {
     const panel = btn.dataset.panel;
@@ -344,8 +357,10 @@ document.querySelectorAll('.ab[data-panel]').forEach(btn => {
       const el = document.getElementById('panel-' + panel);
       if (el) el.classList.add('active');
       vb.classList.remove('sidebar-hidden');
+      if (isMobile()) document.getElementById('sidebar-backdrop')?.classList.add('open');
     } else {
       vb.classList.add('sidebar-hidden');
+      document.getElementById('sidebar-backdrop')?.classList.remove('open');
     }
   });
 });
@@ -584,17 +599,26 @@ searchInput?.addEventListener('input', () => {
 /* ════════════════════════════════
    ZOOM
 ════════════════════════════════ */
-let zoomLevel = 110;
+const isMobile = () => window.innerWidth <= 600;
+let zoomLevel = isMobile() ? 100 : 110;
 const ZOOM_STEP = 10, ZOOM_MIN = 60, ZOOM_MAX = 150;
 
 function setZoom(pct) {
   zoomLevel = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, pct));
   const scale = zoomLevel / 100;
   const app = document.getElementById('app');
-  app.style.transformOrigin = 'top left';
-  app.style.transform = `scale(${scale})`;
-  app.style.width  = `${(1 / scale) * 100}vw`;
-  app.style.height = `${(1 / scale) * 100}vh`;
+  if (isMobile()) {
+    // Never scale on mobile — transform: scale() creates a stacking context
+    // that breaks position:fixed for the sidebar overlay and backdrop
+    app.style.transform = '';
+    app.style.width = '';
+    app.style.height = '';
+  } else {
+    app.style.transformOrigin = 'top left';
+    app.style.transform = `scale(${scale})`;
+    app.style.width  = `${(1 / scale) * 100}vw`;
+    app.style.height = `${(1 / scale) * 100}vh`;
+  }
   const lbl = document.getElementById('zoom-label');
   const sb  = document.getElementById('sb-zoom');
   if (lbl) lbl.textContent = zoomLevel + '%';
@@ -924,6 +948,8 @@ function toggleExpOrg(idx) {
   const isOpen = eorg.classList.toggle('open');
   const roles = eorg.querySelector('.eorg-roles');
   if (roles) roles.classList.toggle('open', isOpen);
+  const btnLabel = eorg.querySelector('.exp-toggle-btn span');
+  if (btnLabel) btnLabel.textContent = isOpen ? 'Hide Details' : 'Show Details';
 }
 
 /* ════════════════════════════════
@@ -1116,6 +1142,18 @@ initSidebarResize();
 generateMinimap();
 openFile('home');
 
+// On mobile, start with sidebar hidden
+if (isMobile()) {
+  document.querySelector('.vsc-body')?.classList.add('sidebar-hidden');
+  document.querySelectorAll('.ab[data-panel]').forEach(b => b.classList.remove('active'));
+}
+
+// Re-apply correct zoom if window is resized (e.g. orientation change)
+window.addEventListener('resize', () => {
+  const expected = isMobile() ? 100 : 110;
+  setZoom(expected);
+});
+
 // ── Cursor ring ──
 (function initCursor() {
   const dot  = document.getElementById('cursor-dot');
@@ -1215,6 +1253,126 @@ document.querySelector('.run-portfolio-btn')?.addEventListener('click', e => {
 });
 
 setTimeout(() => notify('Welcome! Ctrl+Shift+P for commands · Ctrl+Shift+C for AI Copilot', 'info', 'fas fa-terminal'), 1400);
+
+/* ════════════════════════════════
+   PDF.js VIEWER
+════════════════════════════════ */
+(function () {
+  const canvas    = document.getElementById('pdf-canvas');
+  const loadingEl = document.getElementById('pdf-loading');
+  const pageInfo  = document.getElementById('pdf-page-info');
+  const prevBtn   = document.getElementById('pdf-prev');
+  const nextBtn   = document.getElementById('pdf-next');
+  const zoomSel   = document.getElementById('pdf-zoom-sel');
+  const wrap      = document.getElementById('pdf-canvas-wrap');
+  if (!canvas || !wrap) return;
+
+  const ctx = canvas.getContext('2d');
+  let pdfDoc      = null;
+  let curPage     = 1;
+  let pageWidth1  = 612; // actual page width at scale 1 (pts)
+  let rendering   = false;
+  let queued      = null;
+
+  function getScale() {
+    const val = zoomSel ? zoomSel.value : '1.0';
+    if (val === 'fit') return Math.max(0.4, (wrap.clientWidth - 48) / pageWidth1);
+    return parseFloat(val) || 1.0;
+  }
+
+  function renderPage(num) {
+    if (!pdfDoc) return;
+    if (rendering) { queued = num; return; }
+    rendering = true;
+    canvas.style.opacity = '0.4';
+
+    pdfDoc.getPage(num).then(page => {
+      const vp = page.getViewport({ scale: getScale() });
+      canvas.width  = vp.width;
+      canvas.height = vp.height;
+      return page.render({ canvasContext: ctx, viewport: vp }).promise;
+    }).then(() => {
+      rendering = false;
+      canvas.style.opacity = '1';
+      curPage = num;
+      pageInfo.textContent = `${num} / ${pdfDoc.numPages}`;
+      prevBtn.disabled = num <= 1;
+      nextBtn.disabled = num >= pdfDoc.numPages;
+      if (queued !== null) { const q = queued; queued = null; renderPage(q); }
+    }).catch(err => {
+      rendering = false;
+      console.error('PDF render error:', err);
+    });
+  }
+
+  function showErr(msg) {
+    loadingEl.innerHTML =
+      `<i class="fas fa-exclamation-triangle" style="color:#f87171;font-size:2rem"></i>
+       <span style="color:var(--tx2);font-size:0.82rem;text-align:center;max-width:300px">${msg}</span>
+       <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+         <a href="resources/Md. Rakib Hasan.pdf" target="_blank" rel="noopener" class="res-dl-btn" style="font-size:0.75rem;padding:5px 12px">
+           <i class="fas fa-external-link-alt"></i> Open in new tab
+         </a>
+         <a href="resources/Md. Rakib Hasan.pdf" download="Md. Rakib Hasan CV.pdf" class="res-dl-btn res-dl-btn--ghost" style="font-size:0.75rem;padding:5px 12px">
+           <i class="fas fa-download"></i> Download
+         </a>
+       </div>`;
+  }
+
+  let loaded = false;
+  window.pdfViewerLoad = async function () {
+    if (loaded) return;
+    loaded = true;
+
+    loadingEl.style.display = 'flex';
+    canvas.style.display    = 'none';
+
+    // Step 1: check if PDF.js is available
+    if (typeof pdfjsLib === 'undefined') {
+      showErr('PDF viewer library failed to load. Please use the buttons below.');
+      return;
+    }
+
+    // Worker version must match the main library
+    const pdfVer = (typeof pdfjsLib.version === 'string' && pdfjsLib.version) ? pdfjsLib.version : '3.11.174';
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfVer}/pdf.worker.min.js`;
+
+    // Step 2: load PDF directly from the repo file
+    const pdfUrl = encodeURI('resources/Md. Rakib Hasan.pdf');
+    try {
+      pdfDoc = await pdfjsLib.getDocument(pdfUrl).promise;
+    } catch (e) {
+      showErr(`Could not load PDF: ${e.message}`);
+      return;
+    }
+
+    // Step 4: get real page width for fit-width scaling
+    const pg1 = await pdfDoc.getPage(1);
+    pageWidth1 = pg1.getViewport({ scale: 1 }).width;
+
+    loadingEl.style.display = 'none';
+    canvas.style.display    = 'block';
+    prevBtn.disabled = false;
+    nextBtn.disabled = false;
+    renderPage(1);
+
+    document.getElementById('pdf-open-btn')?.addEventListener('click', () => {
+      window.open(encodeURI('resources/Md. Rakib Hasan.pdf'), '_blank', 'noopener');
+    });
+  };
+
+  prevBtn?.addEventListener('click',  () => { if (curPage > 1) renderPage(curPage - 1); });
+  nextBtn?.addEventListener('click',  () => { if (pdfDoc && curPage < pdfDoc.numPages) renderPage(curPage + 1); });
+  zoomSel?.addEventListener('change', () => { if (pdfDoc) renderPage(curPage); });
+
+  let resizeTid;
+  window.addEventListener('resize', () => {
+    if (!pdfDoc || zoomSel?.value !== 'fit') return;
+    clearTimeout(resizeTid);
+    resizeTid = setTimeout(() => renderPage(curPage), 240);
+  });
+})();
 
 /* ════════════════════════════════
    FIND WIDGET (Ctrl+F)
