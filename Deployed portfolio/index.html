@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 <body>
 
@@ -21,7 +22,6 @@
     <a href="#console"      data-rail="console">      <span>Console</span></a>
     <a href="#about"        data-rail="about">        <span>About</span></a>
     <a href="#projects"     data-rail="projects">     <span>Projects</span></a>
-    <a href="#ranks"        data-rail="ranks">        <span>Ranks</span></a>
     <a href="#experience"   data-rail="experience">   <span>Experience</span></a>
     <a href="#achievements" data-rail="achievements"> <span>Achievements</span></a>
     <a href="#skills"       data-rail="skills">       <span>Skills</span></a>
@@ -40,7 +40,6 @@
   <header class="site-header" id="top">
     <div class="wrap nav-wrap">
       <a href="#top" class="brand">
-        <img src="../resources/images/logo.png" alt="Rakib logo">
         <span>RAKIB</span>
       </a>
 
@@ -53,12 +52,15 @@
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#ranks">Ranks</a>
         <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <button class="mode-toggle" type="button" aria-label="Toggle warm mode">☀ Warm</button>
+      <button class="mode-toggle" type="button" aria-label="Toggle warm mode">
+        <i class="fas fa-moon mode-icon-dark"></i>
+        <span class="toggle-pill"><span class="toggle-knob"></span></span>
+        <i class="fas fa-sun mode-icon-warm"></i>
+      </button>
       <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -88,7 +90,7 @@
           </p>
 
           <p class="hero-sub">
-            Final-year CSE undergraduate at AUST. I design and ship software across web, mobile, and AI-assisted systems — from competitive programming to production apps.
+            Final-year CSE undergraduate at AUST. I design and ship software across web, mobile, and AI-assisted systems, from competitive programming to production apps.
           </p>
 
           <p class="hero-currently">
@@ -224,160 +226,82 @@
 
         <div class="project-controls reveal">
           <div class="project-filters">
-            <button class="filter-btn active" type="button" data-filter="all">All</button>
-            <button class="filter-btn" type="button" data-filter="mobile">Mobile</button>
-            <button class="filter-btn" type="button" data-filter="web">Web</button>
-            <button class="filter-btn" type="button" data-filter="ai">AI</button>
-            <button class="filter-btn" type="button" data-filter="game">Game</button>
-          </div>
-          <div class="view-toggle" role="group" aria-label="Project view">
-            <button class="view-btn active" type="button" data-view="grid" aria-label="Grid view" title="Grid view">
-              <i class="fas fa-th-large" aria-hidden="true"></i>
-            </button>
-            <button class="view-btn" type="button" data-view="list" aria-label="List view" title="List view">
-              <i class="fas fa-list" aria-hidden="true"></i>
-            </button>
+            <button class="pf-btn active" type="button" data-cat="all">All</button>
+            <button class="pf-btn" type="button" data-cat="mobile">Mobile</button>
+            <button class="pf-btn" type="button" data-cat="web">Web</button>
+            <button class="pf-btn" type="button" data-cat="ai">AI</button>
+            <button class="pf-btn" type="button" data-cat="game">Game</button>
           </div>
         </div>
 
-        <div class="project-grid" id="project-container">
+        <div class="proj-grid" id="project-container">
 
-          <article class="project-card reveal" data-category="mobile" style="--pcol:#818cf8;">
-            <div class="proj-top-bar"></div>
-            <div class="proj-meta">
-              <span class="proj-badge"><span class="live-pulse"></span>DEMO</span>
-              <span class="proj-yr">2025</span>
-            </div>
-            <img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/team-synergy/refs/heads/main/resources/logo.png" alt="SOHOJOGI logo">
+          <article class="proj-card reveal" data-category="mobile" style="--pcol:#818cf8;">
+            <div class="pc-topbar"></div>
+            <div class="pc-meta"><span class="pc-badge">● DEMO</span><span class="pc-yr">2025</span></div>
+            <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/team-synergy/refs/heads/main/resources/logo.png" alt="SOHOJOGI logo" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
             <h3>SOHOJOGI</h3>
-            <p class="proj-sub">Household Services Platform</p>
+            <p class="pc-sub">Household Services Platform</p>
             <p>Location matching, booking flow, and real-time updates for household service workers.</p>
-            <div class="tags"><span>Flutter</span><span>Supabase</span><span>Provider</span><span>MVVM</span></div>
-            <div class="project-links">
-              <a href="https://github.com/Learnathon-By-Geeky-Solutions/team-synergy" target="_blank" rel="noopener noreferrer">Code</a>
-              <a href="https://youtu.be/Lwbt7yas1KI" target="_blank" rel="noopener noreferrer">Demo</a>
-            </div>
+            <div class="pc-tags"><span>Flutter</span><span>Supabase</span><span>Provider</span><span>MVVM</span></div>
+            <div class="pc-links"><a href="https://github.com/Learnathon-By-Geeky-Solutions/team-synergy" target="_blank" rel="noopener noreferrer">Code</a><a href="https://youtu.be/Lwbt7yas1KI" target="_blank" rel="noopener noreferrer">Demo</a></div>
           </article>
 
-          <article class="project-card reveal delay-1" data-category="web" style="--pcol:#22d3ee;">
-            <div class="proj-top-bar"></div>
-            <div class="proj-meta">
-              <span class="proj-badge"><span class="live-pulse"></span>LIVE</span>
-              <span class="proj-yr">2024</span>
-            </div>
-            <img src="https://raw.githubusercontent.com/AfnanRakib/AUST-CODE-REALM/main/images/logo%20with%20cover.png" alt="AUST CODE REALM">
+          <article class="proj-card reveal delay-1" data-category="web" style="--pcol:#22d3ee;">
+            <div class="pc-topbar"></div>
+            <div class="pc-meta"><span class="pc-badge">● LIVE</span><span class="pc-yr">2024</span></div>
+            <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/AUST-CODE-REALM/main/images/logo%20with%20cover.png" alt="AUST CODE REALM" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
             <h3>AUST CODE REALM</h3>
-            <p class="proj-sub">Online Judge Platform</p>
+            <p class="pc-sub">Online Judge Platform</p>
             <p>Contests, IDE integration, and ratings for competitive programmers at AUST.</p>
-            <div class="tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Judge0 API</span></div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/AUST-CODE-REALM" target="_blank" rel="noopener noreferrer">Code</a>
-              <a href="http://acr.rf.gd/" target="_blank" rel="noopener noreferrer">Live</a>
-            </div>
+            <div class="pc-tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Judge0 API</span></div>
+            <div class="pc-links"><a href="https://github.com/AfnanRakib/AUST-CODE-REALM" target="_blank" rel="noopener noreferrer">Code</a><a href="http://acr.rf.gd/" target="_blank" rel="noopener noreferrer">Live</a></div>
           </article>
 
-          <article class="project-card reveal delay-2" data-category="ai web" style="--pcol:#f59e0b;">
-            <div class="proj-top-bar"></div>
-            <div class="proj-meta"><span class="proj-yr">2024</span></div>
-            <img src="https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg" alt="HOMEHUTBD">
+          <article class="proj-card reveal delay-2" data-category="ai web" style="--pcol:#f59e0b;">
+            <div class="pc-topbar"></div>
+            <div class="pc-meta"><span class="pc-yr">2024</span></div>
+            <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg" alt="HOMEHUTBD" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
             <h3>HOMEHUTBD</h3>
-            <p class="proj-sub">Property Listing Platform</p>
+            <p class="pc-sub">Property Listing Platform</p>
             <p>Property listing and valuation platform with AI-assisted pricing prediction.</p>
-            <div class="tags"><span>ASP.NET MVC</span><span>SQL Server</span><span>Python</span><span>Flask</span></div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/HomeHutBD" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
+            <div class="pc-tags"><span>ASP.NET MVC</span><span>SQL Server</span><span>Python</span><span>Flask</span></div>
+            <div class="pc-links"><a href="https://github.com/AfnanRakib/HomeHutBD" target="_blank" rel="noopener noreferrer">Code</a></div>
           </article>
 
-          <article class="project-card reveal" data-category="ai mobile" style="--pcol:#a78bfa;">
-            <div class="proj-top-bar"></div>
-            <div class="proj-meta"><span class="proj-yr">2024</span></div>
-            <img src="https://raw.githubusercontent.com/AfnanRakib/Bhromon/refs/heads/main/assets/Bhromon.png" alt="BHROMON">
+          <article class="proj-card reveal" data-category="ai mobile" style="--pcol:#a78bfa;">
+            <div class="pc-topbar"></div>
+            <div class="pc-meta"><span class="pc-yr">2024</span></div>
+            <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/Bhromon/refs/heads/main/assets/Bhromon.png" alt="BHROMON" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
             <h3>BHROMON</h3>
-            <p class="proj-sub">AI Travel Assistant</p>
+            <p class="pc-sub">AI Travel Assistant</p>
             <p>Travel assistant app with smart recommendations, maps, and chatbot support.</p>
-            <div class="tags"><span>Flutter</span><span>Google Maps API</span><span>TripAdvisor API</span><span>GPT-4</span></div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/Bhromon" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
+            <div class="pc-tags"><span>Flutter</span><span>Google Maps API</span><span>TripAdvisor API</span><span>GPT-4</span></div>
+            <div class="pc-links"><a href="https://github.com/AfnanRakib/Bhromon" target="_blank" rel="noopener noreferrer">Code</a></div>
           </article>
 
-          <article class="project-card reveal delay-1" data-category="web" style="--pcol:#f97316;">
-            <div class="proj-top-bar"></div>
-            <div class="proj-meta"><span class="proj-yr">2023</span></div>
-            <img src="https://raw.githubusercontent.com/AfnanRakib/CodeRealm/main/CodeRealm.png" alt="CODE REALM">
+          <article class="proj-card reveal delay-1" data-category="web" style="--pcol:#f97316;">
+            <div class="pc-topbar"></div>
+            <div class="pc-meta"><span class="pc-yr">2023</span></div>
+            <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/CodeRealm/main/CodeRealm.png" alt="CODE REALM" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
             <h3>CODE REALM</h3>
-            <p class="proj-sub">Desktop Coding Platform</p>
+            <p class="pc-sub">Desktop Coding Platform</p>
             <p>Desktop coding and contest platform with integrated coding environment.</p>
-            <div class="tags"><span>Java</span><span>JavaFX</span><span>Apache Derby</span><span>Jdoodle API</span></div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/CodeRealm" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
+            <div class="pc-tags"><span>Java</span><span>JavaFX</span><span>Apache Derby</span><span>Jdoodle API</span></div>
+            <div class="pc-links"><a href="https://github.com/AfnanRakib/CodeRealm" target="_blank" rel="noopener noreferrer">Code</a></div>
           </article>
 
-          <article class="project-card reveal delay-2" data-category="game" style="--pcol:#f43f5e;">
-            <div class="proj-top-bar"></div>
-            <div class="proj-meta"><span class="proj-yr">2023</span></div>
-            <img src="https://raw.githubusercontent.com/AfnanRakib/Irrevocable-Eternity/refs/heads/main/menu.png" alt="IRREVOCABLE-ETERNITY">
+          <article class="proj-card reveal delay-2" data-category="game" style="--pcol:#f43f5e;">
+            <div class="pc-topbar"></div>
+            <div class="pc-meta"><span class="pc-yr">2023</span></div>
+            <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/Irrevocable-Eternity/refs/heads/main/menu.png" alt="IRREVOCABLE-ETERNITY" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
             <h3>IRREVOCABLE-ETERNITY</h3>
-            <p class="proj-sub">2D Dungeon Fighter</p>
+            <p class="pc-sub">2D Dungeon Fighter</p>
             <p>2D dungeon-fighting game focused on fast mechanics and challenge progression.</p>
-            <div class="tags"><span>C</span><span>C++</span><span>OpenGL</span><span>iGraphics</span></div>
-            <div class="project-links">
-              <a href="https://github.com/AfnanRakib/Irrevocable-Eternity" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
+            <div class="pc-tags"><span>C</span><span>C++</span><span>OpenGL</span><span>iGraphics</span></div>
+            <div class="pc-links"><a href="https://github.com/AfnanRakib/Irrevocable-Eternity" target="_blank" rel="noopener noreferrer">Code</a></div>
           </article>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════ RANKS — Scoreboard ══════════ -->
-    <section class="section" id="ranks">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="section-kicker">03 / RANKS</p>
-          <h2>Contest <span class="accent-text">Log</span></h2>
-        </div>
-
-        <div class="cc-row reveal">
-          <div class="contest-champ">
-            <div class="cc-emoji">🏆</div>
-            <span class="cc-tag">Champion</span>
-            <h3>Learnathon 3.0</h3>
-            <p>Geeky Solutions · Team Synergy</p>
-            <span class="cc-year">2025</span>
-          </div>
-          <div class="contest-champ">
-            <div class="cc-emoji">🏆</div>
-            <span class="cc-tag">Champion</span>
-            <h3>Intra AUST Programming</h3>
-            <p>CSE Carnival 4.0</p>
-            <span class="cc-year">2024</span>
-          </div>
-        </div>
-
-        <div class="rank-cards reveal delay-1">
-          <div class="rank-card">
-            <div class="rc-num">#35</div>
-            <h4>BUBT IUCPC</h4>
-            <p>AUST_DEADCODER · 2025</p>
-          </div>
-          <div class="rank-card">
-            <div class="rc-num">#97</div>
-            <h4>AUST Inter-Uni PC</h4>
-            <p>0xDEADCODER · 2025</p>
-          </div>
-          <div class="rank-card">
-            <div class="rc-num">#122</div>
-            <h4>ICPC Dhaka Regional</h4>
-            <p>AUST_DEADCODER · 2025</p>
-          </div>
-          <div class="rank-card">
-            <div class="rc-num">R.U.</div>
-            <h4>Research Odyssey</h4>
-            <p>Software Segment · 2025</p>
-          </div>
         </div>
       </div>
     </section>
@@ -390,48 +314,107 @@
           <h2>How I <span class="accent-text">Lead</span></h2>
         </div>
 
-        <div class="exp-timeline">
+        <div class="exp-orgs">
 
-          <div class="exp-node reveal">
-            <div class="exp-card">
-              <img src="../resources/images/austpic.png" alt="AUST Programming and Informatics Club">
-              <div class="exp-content">
-                <span class="exp-role">President</span>
+          <div class="eorg reveal" id="eorg-0">
+            <div class="eorg-header" onclick="toggleExpOrg(0)">
+              <img src="../resources/images/austpic.png" alt="AUST PIC" class="eorg-logo" onerror="this.style.display='none'">
+              <div class="eorg-info">
                 <h3>AUST Programming and Informatics Club</h3>
-                <p>Leading programming culture, organizing workshops and contests, and mentoring members. Previously served as Joint Secretary and Head of IT.</p>
+                <div class="eorg-meta">
+                  <span class="eorg-period">May 2024 – Jun 2026</span>
+                  <span class="eorg-role-count">3 roles</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-down eorg-chev"></i>
+            </div>
+            <button class="exp-toggle-btn" onclick="toggleExpOrg(0)"><i class="fas fa-chevron-down"></i><span>Show Details</span></button>
+            <div class="eorg-roles">
+              <div class="eorg-role-item">
+                <div class="eorg-role-title">President</div>
+                <div class="eorg-role-period">Dec 2025 – Jun 2026</div>
+                <p class="eorg-role-desc">Leading programming culture, organizing workshops and contests, and mentoring members across the club.</p>
+              </div>
+              <div class="eorg-role-item">
+                <div class="eorg-role-title">Joint Secretary</div>
+                <div class="eorg-role-period">Jun 2025 – Dec 2025</div>
+                <p class="eorg-role-desc">Coordinated inter-organization events, managed club logistics and member onboarding processes.</p>
+              </div>
+              <div class="eorg-role-item">
+                <div class="eorg-role-title">Head of IT</div>
+                <div class="eorg-role-period">May 2024 – Jun 2025</div>
+                <p class="eorg-role-desc">Maintained the club's digital infrastructure including the website and online judge integration.</p>
               </div>
             </div>
           </div>
 
-          <div class="exp-node reveal delay-1">
-            <div class="exp-card">
-              <img src="../resources/images/aust cse society.jpg" alt="AUST CSE Society">
-              <div class="exp-content">
-                <span class="exp-role">Vice President</span>
+          <div class="eorg reveal delay-1" id="eorg-1">
+            <div class="eorg-header" onclick="toggleExpOrg(1)">
+              <img src="../resources/images/aust cse society.jpg" alt="AUST CSE Society" class="eorg-logo" onerror="this.style.display='none'">
+              <div class="eorg-info">
                 <h3>AUST CSE Society</h3>
-                <p>Driving major departmental events, sponsorship collaborations, and student-faculty coordination. Previously served as General Secretary.</p>
+                <div class="eorg-meta">
+                  <span class="eorg-period">Jun 2025 – Jun 2026</span>
+                  <span class="eorg-role-count">2 roles</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-down eorg-chev"></i>
+            </div>
+            <button class="exp-toggle-btn" onclick="toggleExpOrg(1)"><i class="fas fa-chevron-down"></i><span>Show Details</span></button>
+            <div class="eorg-roles">
+              <div class="eorg-role-item">
+                <div class="eorg-role-title">Vice President</div>
+                <div class="eorg-role-period">Dec 2025 – Jun 2026</div>
+                <p class="eorg-role-desc">Driving major departmental events, sponsorship collaborations, and student-faculty coordination.</p>
+              </div>
+              <div class="eorg-role-item">
+                <div class="eorg-role-title">General Secretary</div>
+                <div class="eorg-role-period">Jun 2025 – Dec 2025</div>
+                <p class="eorg-role-desc">Managed official correspondence, meeting minutes, and event scheduling for the CSE Society.</p>
               </div>
             </div>
           </div>
 
-          <div class="exp-node reveal delay-2">
-            <div class="exp-card">
-              <img src="../resources/images/aust cp community.jpg" alt="AUST Competitive Programming Community">
-              <div class="exp-content">
-                <span class="exp-role">ACM ICPC Coordinator</span>
+          <div class="eorg reveal delay-2" id="eorg-2">
+            <div class="eorg-header" onclick="toggleExpOrg(2)">
+              <img src="../resources/images/aust cp community.jpg" alt="AUST CP Community" class="eorg-logo" onerror="this.style.display='none'">
+              <div class="eorg-info">
                 <h3>AUST Competitive Programming Community</h3>
-                <p>Managing ICPC and IUPC preparation, team formation and contest logistics for regional and national competitions.</p>
+                <div class="eorg-meta">
+                  <span class="eorg-period">2023 – Present</span>
+                  <span class="eorg-role-count">1 role</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-down eorg-chev"></i>
+            </div>
+            <button class="exp-toggle-btn" onclick="toggleExpOrg(2)"><i class="fas fa-chevron-down"></i><span>Show Details</span></button>
+            <div class="eorg-roles">
+              <div class="eorg-role-item">
+                <div class="eorg-role-title">ACM ICPC Coordinator</div>
+                <div class="eorg-role-period">2023 – Present</div>
+                <p class="eorg-role-desc">Managing ICPC and IUPC preparation, team formation and contest logistics for regional and national competitions.</p>
               </div>
             </div>
           </div>
 
-          <div class="exp-node reveal">
-            <div class="exp-card">
-              <img src="../resources/images/geeky solutions.png" alt="Geeky Solutions">
-              <div class="exp-content">
-                <span class="exp-role">Champion · Team Leader</span>
-                <h3>Geeky Solutions — Learnathon 3.0</h3>
-                <p>Completed six-month intensive mentorship in cross-platform app development and delivered SOHOJOGI as champion project.</p>
+          <div class="eorg reveal" id="eorg-3">
+            <div class="eorg-header" onclick="toggleExpOrg(3)">
+              <img src="../resources/images/geeky solutions.png" alt="Geeky Solutions" class="eorg-logo" onerror="this.style.display='none'">
+              <div class="eorg-info">
+                <h3>Geeky Solutions · Learnathon 3.0</h3>
+                <div class="eorg-meta">
+                  <span class="eorg-period">Dec 2024 – May 2025</span>
+                  <span class="eorg-role-count">1 role</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-down eorg-chev"></i>
+            </div>
+            <button class="exp-toggle-btn" onclick="toggleExpOrg(3)"><i class="fas fa-chevron-down"></i><span>Show Details</span></button>
+            <div class="eorg-roles">
+              <div class="eorg-role-item">
+                <div class="eorg-role-title">Champion · Team Leader</div>
+                <div class="eorg-role-period">Dec 2024 – May 2025</div>
+                <p class="eorg-role-desc">Completed six-month intensive mentorship in cross-platform app development and delivered SOHOJOGI as champion project.</p>
               </div>
             </div>
           </div>
@@ -449,63 +432,140 @@
         </div>
         <p class="achievements-lead reveal">Contests, recognitions, and moments that shaped how I build and compete.</p>
 
-        <div class="bento-grid reveal">
-
-          <div class="bento bento-hero">
-            <div class="bento-num">01</div>
-            <h3>Learnathon 3.0 Champion</h3>
-            <p>Six-month intensive mentorship program run by Geeky Solutions. Delivered SOHOJOGI — a production-ready cross-platform household services platform.</p>
-            <div class="bento-tags">
-              <span>Cross-Platform Dev</span>
-              <span>Team Lead</span>
-              <span>2025</span>
+        <!-- Featured -->
+        <div class="ach-featured-card reveal">
+          <div class="ach-feat-left">
+            <div class="ach-feat-badge"><i class="fas fa-trophy"></i></div>
+            <div>
+              <div class="ach-feat-org">Geeky Solutions · Dec 2024 – May 2025</div>
+              <h2 class="ach-feat-title">Learnathon 3.0 <span class="ach-champ">Champion</span></h2>
+              <p class="ach-feat-desc">Won Champion title in a 6-month intensive mentorship program by Geeky Solutions. Competed in comprehensive training focused on cross-platform mobile development, culminating in building <strong>SOHOJOGI</strong>.</p>
+              <div class="ach-feat-meta"><span class="ach-feat-date">May 2025</span><span class="ach-feat-dot">/</span><span>Cross-Platform Stack</span></div>
+              <div class="ach-tags"><span>Team Lead</span><span>Flutter</span><span>Full-Stack</span><span>6 Months</span></div>
             </div>
-            <div class="bento-badge">🏆 CHAMPION</div>
           </div>
-
-          <div class="bento bento-rank">
-            <div class="bento-num">02</div>
-            <h3>ICPC Dhaka Regional</h3>
-            <div class="bento-rank-num">#122</div>
-            <p>Team AUST_DEADCODER at the onsite regional contest.</p>
-            <span class="bento-meta">Onsite · 2025</span>
+          <div class="ach-feat-right">
+            <img src="../resources/images/learnathon 3 champion.jpg" alt="Learnathon 3.0 Champion" class="ach-feat-img">
           </div>
+        </div>
 
-          <div class="bento bento-sm">
-            <div class="bento-num">03</div>
-            <h3>BUBT IUCPC</h3>
-            <div class="bento-rank-num">#35</div>
-            <span class="bento-meta">National · 2025</span>
+        <!-- Programming Contests -->
+        <div class="ach-section reveal">
+          <div class="ach-section-hd"><i class="fas fa-code"></i> Programming Contests</div>
+          <div class="ach-card-grid">
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-rank">TOP 7%</span>
+              <div class="ach-card-icon ach-icon-blue"><i class="fas fa-trophy"></i></div>
+              <h4 class="ach-card-title">ICPC Dhaka Regional Site 2025</h4>
+              <p class="ach-card-desc">Competed with team "AUST_DEADCODER", ranked #122 in the top 7% out of 1,717 teams</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> December 2025</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-rank">#35</span>
+              <div class="ach-card-icon ach-icon-blue"><i class="fas fa-code"></i></div>
+              <h4 class="ach-card-title">BUBT Inter University Collaborative PC 2025</h4>
+              <p class="ach-card-desc">Ranked 35th with team "AUST_DEADCODER" in inter-university competition</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> November 2025</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-rank">#97</span>
+              <div class="ach-card-icon ach-icon-blue"><i class="fas fa-trophy"></i></div>
+              <h4 class="ach-card-title">AUST Inter-University Programming Contest</h4>
+              <p class="ach-card-desc">Ranked 97th with team "0xDEADCODER" among top programmers from universities nationwide</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> February 2025</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-champ">CHAMPION</span>
+              <div class="ach-card-icon ach-icon-gold"><i class="fas fa-medal"></i></div>
+              <h4 class="ach-card-title">Intra AUST Programming Contest (CSE Carnival 4.0)</h4>
+              <p class="ach-card-desc">Achieved Champion position in the university's premier coding competition</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> July 2024</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-runner">1ST RUNNER-UP</span>
+              <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+              <h4 class="ach-card-title">UAP Inter University Programming Contest 1.0 (Junior)</h4>
+              <p class="ach-card-desc">Secured second place in the junior division of the inter-university competition</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> January 2024</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-runner">1ST RUNNER-UP</span>
+              <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+              <h4 class="ach-card-title">Intra AUST Programming Contest (CSE Carnival 3.0)</h4>
+              <p class="ach-card-desc">Achieved 1st Runners-Up position in the university competition</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> January 2024</div>
+            </div>
           </div>
+        </div>
 
-          <div class="bento bento-sm">
-            <div class="bento-num">04</div>
-            <h3>AUST IUPC</h3>
-            <div class="bento-rank-num">#97</div>
-            <span class="bento-meta">National · 2025</span>
+        <!-- Software Exhibitions -->
+        <div class="ach-section reveal delay-1">
+          <div class="ach-section-hd"><i class="fas fa-laptop-code"></i> Software Exhibitions</div>
+          <div class="ach-card-grid">
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-champ">CHAMPION</span>
+              <div class="ach-card-icon ach-icon-gold"><i class="fas fa-trophy"></i></div>
+              <h4 class="ach-card-title">Software Exhibition (AUST CSE Carnival 5.0)</h4>
+              <p class="ach-card-desc">Won the software exhibition segment at AUST's annual CSE Carnival event</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> February 2025</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-runner">1ST RUNNER-UP</span>
+              <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+              <h4 class="ach-card-title">Research Odyssey: Inter-University Research Exhibition</h4>
+              <p class="ach-card-desc">Recognised for innovation in the software exhibition segment at the national research showcase</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> March 2025</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-runner">2ND RUNNER-UP</span>
+              <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+              <h4 class="ach-card-title">Software Exhibition (AUST CSE Carnival 3.0)</h4>
+              <p class="ach-card-desc">Achieved 2nd Runners-Up position in the software exhibition segment</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> January 2024</div>
+            </div>
           </div>
+        </div>
 
-          <div class="bento bento-wide">
-            <div class="bento-num">05</div>
-            <h3>Research Odyssey — 1st Runner-Up</h3>
-            <p>Recognised for innovation in the software exhibition segment at Research Odyssey.</p>
-            <span class="bento-meta">Software Segment · 2025</span>
+        <!-- Code Refactoring -->
+        <div class="ach-section reveal delay-2">
+          <div class="ach-section-hd"><i class="fas fa-file-code"></i> Code Refactoring</div>
+          <div class="ach-card-grid">
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-runner">2ND RUNNER-UP</span>
+              <div class="ach-card-icon ach-icon-silver"><i class="fas fa-medal"></i></div>
+              <h4 class="ach-card-title">Code Refactoring (AUST CSE Carnival 5.0)</h4>
+              <p class="ach-card-desc">Achieved 2nd Runners-Up in the code refactoring segment</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> February 2025</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-champ">CHAMPION</span>
+              <div class="ach-card-icon ach-icon-gold"><i class="fas fa-trophy"></i></div>
+              <h4 class="ach-card-title">Code Refactoring (AUST CSE Carnival 4.0)</h4>
+              <p class="ach-card-desc">Topped the code refactoring challenge demonstrating exceptional code quality</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> July 2024</div>
+            </div>
           </div>
+        </div>
 
-          <div class="bento bento-sm">
-            <div class="bento-num">06</div>
-            <h3>Intra AUST Champion</h3>
-            <div class="bento-badge-sm">🏆</div>
-            <span class="bento-meta">CSE Carnival 4.0 · 2024</span>
+        <!-- Academic Excellence -->
+        <div class="ach-section reveal">
+          <div class="ach-section-hd"><i class="fas fa-graduation-cap"></i> Academic Excellence</div>
+          <div class="ach-card-grid">
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-green-pill">SCHOLARSHIP</span>
+              <div class="ach-card-icon ach-icon-green"><i class="fas fa-star"></i></div>
+              <h4 class="ach-card-title">Khondaker Ahmed Muktadir Scholarship</h4>
+              <p class="ach-card-desc">Merit-based scholarship awarded for exceptional academic and extracurricular achievement</p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> April 2026</div>
+            </div>
+            <div class="ach-card">
+              <span class="ach-card-badge ach-badge-green-pill">TOP 5%</span>
+              <div class="ach-card-icon ach-icon-green"><i class="fas fa-graduation-cap"></i></div>
+              <h4 class="ach-card-title">AUST Academic Merit Scholarship</h4>
+              <p class="ach-card-desc">Ranked among the top 5% of CSE students. CGPA: <strong>3.75 / 4.00</strong></p>
+              <div class="ach-card-date"><i class="far fa-calendar-alt"></i> December 2023</div>
+            </div>
           </div>
-
-          <div class="bento bento-sm">
-            <div class="bento-num">07</div>
-            <h3>Academic Scholarship</h3>
-            <p>Top 5% of department.</p>
-            <span class="bento-meta">Merit Award · 2023</span>
-          </div>
-
         </div>
       </div>
     </section>
@@ -520,115 +580,47 @@
 
         <div class="skills-wrap" id="skills-wrap">
 
-          <div class="skill-category reveal">
-            <h3 class="skill-cat-title">Languages</h3>
-            <div class="skill-list">
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">C++</span><span class="sp">95%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:95%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">C</span><span class="sp">92%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:92%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Python</span><span class="sp">80%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:80%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Java</span><span class="sp">78%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:78%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Dart</span><span class="sp">80%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:80%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">JavaScript</span><span class="sp">65%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:65%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">C#</span><span class="sp">65%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:65%"></div></div>
-              </div>
+          <div class="skill-section reveal">
+            <div class="skill-section-title"><i class="fas fa-code"></i> Languages</div>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="C++"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+              <div class="skill-logo-item" title="C"><i class="devicon-c-plain colored"></i><span>C</span></div>
+              <div class="skill-logo-item" title="Python"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+              <div class="skill-logo-item" title="Java"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+              <div class="skill-logo-item" title="Dart"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+              <div class="skill-logo-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+              <div class="skill-logo-item" title="C#"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
             </div>
           </div>
-
-          <div class="skill-category reveal delay-1">
-            <h3 class="skill-cat-title">Web &amp; Mobile</h3>
-            <div class="skill-list">
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Flutter</span><span class="sp">90%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:90%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">HTML / CSS</span><span class="sp">92%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:92%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">ASP.NET Core MVC</span><span class="sp">78%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:78%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Bootstrap</span><span class="sp">82%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:82%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">PHP</span><span class="sp">62%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:62%"></div></div>
-              </div>
+          <div class="skill-section reveal delay-1">
+            <div class="skill-section-title"><i class="fas fa-globe"></i> Web &amp; Mobile</div>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="Flutter"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
+              <div class="skill-logo-item" title="HTML5"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+              <div class="skill-logo-item" title="CSS3"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+              <div class="skill-logo-item" title="ASP.NET"><i class="devicon-dotnetcore-plain colored"></i><span>ASP.NET</span></div>
+              <div class="skill-logo-item" title="Bootstrap"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+              <div class="skill-logo-item" title="PHP"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
             </div>
           </div>
-
-          <div class="skill-category reveal delay-2">
-            <h3 class="skill-cat-title">Database &amp; Tools</h3>
-            <div class="skill-list">
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">MySQL</span><span class="sp">82%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:82%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Supabase</span><span class="sp">80%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:80%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">SQL Server</span><span class="sp">78%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:78%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Firebase</span><span class="sp">62%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:62%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Docker</span><span class="sp">58%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:58%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">GitHub Actions</span><span class="sp">58%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:58%"></div></div>
-              </div>
+          <div class="skill-section reveal delay-2">
+            <div class="skill-section-title"><i class="fas fa-database"></i> Databases</div>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="MySQL"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+              <div class="skill-logo-item" title="Supabase"><i class="fas fa-database" style="color:#3ecf8e"></i><span>Supabase</span></div>
+              <div class="skill-logo-item" title="SQL Server"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
+              <div class="skill-logo-item" title="Firebase"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
             </div>
           </div>
-
-          <div class="skill-category reveal">
-            <h3 class="skill-cat-title">Emerging Areas</h3>
-            <div class="skill-list">
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Computer Vision</span><span class="sp">40%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:40%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Machine Learning</span><span class="sp">38%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:38%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">IoT Integration</span><span class="sp">35%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:35%"></div></div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-bar-head"><span class="sn">Blockchain</span><span class="sp">28%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:28%"></div></div>
-              </div>
+          <div class="skill-section reveal">
+            <div class="skill-section-title"><i class="fas fa-tools"></i> Tools &amp; DevOps</div>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+              <div class="skill-logo-item" title="GitHub"><i class="devicon-github-original" style="color:var(--ink)"></i><span>GitHub</span></div>
+              <div class="skill-logo-item" title="GitHub Actions"><i class="fas fa-cogs" style="color:#2088ff"></i><span>GH Actions</span></div>
+              <div class="skill-logo-item" title="SonarCloud"><i class="fas fa-cloud" style="color:#f3702a"></i><span>SonarCloud</span></div>
+              <div class="skill-logo-item" title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+              <div class="skill-logo-item" title="Linux"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
             </div>
           </div>
 
@@ -732,7 +724,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p>Md. Rakib Hasan — CSE Undergraduate — Dhaka, Bangladesh</p>
+      <p>Md. Rakib Hasan · CSE Undergraduate · Dhaka, Bangladesh</p>
       <p>© <span id="year"></span> Md. Rakib Hasan</p>
     </div>
   </footer>
@@ -751,7 +743,6 @@
         <button type="button" data-jump="console">Console</button>
         <button type="button" data-jump="about">About</button>
         <button type="button" data-jump="projects">Projects</button>
-        <button type="button" data-jump="ranks">Ranks</button>
         <button type="button" data-jump="experience">Experience</button>
         <button type="button" data-jump="achievements">Achievements</button>
         <button type="button" data-jump="skills">Skills</button>

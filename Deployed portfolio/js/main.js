@@ -166,13 +166,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const saved = localStorage.getItem("portfolio-theme");
     if (saved === "warm") {
       document.body.classList.add("warm-mode");
-      modeToggle.textContent = "🌙 Dark";
       if (matrixCleanup) { matrixCleanup(); matrixCleanup = null; }
     }
 
     modeToggle.addEventListener("click", () => {
       const warm = document.body.classList.toggle("warm-mode");
-      modeToggle.textContent = warm ? "🌙 Dark" : "☀ Warm";
       localStorage.setItem("portfolio-theme", warm ? "warm" : "dark");
       if (warm) {
         if (matrixCleanup) { matrixCleanup(); matrixCleanup = null; }
@@ -542,12 +540,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ─── PROJECT FILTER ─── */
-  const filterBtns   = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card[data-category]");
+  const filterBtns   = document.querySelectorAll(".pf-btn");
+  const projectCards = document.querySelectorAll(".proj-card[data-category]");
   if (filterBtns.length) {
     filterBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const filter = btn.getAttribute("data-filter") || "all";
+        const filter = btn.getAttribute("data-cat") || "all";
         filterBtns.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         projectCards.forEach((card) => {
@@ -557,6 +555,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  /* ─── EXPERIENCE — EXPANDABLE ORGS ─── */
+  // (global so onclick="toggleExpOrg(n)" in HTML works)
+  window.toggleExpOrg = function(idx) {
+    const eorg = document.getElementById("eorg-" + idx);
+    if (!eorg) return;
+    const isOpen = eorg.classList.toggle("open");
+    const roles = eorg.querySelector(".eorg-roles");
+    if (roles) roles.classList.toggle("open", isOpen);
+    const btnLabel = eorg.querySelector(".exp-toggle-btn span");
+    if (btnLabel) btnLabel.textContent = isOpen ? "Hide Details" : "Show Details";
+  };
 
   /* ─── PROJECT VIEW TOGGLE (grid / list) ─── */
   const viewBtns = document.querySelectorAll(".view-btn");
@@ -585,6 +595,7 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("mouseleave", () => { card.style.transform = ""; });
   });
 
+
   /* ─── CUSTOM CURSOR ─── */
   const cursorDot  = document.querySelector(".cursor-dot");
   const cursorRing = document.querySelector(".cursor-ring");
@@ -597,14 +608,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ringY += (e.clientY - ringY) * 0.2;
       cursorRing.style.transform = `translate(${ringX}px, ${ringY}px)`;
     });
-    document.querySelectorAll("a, button, .project-card, .terminal-chip, .bento, .soc-btn").forEach((el) => {
+    document.querySelectorAll("a, button, .proj-card, .terminal-chip, .ach-card, .soc-btn").forEach((el) => {
       el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
       el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
     });
   }
 
   /* ─── MAGNETIC BUTTONS ─── */
-  document.querySelectorAll(".mag-btn, .mode-toggle, .filter-btn, .terminal-chip").forEach((el) => {
+  document.querySelectorAll(".mag-btn, .mode-toggle, .pf-btn, .terminal-chip").forEach((el) => {
     el.addEventListener("mousemove", (e) => {
       if (window.matchMedia("(pointer: coarse)").matches) return;
       const r = el.getBoundingClientRect();
