@@ -633,7 +633,20 @@
 @media (max-width: 800px) {
   /* Switch app shell to flexbox — grid 1fr rows can't propagate heights reliably
      through nested grid containers on mobile browsers */
-  .vsc-app { display: flex; flex-direction: column; }
+  /* position:fixed bypasses body{overflow:hidden} layout clipping so
+     the status bar (at bottom of the 142dvh scaled layout) stays in view.
+     Default dimensions match the initial 70% zoom set by JS. */
+  .vsc-app {
+    display: flex;
+    flex-direction: column;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform-origin: top left;
+    transform: scale(0.7);
+    width: calc(100vw / 0.7);
+    height: calc(100dvh / 0.7);
+  }
   .vsc-titlebar  { height: 30px; flex-shrink: 0; overflow: hidden; }
   .vsc-menubar   { height: 26px; flex-shrink: 0; overflow: visible; z-index: 300; }
   .vsc-statusbar { height: 22px; flex-shrink: 0; overflow: hidden; }
@@ -689,11 +702,8 @@
   .rank-cards { grid-template-columns: repeat(2, 1fr); }
 
   /* Sidebar becomes a slide-in drawer on tablet/mobile.
-     position:absolute (not fixed) so it scales correctly inside
-     the transform:scale() applied to #app on mobile.
-     left:0 so translateX(-105%) = -273px, right edge = -13px → fully off-screen.
-     When open, translateX(48px) slides it in next to the actbar. */
-  #app { position: relative; }
+     position:absolute anchors to #app (position:fixed above) so it
+     scales correctly inside the transform:scale(). */
   .vsc-sidebar {
     position: absolute !important;
     top: 56px; left: 0;

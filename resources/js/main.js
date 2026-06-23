@@ -431,6 +431,19 @@ function setZoom(pct) {
   app.style.transform = `scale(${scale})`;
   app.style.width  = `${(1 / scale) * 100}vw`;
   app.style.height = `${(1 / scale) * 100}dvh`;
+  // On mobile, position:fixed removes #app from document flow so
+  // body { overflow:hidden } can't clip the scaled layout at 100dvh.
+  // Without this, the status bar (at the bottom of the 142dvh layout)
+  // gets clipped before the transform renders it into view.
+  if (isMobile()) {
+    app.style.position = 'fixed';
+    app.style.top  = '0';
+    app.style.left = '0';
+  } else {
+    app.style.position = '';
+    app.style.top  = '';
+    app.style.left = '';
+  }
   const lbl = document.getElementById('zoom-label');
   const sb  = document.getElementById('sb-zoom');
   if (lbl) lbl.textContent = zoomLevel + '%';
