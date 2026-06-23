@@ -1,7 +1,7 @@
 <div align="center">
 
 <div style="width: 100%; height: auto; overflow: hidden;">
-  <img src="resources/images/banner.gif" style="width: 100%;"/>
+  <img src="banner.gif" style="width: 100%;"/>
 </div>
 
 <h1>Hi 👋, I'm Rakib</h1>
@@ -21,7 +21,7 @@
 
 - 📫 How to reach me **rakibhasan4101@gmail.com**
 
-- 📄 Check out my [CV](resources/Md.%20Rakib%20Hasan.pdf) and [Portfolio](https://afnanrakib.github.io/AfnanRakib/)
+- 📄 Check out my [CV](Md.%20Rakib%20Hasan.pdf) and [Portfolio](https://afnanrakib.github.io/Rakib-Hasan-Portfolio/)
 
 - ⚡ Fun fact **I think I am passionate about programming**
 
