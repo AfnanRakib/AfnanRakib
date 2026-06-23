@@ -260,7 +260,7 @@
   --ln-color:  #93a1a1;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow: hidden; }
 body {
   font-family: 'Space Grotesk', sans-serif;
   background: var(--bg2);

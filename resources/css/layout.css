@@ -644,9 +644,8 @@
     flex: 1 !important;
     min-height: 0 !important;
   }
-  .vsc-actbar { flex-shrink: 0; overflow: hidden; }
-  /* Hide only the spacer — keeps terminal/settings/copilot visible but prevents floating */
-  .vsc-actbar .ab-spacer { display: none; }
+  /* Actbar stretches to fill body height; spacer pushes terminal/settings/chat to bottom */
+  .vsc-actbar { flex-shrink: 0; align-self: stretch; overflow: visible; }
 
   .vsc-editor-wrap {
     display: flex !important;
@@ -660,20 +659,20 @@
   #terminal-panel { flex-shrink: 0; }
   .minimap { display: none !important; }
 
-  /* Copilot: slide-in overlay from right on mobile (same pattern as sidebar) */
+  /* Copilot: full-screen overlay on mobile — slides in from the right */
   .vsc-copilot,
   .vsc-copilot.hidden {
     display: flex !important;
     flex-direction: column;
     position: absolute !important;
-    top: 56px; right: 0;
-    height: calc(100% - 78px);
-    width: 300px !important;
-    z-index: 200;
-    transform: translateX(105%);
-    transition: transform 0.25s cubic-bezier(0.2,0.8,0.2,1), background 0.35s;
-    box-shadow: -4px 0 24px rgba(0,0,0,0.4);
-    border-left: 1px solid var(--line);
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: auto !important;
+    height: auto !important;
+    z-index: 1000;
+    transform: translateX(110%);
+    transition: transform 0.3s cubic-bezier(0.2,0.8,0.2,1);
+    box-shadow: none;
+    border-left: none;
   }
   .vsc-body.copilot-open .vsc-copilot { transform: translateX(0) !important; }
 
@@ -952,28 +951,25 @@
 .run-portfolio-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.67rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 4px 14px;
-  background: rgba(74, 222, 128, 0.09);
-  border: 1px solid rgba(74, 222, 128, 0.28);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  background: #22c55e;
+  border: none;
   border-radius: 5px;
-  color: var(--green);
-  transition: all 0.2s;
-  margin-left: 6px;
+  color: #000;
+  margin-left: 8px;
   white-space: nowrap;
   text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
 }
-.run-portfolio-btn i { font-size: 0.52rem; }
-.run-portfolio-btn:hover {
-  background: rgba(74, 222, 128, 0.18);
-  border-color: var(--green);
-  box-shadow: 0 0 16px rgba(74, 222, 128, 0.22);
-  color: var(--green);
-}
+.run-portfolio-btn i { font-size: 0.6rem; transition: transform 0.2s; }
+.run-portfolio-btn:hover { background: #16a34a; transform: translateY(-1px); }
+.run-portfolio-btn:hover i { transform: translateX(2px); }
 
 /* ── Title bar RH monogram ── */
 .title-logo-text {
