@@ -1,0 +1,274 @@
+/* base.css — CSS custom properties & reset */
+
+/* ═══════════════════════════════════════
+   VS Code Portfolio — Md. Rakib Hasan
+   7 Themes · Indigo/Amber · JetBrains Mono
+═══════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─ BASE THEME (Dark Default — Indigo) ─ */
+:root,
+:root[data-theme="dark-default"] {
+  --bg:     #0d0f1c;
+  --bg2:    #090b14;
+  --bg3:    #111420;
+  --bg4:    #161926;
+  --card:   #12152a;
+  --accent: #818cf8;
+  --a2:     #f59e0b;
+  --a3:     #22d3ee;
+  --green:  #4ade80;
+  --red:    #f87171;
+  --tx:     #e2e8f0;
+  --tx2:    #94a3b8;
+  --tx3:    #64748b;
+  --line:   rgba(129,140,248,0.12);
+  --line2:  rgba(129,140,248,0.24);
+  --kw:   #c792ea;
+  --fn:   #82aaff;
+  --str:  #c3e88d;
+  --cmt:  #546878;
+  --num:  #f78c6c;
+  --tag:  #f07178;
+  --attr: #ffcb6b;
+  --type: #89ddff;
+  --op:   #89ddff;
+  --titlebar:  #080a10;
+  --menubar:   #0d0f1c;
+  --actbar:    #0d0f1c;
+  --sdbg:      #0f1220;
+  --tab-bg:    #0d0f1c;
+  --tab-act:   #111420;
+  --statusbar: #4f46e5;
+  --ln-color:  #3d4155;
+}
+
+/* ─ TOKYO NIGHT ─ */
+:root[data-theme="tokyo-night"] {
+  --bg:     #1a1b26;
+  --bg2:    #13141f;
+  --bg3:    #1f2335;
+  --bg4:    #24283b;
+  --card:   #1f2335;
+  --accent: #7aa2f7;
+  --a2:     #e0af68;
+  --a3:     #7dcfff;
+  --green:  #9ece6a;
+  --red:    #f7768e;
+  --tx:     #c0caf5;
+  --tx2:    #a9b1d6;
+  --tx3:    #565f89;
+  --line:   rgba(122,162,247,0.14);
+  --line2:  rgba(122,162,247,0.28);
+  --kw:   #bb9af7;
+  --fn:   #7aa2f7;
+  --str:  #9ece6a;
+  --cmt:  #444b6a;
+  --num:  #ff9e64;
+  --tag:  #f7768e;
+  --attr: #e0af68;
+  --type: #7dcfff;
+  --op:   #7dcfff;
+  --titlebar:  #0f0f17;
+  --menubar:   #1a1b26;
+  --actbar:    #1a1b26;
+  --sdbg:      #16161e;
+  --tab-bg:    #1a1b26;
+  --tab-act:   #1f2335;
+  --statusbar: #3d59a1;
+  --ln-color:  #3b4261;
+}
+
+/* ─ CATPPUCCIN MOCHA ─ */
+:root[data-theme="catppuccin"] {
+  --bg:     #1e1e2e;
+  --bg2:    #181825;
+  --bg3:    #24273a;
+  --bg4:    #292c3c;
+  --card:   #24273a;
+  --accent: #cba6f7;
+  --a2:     #fab387;
+  --a3:     #89dceb;
+  --green:  #a6e3a1;
+  --red:    #f38ba8;
+  --tx:     #cdd6f4;
+  --tx2:    #bac2de;
+  --tx3:    #6c7086;
+  --line:   rgba(203,166,247,0.14);
+  --line2:  rgba(203,166,247,0.28);
+  --kw:   #cba6f7;
+  --fn:   #89b4fa;
+  --str:  #a6e3a1;
+  --cmt:  #585b70;
+  --num:  #fab387;
+  --tag:  #f38ba8;
+  --attr: #f9e2af;
+  --type: #89dceb;
+  --op:   #89dceb;
+  --titlebar:  #11111b;
+  --menubar:   #1e1e2e;
+  --actbar:    #1e1e2e;
+  --sdbg:      #181825;
+  --tab-bg:    #1e1e2e;
+  --tab-act:   #24273a;
+  --statusbar: #7c3aed;
+  --ln-color:  #45475a;
+}
+
+/* ─ NORD ─ */
+:root[data-theme="nord"] {
+  --bg:     #2e3440;
+  --bg2:    #242933;
+  --bg3:    #3b4252;
+  --bg4:    #434c5e;
+  --card:   #3b4252;
+  --accent: #88c0d0;
+  --a2:     #ebcb8b;
+  --a3:     #8fbcbb;
+  --green:  #a3be8c;
+  --red:    #bf616a;
+  --tx:     #eceff4;
+  --tx2:    #d8dee9;
+  --tx3:    #616e88;
+  --line:   rgba(136,192,208,0.16);
+  --line2:  rgba(136,192,208,0.32);
+  --kw:   #81a1c1;
+  --fn:   #88c0d0;
+  --str:  #a3be8c;
+  --cmt:  #4c566a;
+  --num:  #d08770;
+  --tag:  #bf616a;
+  --attr: #ebcb8b;
+  --type: #8fbcbb;
+  --op:   #8fbcbb;
+  --titlebar:  #1c2128;
+  --menubar:   #2e3440;
+  --actbar:    #2e3440;
+  --sdbg:      #272e3b;
+  --tab-bg:    #2e3440;
+  --tab-act:   #3b4252;
+  --statusbar: #4c566a;
+  --ln-color:  #4c566a;
+}
+
+/* ─ VS CODE LIGHT ─ */
+:root[data-theme="vscode-light"] {
+  --bg:     #ffffff;
+  --bg2:    #f3f3f3;
+  --bg3:    #f8f8f8;
+  --bg4:    #e8e8e8;
+  --card:   #f0f0f0;
+  --accent: #0078d4;
+  --a2:     #cb7d00;
+  --a3:     #0070c0;
+  --green:  #107c10;
+  --red:    #cd3131;
+  --tx:     #1e1e1e;
+  --tx2:    #444444;
+  --tx3:    #7a7a7a;
+  --line:   rgba(0,120,212,0.14);
+  --line2:  rgba(0,120,212,0.28);
+  --kw:     #0000ff;
+  --fn:     #795e26;
+  --str:    #a31515;
+  --cmt:    #008000;
+  --num:    #098658;
+  --tag:    #800000;
+  --attr:   #0451a5;
+  --type:   #267f99;
+  --op:     #000000;
+  --titlebar:  #dddddd;
+  --menubar:   #f3f3f3;
+  --actbar:    #2c2c2c;
+  --sdbg:      #f3f3f3;
+  --tab-bg:    #e8e8e8;
+  --tab-act:   #ffffff;
+  --statusbar: #0078d4;
+  --ln-color:  #a0a0a0;
+}
+
+/* ─ DRACULA ─ */
+:root[data-theme="dracula"] {
+  --bg:     #282a36;
+  --bg2:    #21222c;
+  --bg3:    #2d2f3f;
+  --bg4:    #343746;
+  --card:   #2d2f3f;
+  --accent: #bd93f9;
+  --a2:     #f1fa8c;
+  --a3:     #8be9fd;
+  --green:  #50fa7b;
+  --red:    #ff5555;
+  --tx:     #f8f8f2;
+  --tx2:    #cdd6f4;
+  --tx3:    #6272a4;
+  --line:   rgba(189,147,249,0.14);
+  --line2:  rgba(189,147,249,0.28);
+  --kw:   #ff79c6;
+  --fn:   #50fa7b;
+  --str:  #f1fa8c;
+  --cmt:  #6272a4;
+  --num:  #bd93f9;
+  --tag:  #ff5555;
+  --attr: #ffb86c;
+  --type: #8be9fd;
+  --op:   #8be9fd;
+  --titlebar:  #191a21;
+  --menubar:   #282a36;
+  --actbar:    #282a36;
+  --sdbg:      #21222c;
+  --tab-bg:    #282a36;
+  --tab-act:   #2d2f3f;
+  --statusbar: #6272a4;
+  --ln-color:  #44475a;
+}
+
+/* ─ SOLARIZED LIGHT ─ */
+:root[data-theme="solarized-light"] {
+  --bg:     #fdf6e3;
+  --bg2:    #eee8d5;
+  --bg3:    #f5f0e0;
+  --bg4:    #e4dfc8;
+  --card:   #f5f0e0;
+  --accent: #cb4b16;
+  --a2:     #b58900;
+  --a3:     #2aa198;
+  --green:  #859900;
+  --red:    #dc322f;
+  --tx:     #586e75;
+  --tx2:    #657b83;
+  --tx3:    #93a1a1;
+  --line:   rgba(203,75,22,0.18);
+  --line2:  rgba(203,75,22,0.35);
+  --kw:     #859900;
+  --fn:     #268bd2;
+  --str:    #2aa198;
+  --cmt:    #93a1a1;
+  --num:    #d33682;
+  --tag:    #dc322f;
+  --attr:   #b58900;
+  --type:   #268bd2;
+  --op:     #586e75;
+  --titlebar:  #d8d2bf;
+  --menubar:   #eee8d5;
+  --actbar:    #002b36;
+  --sdbg:      #eee8d5;
+  --tab-bg:    #e4dfc8;
+  --tab-act:   #fdf6e3;
+  --statusbar: #cb4b16;
+  --ln-color:  #93a1a1;
+}
+
+html { scroll-behavior: smooth; overflow: hidden; }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg2);
+  color: var(--tx);
+  height: 100dvh;
+  overflow: hidden;
+  transition: background 0.35s, color 0.35s;
+}
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; }
+input { outline: none; border: none; background: none; }
