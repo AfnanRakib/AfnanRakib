@@ -971,3 +971,91 @@ document.querySelector('.run-portfolio-btn')?.addEventListener('click', e => {
 });
 
 setTimeout(() => notify('Welcome! Ctrl+Shift+P for commands · Ctrl+Shift+C for AI Copilot', 'info', 'fas fa-terminal'), 1400);
+
+
+/* ════════════════════════════════
+   PROJECT DETAIL MODAL
+════════════════════════════════ */
+(function () {
+  const PROJECTS = {
+    sohojogi: {
+      name: 'SOHOJOGI', sub: 'Household Services Platform', year: '2025', badge: '● DEMO',
+      img: 'https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/team-synergy/refs/heads/main/resources/logo.png',
+      desc: 'Built as the Champion project for Geeky Solutions Learnathon 3.0 (Dec 2024 – May 2025), SOHOJOGI connects households with reliable service providers across Bangladesh. Features GPS-based worker matching, a structured booking flow with real-time status tracking, push notifications, and clean MVVM architecture backed by Supabase for authentication and live data sync.',
+      tags: ['Flutter', 'Supabase', 'Provider', 'MVVM', 'Dart', 'REST API'],
+      links: [{ label: 'Code', url: 'https://github.com/Learnathon-By-Geeky-Solutions/team-synergy' }, { label: 'Demo', url: 'https://youtu.be/Lwbt7yas1KI' }]
+    },
+    austcoderealm: {
+      name: 'AUST CODE REALM', sub: 'Online Judge Platform', year: '2024', badge: '● LIVE',
+      img: 'https://raw.githubusercontent.com/AfnanRakib/AUST-CODE-REALM/main/images/logo%20with%20cover.png',
+      desc: 'A full-featured competitive programming platform built for Ahsanullah University of Science and Technology. Supports multi-language online judging via Judge0 API, user rating systems, contest creation and management, leaderboards, and a problem archive. Built on a PHP/MySQL stack with a custom front-end for problem submission and real-time evaluation feedback.',
+      tags: ['PHP', 'MySQL', 'JavaScript', 'Judge0 API', 'HTML', 'CSS'],
+      links: [{ label: 'Code', url: 'https://github.com/AfnanRakib/AUST-CODE-REALM' }, { label: 'Live', url: 'http://acr.rf.gd/' }]
+    },
+    homehutbd: {
+      name: 'HOMEHUTBD', sub: 'Property Listing Platform', year: '2024', badge: '',
+      img: 'https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg',
+      desc: 'A property listing and valuation platform with AI-assisted pricing prediction. Users can list, browse, and filter properties across Bangladesh. A Python/Flask microservice powers an ML pricing model trained on local real estate data and integrates with the ASP.NET MVC backend via REST API. Includes user authentication, property image upload, and advanced search filters.',
+      tags: ['ASP.NET MVC', 'SQL Server', 'Python', 'Flask', 'C#', 'Machine Learning'],
+      links: [{ label: 'Code', url: 'https://github.com/AfnanRakib/HomeHutBD' }]
+    },
+    bhromon: {
+      name: 'BHROMON', sub: 'AI Travel Assistant', year: '2024', badge: '',
+      img: 'https://raw.githubusercontent.com/AfnanRakib/Bhromon/refs/heads/main/assets/Bhromon.png',
+      desc: 'An AI-powered travel assistant for Bangladesh built in Flutter. Uses Google Maps API for navigation and POI discovery, and integrates GPT-4 as a conversational chatbot that recommends destinations, creates custom itineraries, and answers travel queries. Designed for a seamless cross-platform experience on both Android and iOS.',
+      tags: ['Flutter', 'Dart', 'Google Maps', 'GPT-4', 'REST API'],
+      links: [{ label: 'Code', url: 'https://github.com/AfnanRakib/Bhromon' }]
+    },
+    coderealm: {
+      name: 'CODE REALM', sub: 'Desktop Coding Platform', year: '2023', badge: '',
+      img: 'https://raw.githubusercontent.com/AfnanRakib/CodeRealm/main/CodeRealm.png',
+      desc: 'A desktop competitive programming environment built in Java and JavaFX. Features an integrated code editor with syntax highlighting, a contest management system, online code execution via Jdoodle API, and a local Apache Derby database for user data and problem sets. Built as an academic software engineering project.',
+      tags: ['Java', 'JavaFX', 'Apache Derby', 'Jdoodle API', 'OOP'],
+      links: [{ label: 'Code', url: 'https://github.com/AfnanRakib/CodeRealm' }]
+    },
+    irrevocable: {
+      name: 'IRREVOCABLE-ETERNITY', sub: '2D Dungeon Fighter', year: '2023', badge: '',
+      img: 'https://raw.githubusercontent.com/AfnanRakib/Irrevocable-Eternity/refs/heads/main/menu.png',
+      desc: 'A 2D dungeon-fighting game developed in C/C++ using OpenGL and the iGraphics library. Features multi-room dungeon navigation, enemy AI with attack patterns, a health and progression system with increasing difficulty, and sprite-based animations. Built as a graphics programming course project.',
+      tags: ['C', 'C++', 'OpenGL', 'iGraphics', 'Game Dev'],
+      links: [{ label: 'Code', url: 'https://github.com/AfnanRakib/Irrevocable-Eternity' }]
+    }
+  };
+
+  const overlay = document.getElementById('proj-modal');
+  const closeBtn = document.getElementById('proj-modal-close');
+  if (!overlay) return;
+
+  function openModal(id) {
+    const p = PROJECTS[id]; if (!p) return;
+    document.getElementById('pm-badge').textContent = p.badge;
+    document.getElementById('pm-name').textContent  = p.name;
+    document.getElementById('pm-sub').textContent   = p.sub;
+    document.getElementById('pm-desc').textContent  = p.desc;
+    const img = document.getElementById('pm-img');
+    img.src = p.img; img.alt = p.name;
+    img.parentElement.style.display = '';
+    document.getElementById('pm-tags').innerHTML = p.tags.map(t => `<span>${t}</span>`).join('');
+    document.getElementById('pm-links').innerHTML = p.links.map(l =>
+      `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a>`).join('');
+    overlay.hidden = false;
+    requestAnimationFrame(() => overlay.style.opacity = '1');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.style.opacity = '0';
+    setTimeout(() => { overlay.hidden = true; document.body.style.overflow = ''; }, 220);
+  }
+
+  document.querySelectorAll('.pc-details-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      openModal(btn.closest('[data-proj-id]')?.dataset.projId);
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
+})();

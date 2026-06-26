@@ -32,6 +32,24 @@
 <div id="cursor-dot" class="cursor-dot"></div>
 <div id="cursor-ring" class="cursor-ring"></div>
 
+<!-- PROJECT DETAIL MODAL -->
+<div class="proj-modal-overlay" id="proj-modal" role="dialog" aria-modal="true" aria-label="Project details" hidden>
+  <div class="proj-modal-box">
+    <button class="proj-modal-close" id="proj-modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+    <div class="proj-modal-img-wrap">
+      <img id="pm-img" src="" alt="" onerror="this.parentNode.style.display='none'">
+    </div>
+    <div class="proj-modal-body">
+      <p id="pm-badge" class="pm-badge"></p>
+      <h2 id="pm-name"></h2>
+      <p id="pm-sub" class="pm-sub"></p>
+      <p id="pm-desc" class="pm-desc"></p>
+      <div id="pm-tags" class="pm-tags"></div>
+      <div id="pm-links" class="pm-links"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ WINDOW CLOSED OVERLAY ═══ -->
 <div id="wd-closed" class="desktop-overlay hidden">
   <img src="resources/images/banner.gif" class="desk-wallpaper" alt="">
@@ -254,12 +272,12 @@
             </div>
           </div>
           <div class="tree-section">
-            <div class="tf-label" data-folder="resources">
-              <i class="fas fa-chevron-right chev"></i>
-              <i class="fas fa-folder fi-folder dim"></i>
+            <div class="tf-label open" data-folder="resources">
+              <i class="fas fa-chevron-down chev"></i>
+              <i class="fas fa-folder-open fi-folder dim"></i>
               <span class="dim">resources/</span>
             </div>
-            <div class="tf-children tf-hidden" id="resources-folder">
+            <div class="tf-children" id="resources-folder">
               <div class="tree-file" data-file="photo" title="View Photo">
                 <i class="fas fa-image fi-type-icon fi-png"></i>Md. Rakib Hasan.png
               </div>
@@ -554,7 +572,7 @@
               <button class="pf-btn" data-cat="game">Game</button>
             </div>
             <div class="proj-grid" id="proj-grid">
-              <article class="proj-card" data-cat="mobile" style="--pcol:#818cf8">
+              <article class="proj-card" data-cat="mobile" data-proj-id="sohojogi" style="--pcol:#818cf8">
                 <div class="pc-topbar"></div>
                 <div class="pc-meta"><span class="pc-badge">● DEMO</span><span class="pc-yr">2025</span></div>
                 <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/team-synergy/refs/heads/main/resources/logo.png" alt="SOHOJOGI" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
@@ -565,9 +583,10 @@
                 <div class="pc-links">
                   <a href="https://github.com/Learnathon-By-Geeky-Solutions/team-synergy" target="_blank" rel="noopener">Code</a>
                   <a href="https://youtu.be/Lwbt7yas1KI" target="_blank" rel="noopener">Demo</a>
+                  <button class="pc-details-btn" type="button">Details</button>
                 </div>
               </article>
-              <article class="proj-card" data-cat="web" style="--pcol:#22d3ee">
+              <article class="proj-card" data-cat="web" data-proj-id="austcoderealm" style="--pcol:#22d3ee">
                 <div class="pc-topbar"></div>
                 <div class="pc-meta"><span class="pc-badge">● LIVE</span><span class="pc-yr">2024</span></div>
                 <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/AUST-CODE-REALM/main/images/logo%20with%20cover.png" alt="AUST CODE REALM" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
@@ -578,9 +597,10 @@
                 <div class="pc-links">
                   <a href="https://github.com/AfnanRakib/AUST-CODE-REALM" target="_blank" rel="noopener">Code</a>
                   <a href="http://acr.rf.gd/" target="_blank" rel="noopener">Live</a>
+                  <button class="pc-details-btn" type="button">Details</button>
                 </div>
               </article>
-              <article class="proj-card" data-cat="ai web" style="--pcol:#f59e0b">
+              <article class="proj-card" data-cat="ai web" data-proj-id="homehutbd" style="--pcol:#f59e0b">
                 <div class="pc-topbar"></div>
                 <div class="pc-meta"><span class="pc-yr">2024</span></div>
                 <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg" alt="HOMEHUTBD" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
@@ -590,9 +610,10 @@
                 <div class="pc-tags"><span>ASP.NET MVC</span><span>SQL Server</span><span>Python</span><span>Flask</span></div>
                 <div class="pc-links">
                   <a href="https://github.com/AfnanRakib/HomeHutBD" target="_blank" rel="noopener">Code</a>
+                  <button class="pc-details-btn" type="button">Details</button>
                 </div>
               </article>
-              <article class="proj-card" data-cat="ai mobile" style="--pcol:#a78bfa">
+              <article class="proj-card" data-cat="ai mobile" data-proj-id="bhromon" style="--pcol:#a78bfa">
                 <div class="pc-topbar"></div>
                 <div class="pc-meta"><span class="pc-yr">2024</span></div>
                 <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/Bhromon/refs/heads/main/assets/Bhromon.png" alt="BHROMON" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
@@ -602,9 +623,10 @@
                 <div class="pc-tags"><span>Flutter</span><span>Google Maps</span><span>GPT-4</span></div>
                 <div class="pc-links">
                   <a href="https://github.com/AfnanRakib/Bhromon" target="_blank" rel="noopener">Code</a>
+                  <button class="pc-details-btn" type="button">Details</button>
                 </div>
               </article>
-              <article class="proj-card" data-cat="web" style="--pcol:#f97316">
+              <article class="proj-card" data-cat="web" data-proj-id="coderealm" style="--pcol:#f97316">
                 <div class="pc-topbar"></div>
                 <div class="pc-meta"><span class="pc-yr">2023</span></div>
                 <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/CodeRealm/main/CodeRealm.png" alt="CODE REALM" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
@@ -614,9 +636,10 @@
                 <div class="pc-tags"><span>Java</span><span>JavaFX</span><span>Apache Derby</span></div>
                 <div class="pc-links">
                   <a href="https://github.com/AfnanRakib/CodeRealm" target="_blank" rel="noopener">Code</a>
+                  <button class="pc-details-btn" type="button">Details</button>
                 </div>
               </article>
-              <article class="proj-card" data-cat="game" style="--pcol:#f43f5e">
+              <article class="proj-card" data-cat="game" data-proj-id="irrevocable" style="--pcol:#f43f5e">
                 <div class="pc-topbar"></div>
                 <div class="pc-meta"><span class="pc-yr">2023</span></div>
                 <div class="pc-imgwrap"><img src="https://raw.githubusercontent.com/AfnanRakib/Irrevocable-Eternity/refs/heads/main/menu.png" alt="IRREVOCABLE-ETERNITY" onerror="this.parentNode.classList.add('img-failed'); this.style.display='none'"></div>
@@ -626,6 +649,7 @@
                 <div class="pc-tags"><span>C</span><span>C++</span><span>OpenGL</span><span>iGraphics</span></div>
                 <div class="pc-links">
                   <a href="https://github.com/AfnanRakib/Irrevocable-Eternity" target="_blank" rel="noopener">Code</a>
+                  <button class="pc-details-btn" type="button">Details</button>
                 </div>
               </article>
             </div>
@@ -1142,28 +1166,20 @@
                 <span class="res-viewer-type">PDF Document · Resume / CV</span>
               </div>
               <div class="res-header-actions">
-                <button class="pdf-nav-btn" id="pdf-prev" title="Previous page" disabled><i class="fas fa-chevron-up"></i></button>
-                <span class="pdf-page-info" id="pdf-page-info">— / —</span>
-                <button class="pdf-nav-btn" id="pdf-next" title="Next page" disabled><i class="fas fa-chevron-down"></i></button>
-                <select class="pdf-zoom-sel" id="pdf-zoom-sel">
-                  <option value="0.75">75%</option>
-                  <option value="1.0">100%</option>
-                  <option value="1.25" selected>125%</option>
-                  <option value="1.5">150%</option>
-                  <option value="fit">Fit Width</option>
-                </select>
-                <button id="pdf-open-btn" class="res-dl-btn res-dl-btn--ghost" title="Open in new tab">
+                <a href="resources/Md. Rakib Hasan.pdf" target="_blank" rel="noopener" class="res-dl-btn res-dl-btn--ghost">
                   <i class="fas fa-external-link-alt"></i> Open
-                </button>
+                </a>
                 <a href="resources/Md. Rakib Hasan.pdf" download="Md. Rakib Hasan CV.pdf" class="res-dl-btn">
                   <i class="fas fa-download"></i> Download
                 </a>
               </div>
             </div>
-            <div class="pdf-canvas-wrap" id="pdf-canvas-wrap">
-              <div class="pdf-loading" id="pdf-loading"><i class="fas fa-spinner fa-spin"></i><span>Loading PDF...</span></div>
-              <canvas id="pdf-canvas" class="pdf-canvas"></canvas>
-            </div>
+            <iframe
+              src="resources/Md. Rakib Hasan.pdf"
+              class="pdf-iframe"
+              title="Md. Rakib Hasan CV"
+              aria-label="CV / Resume PDF viewer">
+            </iframe>
           </div>
         </div>
 
