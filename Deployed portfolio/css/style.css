@@ -34,7 +34,7 @@ body.warm-mode {
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--ink);
   background:
     radial-gradient(circle at 10% 18%, rgba(129, 140, 248, 0.1), transparent 40%),
@@ -1574,10 +1574,10 @@ body.warm-mode .jump-grid button { background: rgba(255, 255, 255, 0.7); color: 
   letter-spacing: 0.07em;
 }
 .proj-card > p {
-  font-size: 0.79rem;
-  color: color-mix(in srgb, var(--ink) 65%, transparent);
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--ink) 92%, transparent);
   padding: 0 14px 10px;
-  line-height: 1.55;
+  line-height: 1.6;
   flex: 1;
 }
 .pc-tags { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 14px 10px; }
@@ -1611,81 +1611,95 @@ body.warm-mode .jump-grid button { background: rgba(255, 255, 255, 0.7); color: 
 
 /* ── Project Modal ── */
 .proj-modal-overlay {
-  position: fixed; inset: 0; z-index: 1000;
-  background: rgba(0,0,0,0.72);
-  backdrop-filter: blur(6px);
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.86);
+  backdrop-filter: blur(16px);
   display: flex; align-items: center; justify-content: center;
   padding: 1.5rem;
-  opacity: 0; transition: opacity 0.22s;
+  opacity: 0; transition: opacity 0.25s;
 }
 .proj-modal-overlay:not([hidden]) { opacity: 1; }
 .proj-modal-overlay[hidden] { display: none; }
 .proj-modal-box {
   background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  max-width: 640px; width: 100%;
-  max-height: 88vh;
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  border-radius: 22px;
+  max-width: 660px; width: 100%;
+  max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 36px 88px rgba(0,0,0,0.65), 0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent);
   scrollbar-width: thin;
+  animation: pmSlideIn 0.3s cubic-bezier(0.34,1.18,0.64,1);
+}
+@keyframes pmSlideIn {
+  from { transform: translateY(24px) scale(0.95); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
 }
 .proj-modal-close {
-  position: absolute; top: 14px; right: 14px; z-index: 2;
+  position: absolute; top: 14px; right: 14px; z-index: 10;
   width: 32px; height: 32px; border-radius: 50%;
-  border: 1px solid var(--line);
-  background: var(--card);
-  color: var(--muted); cursor: pointer; font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);
+  color: rgba(255,255,255,0.8); cursor: pointer; font-size: 0.85rem;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.15s, color 0.15s;
 }
-.proj-modal-close:hover { background: color-mix(in srgb, var(--accent) 12%, var(--card)); color: var(--ink); }
+.proj-modal-close:hover { background: rgba(255,255,255,0.16); color: #fff; }
 .proj-modal-img-wrap {
-  width: 100%; height: 200px; overflow: hidden;
-  border-radius: 20px 20px 0 0;
-  background: color-mix(in srgb, var(--accent) 6%, var(--card));
+  width: 100%; height: 220px; overflow: hidden;
+  border-radius: 22px 22px 0 0;
+  background: color-mix(in srgb, var(--accent) 8%, var(--card));
+  position: relative;
+}
+.proj-modal-img-wrap::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.72) 100%);
 }
 .proj-modal-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.proj-modal-body { padding: 1.6rem 1.8rem 1.8rem; }
+.proj-modal-body { padding: 1.6rem 2rem 2rem; }
 .pm-badge {
   font-family: var(--fn-mono); font-size: 0.62rem;
-  font-weight: 700; letter-spacing: 0.1em;
-  color: var(--accent); margin-bottom: 0.4rem;
+  font-weight: 700; letter-spacing: 0.12em;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  padding: 3px 12px; border-radius: 999px;
+  display: inline-block; margin-bottom: 0.55rem;
 }
 .proj-modal-body h2 {
   font-family: var(--fn-display);
-  font-size: 1.5rem; font-weight: 800;
-  color: var(--ink); margin-bottom: 0.2rem;
+  font-size: 1.65rem; font-weight: 800;
+  color: var(--ink); margin-bottom: 0.2rem; line-height: 1.15;
 }
 .pm-sub {
   font-family: var(--fn-mono);
-  font-size: 0.75rem; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.07em;
-  margin-bottom: 1rem;
+  font-size: 0.72rem; color: color-mix(in srgb, var(--ink) 60%, transparent);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 1.1rem;
 }
 .pm-desc {
-  font-size: 0.95rem; line-height: 1.7;
-  color: color-mix(in srgb, var(--ink) 88%, transparent);
-  margin-bottom: 1.2rem;
+  font-size: 0.95rem; line-height: 1.74;
+  color: color-mix(in srgb, var(--ink) 93%, transparent);
+  margin-bottom: 1.3rem;
 }
-.pm-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.4rem; }
+.pm-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1.5rem; }
 .pm-tags span {
   font-family: var(--fn-mono); font-size: 0.7rem;
-  padding: 3px 10px; border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  padding: 4px 12px; border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 11%, transparent);
   border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
   color: var(--accent);
 }
 .pm-links { display: flex; gap: 10px; flex-wrap: wrap; }
 .pm-links a {
-  font-family: var(--fn-mono); font-size: 0.75rem;
+  font-family: var(--fn-mono); font-size: 0.76rem;
   font-weight: 700; letter-spacing: 0.04em;
   color: var(--bg); background: var(--accent);
-  padding: 7px 18px; border-radius: 8px;
-  text-decoration: none; transition: filter 0.15s;
+  padding: 9px 22px; border-radius: 9px;
+  text-decoration: none; transition: filter 0.15s, transform 0.15s;
 }
-.pm-links a:hover { filter: brightness(1.12); }
+.pm-links a:hover { filter: brightness(1.15); transform: translateY(-1px); }
 .pc-links a {
   font-family: var(--fn-mono);
   font-size: 0.68rem;
@@ -1764,9 +1778,9 @@ body.warm-mode .jump-grid button { background: rgba(255, 255, 255, 0.7); color: 
 }
 .ach-feat-title .ach-champ { color: var(--accent-2); }
 .ach-feat-desc {
-  font-size: 0.8rem;
-  color: color-mix(in srgb, var(--ink) 65%, transparent);
-  line-height: 1.6;
+  font-size: 0.84rem;
+  color: color-mix(in srgb, var(--ink) 92%, transparent);
+  line-height: 1.65;
   margin-bottom: 12px;
 }
 .ach-feat-meta {
@@ -1774,8 +1788,8 @@ body.warm-mode .jump-grid button { background: rgba(255, 255, 255, 0.7); color: 
   align-items: center;
   gap: 8px;
   font-family: var(--fn-mono);
-  font-size: 0.65rem;
-  color: var(--muted);
+  font-size: 0.67rem;
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
   margin-bottom: 12px;
 }
 .ach-feat-date {
@@ -1860,6 +1874,9 @@ body.warm-mode .jump-grid button { background: rgba(255, 255, 255, 0.7); color: 
 body.warm-mode .ach-badge-champ {
   color: #fff;
 }
+body.warm-mode .proj-modal-overlay { background: rgba(0,0,0,0.62); }
+body.warm-mode .proj-modal-box { box-shadow: 0 24px 60px rgba(0,0,0,0.28), 0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent); }
+body.warm-mode .pm-links a { color: #fff; }
 .ach-badge-runner {
   background: color-mix(in srgb, var(--ink) 75%, transparent);
   color: var(--bg);
@@ -1970,7 +1987,7 @@ body.warm-mode .ach-badge-champ {
 .eorg-period {
   font-family: var(--fn-mono);
   font-size: 0.74rem;
-  color: color-mix(in srgb, var(--ink) 55%, transparent);
+  color: color-mix(in srgb, var(--ink) 82%, transparent);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -2049,8 +2066,8 @@ body.warm-mode .ach-badge-champ {
 }
 .eorg-role-period {
   font-family: var(--fn-mono);
-  font-size: 0.73rem;
-  color: color-mix(in srgb, var(--ink) 55%, transparent);
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--ink) 82%, transparent);
   margin-bottom: 8px;
   display: flex;
   align-items: center;

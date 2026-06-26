@@ -726,7 +726,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openModal(id) {
     const p = PROJECTS[id]; if (!p) return;
-    document.getElementById('pm-badge').textContent = p.badge;
+    const badgeEl = document.getElementById('pm-badge');
+    const parts = [p.year, p.badge].filter(Boolean);
+    badgeEl.textContent = parts.join(' · ');
+    badgeEl.style.display = parts.length ? 'inline-block' : 'none';
     document.getElementById('pm-name').textContent  = p.name;
     document.getElementById('pm-sub').textContent   = p.sub;
     document.getElementById('pm-desc').textContent  = p.desc;
@@ -736,8 +739,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('pm-tags').innerHTML = p.tags.map(t => `<span>${t}</span>`).join('');
     document.getElementById('pm-links').innerHTML = p.links.map(l =>
       `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a>`).join('');
-    overlay.hidden = false;
-    requestAnimationFrame(() => overlay.style.opacity = '1');
+    overlay.removeAttribute('hidden');
+    overlay.style.opacity = '0';
+    requestAnimationFrame(() => requestAnimationFrame(() => { overlay.style.opacity = '1'; }));
     document.body.style.overflow = 'hidden';
   }
 

@@ -870,7 +870,8 @@
 .pdf-iframe {
   flex: 1;
   width: 100%;
-  min-height: 0;
+  min-height: 560px;
+  height: 0;
   border: none;
   background: var(--bg3);
   display: block;
