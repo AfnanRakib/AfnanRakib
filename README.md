@@ -21,7 +21,7 @@
 
 - 📫 How to reach me **rakibhasan4101@gmail.com**
 
-- 📄 Check out my [CV](Md.%20Rakib%20Hasan.pdf) and [Portfolio](https://afnanrakib.github.io/Rakib-Hasan-Portfolio/)
+- 📄 Check out my [CV](Md.%20Rakib%20Hasan.pdf) and [Portfolio](https://afnanrakib.github.io/AfnanRakib/)
 
 - ⚡ Fun fact **I think I am passionate about programming**
 
