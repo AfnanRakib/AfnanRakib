@@ -200,7 +200,7 @@ function buildCmdItems(query) {
     { label: 'Toggle Sidebar',       desc: 'Ctrl+B',       icon: 'fas fa-sidebar cri-cmd',   action: () => document.querySelector('.ab.active')?.click() },
     { label: 'Open Profile Panel',   desc: 'View profile', icon: 'fas fa-user cri-cmd',      action: () => document.querySelector('[data-panel="profile"]').click() },
     { label: 'Open Extensions',      desc: 'View skills',  icon: 'fas fa-puzzle-piece cri-cmd', action: () => document.querySelector('[data-panel="extensions"]').click() },
-    { label: 'Download CV',          desc: 'PDF download', icon: 'fas fa-download cri-cmd',  action: () => { const a = document.createElement('a'); a.href='../../resources/Md. Rakib Hasan.pdf'; a.download=''; a.click(); } },
+    { label: 'Download CV',          desc: 'PDF download', icon: 'fas fa-download cri-cmd',  action: () => { const a = document.createElement('a'); a.href='resources/Md. Rakib Hasan.pdf'; a.download=''; a.click(); } },
   ];
   cmds.forEach(c => {
     if (!q || c.label.toLowerCase().includes(q) || c.desc.toLowerCase().includes(q)) {
@@ -993,7 +993,7 @@ setTimeout(() => notify('Welcome! Ctrl+Shift+P for commands · Ctrl+Shift+C for 
       links: [{ label: 'Code', url: 'https://github.com/AfnanRakib/AUST-CODE-REALM' }, { label: 'Live', url: 'http://acr.rf.gd/' }]
     },
     homehutbd: {
-      name: 'HOMEHUTBD', sub: 'Property Listing Platform', year: '2024', badge: '',
+      name: 'HOMEHUTBD', sub: 'Property Listing Platform', year: '2025', badge: '',
       img: 'https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg',
       desc: 'A property listing and valuation platform with AI-assisted pricing prediction. Users can list, browse, and filter properties across Bangladesh. A Python/Flask microservice powers an ML pricing model trained on local real estate data and integrates with the ASP.NET MVC backend via REST API. Includes user authentication, property image upload, and advanced search filters.',
       tags: ['ASP.NET MVC', 'SQL Server', 'Python', 'Flask', 'C#', 'Machine Learning'],

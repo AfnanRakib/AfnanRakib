@@ -13,15 +13,19 @@
 <tr border="none">
 <td width="50%" align="left">
   
-- 🔭 I'm currently working on **[SOHOJOGI](https://github.com/Learnathon-By-Geeky-Solutions/team-synergy)**
+- 💼 I'm currently a **Junior Software Engineer** at **Dynamic Solutions Innovators (DSI)**
 
-- 🌱 I'm currently learning **App Development**
+- 🌱 I'm currently learning backend systems with **Perl, Python & Java Spring Boot**
 
-- 💬 Ask me about **C++, Python, Java**
+- 💬 Ask me about **C++, Python, Java, Spring Boot**
 
 - 📫 How to reach me **rakibhasan4101@gmail.com**
 
+<<<<<<< Updated upstream
 - 📄 Check out my [CV](Md.%20Rakib%20Hasan.pdf) and [Portfolio](https://afnanrakib.github.io/AfnanRakib/)
+=======
+- 📄 Check out my [CV](Md.%20Rakib%20Hasan.pdf) and [Portfolio](https://afnanrakib.github.io/AfnanRakib)
+>>>>>>> Stashed changes
 
 - ⚡ Fun fact **I think I am passionate about programming**
 

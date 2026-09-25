@@ -306,11 +306,16 @@ document.addEventListener("DOMContentLoaded", () => {
         achievements: {
           type: "dir", children: {
             "learnathon.txt": { type: "file", content: "Champion, Learnathon 3.0 (Geeky Solutions) — 2025." },
-            "icpc.txt":       { type: "file", content: "ICPC Dhaka Regional 2025 — Rank #122, Team AUST_DEADCODER." },
+            "icpc.txt":       { type: "file", content: "ICPC Dhaka Regional 2025 — Top 7% of 1,717 teams, Team AUST_DEADCODER." },
             "bubt-iucpc.txt": { type: "file", content: "BUBT IUCPC 2025 — Rank #35, Team AUST_DEADCODER." },
           },
         },
-        "about.txt":   { type: "file", content: "Final-year CSE undergraduate at AUST, CGPA 3.75. President AUST Programming Club, VP AUST CSE Society, ACM ICPC Coordinator." },
+        experience: {
+          type: "dir", children: {
+            "dsi.txt": { type: "file", content: "Junior Software Engineer, Dynamic Solutions Innovators (DSI) — Jul 2026 – Present. Backend systems, Perl/Python log processing on Linux, Java Spring Boot services." },
+          },
+        },
+        "about.txt":   { type: "file", content: "CSE graduate of AUST, CGPA 3.772. Junior Software Engineer at Dynamic Solutions Innovators (DSI). Ex-President AUST Programming Club, Ex-VP AUST CSE Society, Ex-ACM ICPC Coordinator." },
         "contact.txt": { type: "file", content: "Email: rakibhasan4101@gmail.com | LinkedIn: linkedin.com/in/afnanhasanrakib | GitHub: github.com/afnanrakib" },
       },
     },
@@ -361,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (cmd === "help") {
       [
-        "Commands: help, ls, pwd, cd <dir>, cat <file>, tree, whoami, about, stats, achievements, ranks, projects, contact, matrix, clear",
+        "Commands: help, ls, pwd, cd <dir>, cat <file>, tree, whoami, about, stats, achievements, ranks, projects, experience, contact, matrix, clear",
         "Tip: ArrowUp/Down for history. Press '/' to focus terminal.",
       ].forEach(l => appendLine(l, "line-ok"));
       return;
@@ -440,18 +445,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const staticOutputs = {
       about: [
-        "Rakib Hasan: final-year CSE undergraduate at AUST.",
+        "Rakib Hasan: CSE graduate of AUST, now a Junior Software Engineer at DSI.",
         "Focus: full-stack engineering, mobile apps, competitive programming.",
-        "CGPA: 3.75 | Location: Dhaka, Bangladesh",
+        "CGPA: 3.772 | Location: Dhaka, Bangladesh",
       ],
       stats: [
-        "CGPA: 3.75 | University: AUST",
-        "Leadership: President AUST Programming Club, VP AUST CSE Society, ACM ICPC Coordinator.",
-        "Competitive: ICPC Dhaka 2025 #122, Learnathon 3.0 Champion.",
+        "CGPA: 3.772 | University: AUST",
+        "Employer: Junior Software Engineer @ Dynamic Solutions Innovators (DSI).",
+        "Leadership (past): President AUST Programming Club, VP AUST CSE Society, ACM ICPC Coordinator.",
+        "Competitive: ICPC Dhaka 2025 Top 7%, Learnathon 3.0 Champion.",
       ],
       achievements: [
         "Champion  — Learnathon 3.0 (2025)",
-        "#122      — ICPC Dhaka Regional (2025)",
+        "Top 7%    — ICPC Dhaka Regional (2025)",
         "#35       — BUBT IUCPC (2025)",
         "#97       — AUST IUPC (2025)",
         "1st R.U.  — Research Odyssey Exhibition (2025)",
@@ -462,9 +468,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Champion  — Intra AUST Programming Contest (2024)",
         "#35       — BUBT IUCPC 2025 · AUST_DEADCODER",
         "#97       — AUST IUPC 2025 · 0xDEADCODER",
-        "#122      — ICPC Dhaka Regional 2025 · AUST_DEADCODER",
+        "Top 7%    — ICPC Dhaka Regional 2025 · AUST_DEADCODER",
         "1st R.U.  — Research Odyssey Exhibition 2025",
       ],
+      experience: ["Navigating to experience section..."],
       contact: [
         "Email:    rakibhasan4101@gmail.com",
         "GitHub:   github.com/afnanrakib",
@@ -482,6 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (cmd === "projects") document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    if (cmd === "experience") document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
     if (cmd === "contact")  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
     output.forEach(l => appendLine(l, "line-ok"));
@@ -691,7 +699,7 @@ document.addEventListener("DOMContentLoaded", () => {
       links: [{ label: 'Code', url: 'https://github.com/AfnanRakib/AUST-CODE-REALM' }, { label: 'Live', url: 'http://acr.rf.gd/' }]
     },
     homehutbd: {
-      name: 'HOMEHUTBD', sub: 'Property Listing Platform', year: '2024', badge: '',
+      name: 'HOMEHUTBD', sub: 'Property Listing Platform', year: '2025', badge: '',
       img: 'https://raw.githubusercontent.com/AfnanRakib/HomeHutBD/main/HomeHutBD/wwwroot/images/background.jpg',
       desc: 'A property listing and valuation platform with AI-assisted pricing prediction. Users can list, browse, and filter properties across Bangladesh. A Python/Flask microservice powers an ML pricing model trained on local real estate data and integrates with the ASP.NET MVC backend via REST API. Includes user authentication, property image upload, and advanced search filters.',
       tags: ['ASP.NET MVC', 'SQL Server', 'Python', 'Flask', 'C#', 'Machine Learning'],

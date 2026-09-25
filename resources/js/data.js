@@ -25,12 +25,12 @@ const THEMES = {
 
 /* ─── Searchable index ─── */
 const SEARCH_DATA = [
-  { file: 'home',         text: 'Md. Rakib Hasan software developer competitive programmer technical leader AUST Bangladesh' },
-  { file: 'about',        text: 'about background CSE CGPA 3.75 Ahsanullah University SOHOJOGI AUST CODE REALM HOMEHUTBD' },
+  { file: 'home',         text: 'Md. Rakib Hasan junior software engineer DSI competitive programmer technical leader AUST Bangladesh' },
+  { file: 'about',        text: 'about background CSE CGPA 3.772 Ahsanullah University Dynamic Solutions Innovators DSI SOHOJOGI AUST CODE REALM HOMEHUTBD' },
   { file: 'projects',     text: 'SOHOJOGI Flutter Supabase AUST CODE REALM PHP MySQL HOMEHUTBD ASP.NET BHROMON Google Maps IRREVOCABLE-ETERNITY OpenGL Java JavaFX CODE REALM' },
-  { file: 'experience',   text: 'president vice president AUST programming club CSE society CP community Geeky Solutions learnathon leader' },
-  { file: 'achievements', text: 'champion learnathon ICPC #122 BUBT IUCPC #35 AUST inter-university #97 rank merit scholarship academic award runner-up research odyssey' },
-  { file: 'skills',       text: 'C++ C Python Java Dart JavaScript C# Flutter HTML CSS ASP.NET MySQL Supabase Docker Firebase GitHub Actions computer vision machine learning' },
+  { file: 'experience',   text: 'Dynamic Solutions Innovators DSI junior software engineer president vice president AUST programming club CSE society CP community Geeky Solutions learnathon leader' },
+  { file: 'achievements', text: 'champion learnathon ICPC top 7% BUBT IUCPC #35 AUST inter-university #97 rank merit scholarship academic award runner-up research odyssey' },
+  { file: 'skills',       text: 'C++ C Python Java Dart JavaScript C# Flutter HTML CSS ASP.NET Spring Boot JavaFX Perl Shell Linux MySQL Supabase Docker Firebase GitHub Actions computer vision machine learning' },
   { file: 'contact',      text: 'email github linkedin codeforces leetcode atcoder discord contact rakibhasan4101@gmail.com' },
   { file: 'settings',     text: 'settings theme editor font JetBrains Mono configuration vscode' },
   { file: 'photo',        text: 'photo portrait image png Md. Rakib Hasan' },

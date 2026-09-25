@@ -8,7 +8,7 @@ const copInput   = document.getElementById('cop-input');
 const COPILOT_RESPONSES = [
   {
     keys: ['about', 'who', 'rakib', 'tell'],
-    text: `**Rakib** is a final-year CSE student at AUST (CGPA 3.75) who blends algorithmic precision with full-stack product development.\n\nHe's the **President** of the AUST Programming Club, a **Learnathon 3.0 Champion**, and has ranked **#122 at ICPC Dhaka Regional**. He builds everything from cross-platform mobile apps to competitive programming judges.`,
+    text: `**Rakib** is a CSE graduate of AUST (CGPA 3.772) now working as a **Junior Software Engineer** at **Dynamic Solutions Innovators (DSI)**, blending algorithmic precision with full-stack product development.\n\nHe was **President** of the AUST Programming Club, is a **Learnathon 3.0 Champion**, and ranked **Top 7% at ICPC Dhaka Regional** (1,717 teams). He builds everything from cross-platform mobile apps to competitive programming judges.`,
   },
   {
     keys: ['project', 'built', 'work', 'apps'],
@@ -16,11 +16,11 @@ const COPILOT_RESPONSES = [
   },
   {
     keys: ['stack', 'skill', 'tech', 'language', 'tool'],
-    text: `**Languages:** C++ (95%), C, Python, Java, Dart, JS, C#\n\n**Mobile/Web:** Flutter, HTML/CSS, ASP.NET MVC, Bootstrap, PHP\n\n**Databases:** MySQL, Supabase, SQL Server, Firebase\n\n**Tools:** Docker, GitHub Actions, Judge0, OpenCV, Git`,
+    text: `**Languages:** C++ (95%), C, Python, Java, Dart, JS, C#\n\n**Mobile/Web:** Flutter, HTML/CSS, ASP.NET MVC, Spring Boot, JavaFX, Bootstrap, PHP\n\n**Databases:** MySQL, Supabase, SQL Server, Firebase\n\n**Tools:** Linux, Shell Scripting, Perl, Docker, GitHub Actions, Judge0, OpenCV, Git`,
   },
   {
     keys: ['hire', 'job', 'opportunity', 'recruit', 'work with'],
-    text: `Rakib is **open to new opportunities** — full-time roles, internships, and freelance collaborations.\n\nBest way to reach him:\n📧 **rakibhasan4101@gmail.com**\n💼 <a href="https://linkedin.com/in/afnanhasanrakib" target="_blank">LinkedIn</a>\n\nHe's based in Dhaka, Bangladesh and available immediately.`,
+    text: `Rakib is currently a **Junior Software Engineer at DSI**, and open to **freelance projects and open-source collaborations**.\n\nBest way to reach him:\n📧 **rakibhasan4101@gmail.com**\n💼 <a href="https://linkedin.com/in/afnanhasanrakib" target="_blank">LinkedIn</a>\n\nHe's based in Dhaka, Bangladesh.`,
   },
   {
     keys: ['contact', 'email', 'reach', 'find'],
@@ -28,11 +28,11 @@ const COPILOT_RESPONSES = [
   },
   {
     keys: ['achieve', 'award', 'rank', 'contest', 'icpc', 'champion'],
-    text: `🏆 **Learnathon 3.0 Champion** — Geeky Solutions, 2025\n🏆 **Intra AUST Programming Champion** — CSE Carnival 4.0, 2024\n**#35** BUBT IUCPC National (Team AUST_DEADCODER)\n**#97** AUST Inter-University PC\n**#122** ICPC Dhaka Regional (Onsite)\n🥈 Research Odyssey Runner-Up\n🎓 Academic Merit Scholarship — Top 5% of dept`,
+    text: `🏆 **Learnathon 3.0 Champion** — Geeky Solutions, 2025\n🏆 **Intra AUST Programming Champion** — CSE Carnival 4.0, 2024\n**#35** BUBT IUCPC National (Team AUST_DEADCODER)\n**#97** AUST Inter-University PC\n**Top 7%** ICPC Dhaka Regional (1,717 teams)\n🥈 Research Odyssey Runner-Up\n🎓 Academic Merit Scholarship — Top 5% of dept`,
   },
   {
     keys: ['experience', 'leader', 'club', 'president', 'role'],
-    text: `Rakib holds multiple leadership positions:\n\n• **President** — AUST Programming and Informatics Club\n• **Vice President** — AUST CSE Society\n• **ACM Coordinator** — AUST CP Community\n• **Team Leader** — Learnathon 3.0 (Geeky Solutions)`,
+    text: `Rakib is currently a **Junior Software Engineer** at **Dynamic Solutions Innovators (DSI)**.\n\nHe previously held multiple leadership positions:\n\n• **President** — AUST Programming and Informatics Club\n• **Vice President** — AUST CSE Society\n• **ACM Coordinator** — AUST CP Community\n• **Team Leader** — Learnathon 3.0 (Geeky Solutions)`,
   },
 ];
 
