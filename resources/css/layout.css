@@ -985,21 +985,15 @@
 .run-portfolio-btn:hover { background: #16a34a; transform: translateY(-1px); }
 .run-portfolio-btn:hover i { transform: translateX(2px); }
 
-/* ── Title bar RH monogram ── */
+/* ── Title bar brand monogram ── */
 .title-logo-text {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.58rem;
-  font-weight: 900;
-  background: var(--accent);
-  color: #fff;
-  width: 17px; height: 17px;
-  border-radius: 3px;
+  color: var(--accent);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: -0.02em;
   flex-shrink: 0;
 }
+.title-logo-text .brand-mark { width: 34px; height: 23px; }
 
 /* ════════════════════════════════
    REMOVE GLOW ANIMATION (override)

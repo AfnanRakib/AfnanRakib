@@ -223,7 +223,7 @@ body.warm-mode .site-header.nav-sc {
   font-family: var(--fn-display);
   letter-spacing: 0.08em; font-weight: 800; color: var(--ink);
 }
-.brand img { width: 30px; height: 30px; object-fit: contain; }
+.brand .brand-mark { width: auto; height: 40px; color: var(--accent); transition: color 0.3s; }
 
 /* Live clock */
 .live-clock-wrap {

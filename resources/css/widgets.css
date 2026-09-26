@@ -356,20 +356,16 @@
 }
 .splash-logo { display: none; }
 .splash-logo-badge {
-  width: 64px; height: 64px;
-  border-radius: 14px;
-  background: #818cf8;
+  width: 88px; height: 88px;
+  border-radius: 18px;
+  background: var(--accent, #818cf8);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: -0.02em;
   box-shadow: 0 0 32px rgba(129,140,248,0.4);
   animation: splashPulse 1.5s ease-in-out infinite;
 }
+.splash-logo-badge .brand-mark { width: 60px; height: 60px; }
 @keyframes splashPulse {
   0%, 100% { opacity: 0.85; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.06); }
@@ -685,19 +681,15 @@
   line-height: 1.2;
 }
 .desk-logo-text {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 900;
   background: var(--accent, #818cf8);
-  color: #fff;
-  width: 22px; height: 22px;
-  border-radius: 5px;
+  width: 30px; height: 30px;
+  border-radius: 7px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: -0.01em;
   flex-shrink: 0;
 }
+.desk-logo-text .brand-mark { width: 22px; height: 22px; }
 
 /* ════════════════════════════════
    DEPLOY ANIMATION OVERLAY

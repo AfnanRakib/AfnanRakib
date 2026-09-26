@@ -7,6 +7,9 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ─ Brand mark (RAKIB wordmark, recolored via currentColor/fill by context) ─ */
+.brand-mark { display: block; flex-shrink: 0; }
+
 /* ─ BASE THEME (Dark Default — Indigo) ─ */
 :root,
 :root[data-theme="dark-default"] {

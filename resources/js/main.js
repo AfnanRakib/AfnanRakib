@@ -106,7 +106,10 @@ function openFile(id) {
   content.scrollTo({ top: 0, behavior: 'smooth' });
   triggerSkillBars(id);
   generateMinimap();
-  if (id === 'cv' && typeof window.pdfViewerLoad === 'function') window.pdfViewerLoad();
+  if (id === 'cv') {
+    const cvFrame = document.getElementById('cv-pdf-frame');
+    if (cvFrame && !cvFrame.getAttribute('src')) cvFrame.setAttribute('src', 'resources/Md. Rakib Hasan.pdf');
+  }
   if (isMobile()) closeMobileSidebar();
 }
 
@@ -132,11 +135,18 @@ function triggerSkillBars(id) {
 /* ════════════════════════════════
    THEMES
 ════════════════════════════════ */
+function updateFaviconColor(hex) {
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='${LOGO_VIEWBOX}'><path d='${LOGO_PATH_D}' fill='${hex}' fill-rule='evenodd'/></svg>`;
+  const link = document.querySelector('link[rel="icon"]');
+  if (link) link.href = 'data:image/svg+xml,' + encodeURIComponent(svg);
+}
+
 function applyTheme(id) {
   if (!THEMES[id]) return;
   activeTheme = id;
   document.documentElement.dataset.theme = id;
   localStorage.setItem('vsc-theme', id);
+  updateFaviconColor(THEMES[id].color);
 
   // Theme panel checkmarks
   document.querySelectorAll('.theme-item').forEach(el => {
